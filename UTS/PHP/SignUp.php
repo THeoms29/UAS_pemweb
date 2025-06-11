@@ -1,4 +1,8 @@
 <?php
+
+  if (!defined('BASE_URL')) {
+    define('BASE_URL', '../'); 
+}
 // Debug version - tambahkan logging untuk troubleshooting
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -182,48 +186,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<!DOCTYPE html>
+<script src="../JS/JsSign.js" defer></script>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
-    <link rel="stylesheet" href="UTS/CSS/sign.css">
+    <link rel="stylesheet" href="../CSS/sign.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-    </style>
 </head>
 <body>
     <div class="login-wrapper">
         <div class="login-container">
           <h2 class="title">Create Account</h2>
 
-          <div id="alert-container">
-            <?php if (!empty($success_message)): ?>
-                <div class="alert alert-success">
-                    <?php echo $success_message; ?>
-                </div>
-            <?php endif; ?>
-            
-            <?php if (!empty($error_message)): ?>
-                <div class="alert alert-danger">
-                    <?php echo $error_message; ?>
-                </div>
-            <?php endif; ?>
-          </div>
+          <div id="alert-container"></div>
           
-          <form class="login-form" id="signupForm" method="POST" action="">
+          <form class="login-form" id="signupForm">
             
             <div class="form-group icon-container">
               <i class="icon fas fa-user"></i>
-              <input type="text" name="full_name" class="form-control" placeholder="Full Name" 
-                     value="<?php echo htmlspecialchars($form_data['full_name']); ?>" required>
+              <input type="text" name="full_name" class="form-control" placeholder="Full Name" required>
             </div>
       
             <div class="form-group icon-container">
               <i class="icon fas fa-envelope"></i>
-              <input type="email" name="email" class="form-control" placeholder="Email Address" 
-                     value="<?php echo htmlspecialchars($form_data['email']); ?>" required>
+              <input type="email" name="email" class="form-control" placeholder="Email Address" required>
             </div>
       
             <div class="form-group icon-container">
@@ -246,12 +235,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <button type="submit" class="btn-login">Sign Up</button>
       
             <div class="signup-link">
-              Sudah punya akun? <a href="UTS\Login.html">Sign In</a>
+              Sudah punya akun? <a href="Login.html">Sign In</a>
             </div>
           </form>
         </div>
       </div>
-    <script src="UTS\JS\jsSign.js"></script>
+    
     
     <!-- Auto-redirect script untuk traditional form submission -->
     <?php if (!empty($success_message)): ?>
@@ -259,7 +248,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Jika tidak ada AJAX (traditional form), redirect setelah 2 detik
         if (!window.XMLHttpRequest || !document.querySelector('#signupForm').dataset.ajax) {
             setTimeout(function() {
-                window.location.href = 'UTS\Login.html';
+                window.location.href = 'Login.html';
             }, 2000);
         }
     </script>

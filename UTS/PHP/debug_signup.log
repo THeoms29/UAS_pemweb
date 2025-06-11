@@ -1,0 +1,23 @@
+[2025-06-11 14:52:39] === Debug signup process started ===
+[2025-06-11 14:52:39] Database connection included
+[2025-06-11 14:52:39] Method: POST
+[2025-06-11 14:52:39] POST data: Array
+(
+    [full_name] => Manuela Siska
+    [email] => manuelasiska@gmail.com
+    [password] => 7654321
+    [confirm_password] => 7654321
+    [terms] => on
+)
+
+[2025-06-11 14:52:39] Data received - Name: Manuela Siska, Email: manuelasiska@gmail.com
+[2025-06-11 14:52:39] Validation passed, checking database connection
+[2025-06-11 14:52:39] Database connected successfully
+[2025-06-11 14:52:39] Email check passed, proceeding with insert
+[2025-06-11 14:52:39] Password hashed successfully
+[2025-06-11 14:52:39] Current time: 2025-06-11 14:52:39
+[2025-06-11 14:52:39] Insert query prepared successfully
+[2025-06-11 14:52:39] Parameters bound, executing insert
+[2025-06-11 14:52:39] Insert executed successfully
+[2025-06-11 14:52:39] New user ID: 3
+[2025-06-11 14:52:39] === Debug signup process ended ===
