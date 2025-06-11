@@ -162,3 +162,22 @@
       font-size: 18px;
     }
   }
+  /* Custom Modal Style */
+.modal-header {
+    background-color: #0d6fb1; /* Warna biru sesuai tema */
+    color: white;
+}
+
+.modal-header .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%); /* Membuat tombol 'X' menjadi putih */
+}
+
+.modal-body h6 {
+    font-weight: bold;
+    color: #0d6fb1;
+    margin-top: 1rem;
+}
+
+.modal-footer .btn-success {
+    background-color: #198754; /* Warna hijau untuk tombol pesan */
+}
