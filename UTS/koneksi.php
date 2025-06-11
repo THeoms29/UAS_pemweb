@@ -1,7 +1,7 @@
 <?php
 $host = "localhost";
 $user = "root";
-$pass = "12345678";
+$pass = "";
 $db   = "baweanique_db"; // ini nama database kamu
 
 $conn = mysqli_connect($host, $user, $pass, $db);
