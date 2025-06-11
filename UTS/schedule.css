@@ -49,10 +49,6 @@ h1 {
   font-size: 0.95rem;
 }
 
-.schedule-table tr:hover {
-  background-color: #f1f9ff;
-  transition: background-color 0.3s ease;
-}
 
 .font-table{
     color: #333;
