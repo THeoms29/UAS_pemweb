@@ -1,3 +1,8 @@
+<?php
+  if (!defined('BASE_URL')) {
+    define('BASE_URL', '../'); 
+  }
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,7 +41,7 @@
                       </div>
                     <button type="button" class="btn-login" id="login-btn">LOGIN</button>
                     <div class="signup-link">
-                        Belum punya akun? <a href="signup.html">Sign Up</a>
+                        Belum punya akun? <a href="Sign.php">Sign Up</a>
                       </div>
                 </form>
             </div>
@@ -46,6 +51,6 @@
         Copyright © | Design by Nabilafarahh - Theodore
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
-    <script src="Jsform.js"></script>
+    <script src="../Jsform.js"></script>
 </body>
 </html>

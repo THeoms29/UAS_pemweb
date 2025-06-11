@@ -235,7 +235,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <button type="submit" class="btn-login">Sign Up</button>
       
             <div class="signup-link">
-              Sudah punya akun? <a href="Login.html">Sign In</a>
+              Sudah punya akun? <a href="<?php echo BASE_URL; ?>PHP/Login.php">Sign In</a>
             </div>
           </form>
         </div>
@@ -248,7 +248,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Jika tidak ada AJAX (traditional form), redirect setelah 2 detik
         if (!window.XMLHttpRequest || !document.querySelector('#signupForm').dataset.ajax) {
             setTimeout(function() {
-                window.location.href = 'Login.html';
+                window.location.href = '<?php echo BASE_URL; ?>PHP/Login.php';
             }, 2000);
         }
     </script>
