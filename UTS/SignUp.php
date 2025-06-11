@@ -188,7 +188,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
-    <link rel="stylesheet" href="/CSS/sign.css">
+    <link rel="stylesheet" href="UTS/CSS/sign.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
     </style>
@@ -246,12 +246,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <button type="submit" class="btn-login">Sign Up</button>
       
             <div class="signup-link">
-              Sudah punya akun? <a href="Login.html">Sign In</a>
+              Sudah punya akun? <a href="UTS\Login.html">Sign In</a>
             </div>
           </form>
         </div>
       </div>
-    <script src="jsSign.js"></script>
+    <script src="UTS\JS\jsSign.js"></script>
     
     <!-- Auto-redirect script untuk traditional form submission -->
     <?php if (!empty($success_message)): ?>
@@ -259,7 +259,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Jika tidak ada AJAX (traditional form), redirect setelah 2 detik
         if (!window.XMLHttpRequest || !document.querySelector('#signupForm').dataset.ajax) {
             setTimeout(function() {
-                window.location.href = 'Login.html';
+                window.location.href = 'UTS\Login.html';
             }, 2000);
         }
     </script>
