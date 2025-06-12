@@ -1,3 +1,8 @@
+<?php
+  if (!defined('BASE_URL')) {
+    define('BASE_URL', '../'); 
+  }
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,33 +12,33 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="about.css">
-    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/about.css">
+    <link rel="stylesheet" href="../CSS/navbar.css">
 </head>
 <body>
     <nav class="navbar navbar-dark d-flex justify-content-between px-4 py-3">
         <div>
-          <img src="BAWEANIQUE.png" width="190" height="85" alt="" />
+          <img src="../a1/BAWEANIQUE.png" width="190" height="85" alt="" />
           </div>
         <div class="d-flex gap-4">
-          <a href="Index.html" class="nav-link text-center">
+          <a href="<?php echo BASE_URL; ?>PHP/Index.php" class="nav-link text-center">
             <i class="bi bi-house-door"></i>
             <b>Home</b>
           </a>
-          <a href="packages.html" class="nav-link text-center">
+          <a href="<?php echo BASE_URL; ?>PHP/packages.php" class="nav-link text-center">
             <i class="bi bi-map"></i>
             <b>Packages</b>
           </a>
-          <a href="schedule.html" class="nav-link text-center">
+          <a href="<?php echo BASE_URL; ?>PHP/schedule.php" class="nav-link text-center">
             <i class="bi bi-table"></i>
             <b>Schedule</b>
           </a>
-          <a href="gallery.html" class="nav-link text-center">
+          <a href="<?php echo BASE_URL; ?>PHP/gallery.php" class="nav-link text-center">
             <i class="bi bi-camera"></i>
             <b>Gallery</b>
           </a>
-          <a href="booking.html" class="nav-link text-center">
+          <a href="<?php echo BASE_URL; ?>PHP/booking.php" class="nav-link text-center">
             <i class="bi bi-cart2"></i>
             <b>My Book</b>
          </a>
@@ -43,11 +48,11 @@
           </a>
         </div>
         <div class="d-flex gap-2">
-          <a href="login.html" class="btn btn-outline-dark custom-login-btn d-flex align-items-center gap-1 rounded-pill">
+          <a href="<?php echo BASE_URL; ?>PHP/login.php" class="btn btn-outline-dark custom-login-btn d-flex align-items-center gap-1 rounded-pill">
             <span>Login</span>
             <i class="bi bi-box-arrow-in-right small"></i>
           </a>
-          <a href="signup.html" class="btn btn-primary rounded-pill">
+          <a href="<?php echo BASE_URL; ?>PHP/signup.php" class="btn btn-primary rounded-pill">
             <span>Sign-up</span>
           </a>
         </div>
@@ -66,7 +71,7 @@
           <div class="row">
             <div class="col-md-4 mb-4">
               <div class="card">
-                <img src="a1/noko.jpg" class="card-img-top" alt="Noko Gili">
+                <img src="../a1/noko.jpg" class="card-img-top" alt="Noko Gili">
                 <div class="card-body">
                   <h5 class="card-title">Noko Gili</h5>
                   <p class="card-text">Pulau pasir putih yang menakjubkan ini hanya muncul saat air laut surut. Jelajahi keindahan bawah lautnya.</p>
@@ -76,7 +81,7 @@
             </div>
             <div class="col-md-4 mb-4">
               <div class="card">
-                <img src="a1/tajhunggheen.jpg" class="card-img-top" alt="Tajhunghe'en">
+                <img src="../a1/tajhunggheen.jpg" class="card-img-top" alt="Tajhunghe'en">
                 <div class="card-body">
                   <h5 class="card-title">Tajhunghe'en</h5>
                   <p class="card-text">Nikmati pemandangan tebing karang yang megah dan ombak yang menenangkan di spot terbaik untuk bersantai.</p>
@@ -86,7 +91,7 @@
             </div>
             <div class="col-md-4 mb-4">
               <div class="card">
-                <img src="a1/kastoba.jpg" class="card-img-top" alt="Kastoba Lake">
+                <img src="../a1/kastoba.jpg" class="card-img-top" alt="Kastoba Lake">
                 <div class="card-body">
                   <h5 class="card-title">Kastoba Lake</h5>
                   <p class="card-text">Danau alami di tengah pulau yang dikelilingi oleh hutan hijau, menawarkan ketenangan dan udara yang sejuk.</p>
@@ -96,7 +101,7 @@
             </div>
             <div class="col-md-4 mb-4">
               <div class="card">
-                <img src="a1/air terjun.jpg" class="card-img-top" alt="Laccar Waterfall">
+                <img src="../a1/air terjun.jpg" class="card-img-top" alt="Laccar Waterfall">
                 <div class="card-body">
                   <h5 class="card-title">Laccar Waterfall</h5>
                   <p class="card-text">Rasakan kesegaran air terjun yang tersembunyi di pedalaman pulau Bawean, petualangan seru menanti Anda.</p>
@@ -106,7 +111,7 @@
             </div>
             <div class="col-md-4 mb-4">
               <div class="card">
-                <img src="a1/noko selayar.jpg" class="card-img-top" alt="Noko Selayar">
+                <img src="../a1/noko selayar.jpg" class="card-img-top" alt="Noko Selayar">
                 <div class="card-body">
                   <h5 class="card-title">Noko Selayar</h5>
                   <p class="card-text">Gundukan pasir berbentuk hati yang romantis, menjadi ikon unik dan spot foto favorit di Bawean.</p>
@@ -116,7 +121,7 @@
             </div>
             <div class="col-md-4 mb-4">
               <div class="card">
-                <img src="a1/cina.jpg" class="card-img-top" alt="China Island">
+                <img src="../a1/cina.jpg" class="card-img-top" alt="China Island">
                 <div class="card-body">
                   <h5 class="card-title">China Island</h5>
                   <p class="card-text">Pulau kecil dengan dermaga ikonik, cocok untuk berenang dan menikmati pemandangan laut yang jernih.</p>
@@ -126,7 +131,7 @@
             </div>
             <div class="col-md-4 mb-4">
               <div class="card">
-                <img src="a1/air panas.jpg" class="card-img-top" alt="Pemandian Air Panas">
+                <img src="../a1/air panas.jpg" class="card-img-top" alt="Pemandian Air Panas">
                 <div class="card-body">
                   <h5 class="card-title">Pemandian Air Panas</h5>
                   <p class="card-text">Relaksasikan tubuh Anda di pemandian air panas alami yang dipercaya memiliki khasiat untuk kesehatan.</p>
@@ -136,7 +141,7 @@
             </div>
             <div class="col-md-4 mb-4">
               <div class="card">
-                <img src="a1/rusa.jpg" class="card-img-top" alt="Bawean Deer Breeding">
+                <img src="../a1/rusa.jpg" class="card-img-top" alt="Bawean Deer Breeding">
                 <div class="card-body">
                   <h5 class="card-title">Bawean Deer Breeding</h5>
                   <p class="card-text">Lihat dari dekat Rusa Bawean (Axis kuhlii), spesies endemik yang dilindungi dan menjadi kebanggaan pulau ini.</p>
@@ -146,7 +151,7 @@
             </div>
             <div class="col-md-4 mb-4">
               <div class="card">
-                <img src="a1/snorkeling.jpg" class="card-img-top" alt="Bawean Underwater">
+                <img src="../a1/snorkeling.jpg" class="card-img-top" alt="Bawean Underwater">
                 <div class="card-body">
                   <h5 class="card-title">Bawean Underwater</h5>
                   <p class="card-text">Selami keindahan bawah laut Bawean yang kaya akan terumbu karang dan biota laut yang beragam.</p>
@@ -156,7 +161,7 @@
             </div>
             <div class="col-md-4 mb-4">
               <div class="card">
-                <img src="a1/mombhul.png" class="card-img-top" alt="Mombhul Beach">
+                <img src="../a1/mombhul.png" class="card-img-top" alt="Mombhul Beach">
                 <div class="card-body">
                   <h5 class="card-title">Mombhul Beach</h5>
                   <p class="card-text">Pantai dengan jajaran perahu nelayan tradisional dan pemandangan sunset yang memukau.</p>
@@ -166,7 +171,7 @@
             </div>
             <div class="col-md-4 mb-4">
               <div class="card">
-                <img src="a1/lantong.jpg" class="card-img-top" alt="Lantong Waterfall">
+                <img src="../a1/lantong.jpg" class="card-img-top" alt="Lantong Waterfall">
                 <div class="card-body">
                   <h5 class="card-title">Lantong Waterfall</h5>
                   <p class="card-text">Air terjun cantik lainnya yang menawarkan suasana asri dan kolam alami untuk berenang.</p>
@@ -176,7 +181,7 @@
             </div>
             <div class="col-md-4 mb-4">
               <div class="card">
-                <img src="a1/mangrove.jpg" class="card-img-top" alt="Mangrove">
+                <img src="../a1/mangrove.jpg" class="card-img-top" alt="Mangrove">
                 <div class="card-body">
                   <h5 class="card-title">Mangrove</h5>
                   <p class="card-text">Jelajahi ekosistem hutan bakau yang penting dengan jembatan kayu yang melintas di tengahnya.</p>
@@ -189,51 +194,51 @@
       </div>
 
     <div class="modal fade" id="nokoGiliModal" tabindex="-1" aria-labelledby="nokoGiliModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="nokoGiliModalLabel">Noko Gili</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><img src="a1/noko.jpg" class="img-fluid mb-3" alt="Noko Gili"><p>Deskripsi lengkap tentang paket wisata Noko Gili...</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button><a href="booking.html" class="btn btn-success">Pesan Sekarang</a></div></div></div>
+      <div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="nokoGiliModalLabel">Noko Gili</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><img src="../a1/noko.jpg" class="img-fluid mb-3" alt="Noko Gili"><p>Deskripsi lengkap tentang paket wisata Noko Gili...</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button><a href="booking.html" class="btn btn-success">Pesan Sekarang</a></div></div></div>
     </div>
     
     <div class="modal fade" id="tajhungheenModal" tabindex="-1" aria-labelledby="tajhungheenModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="tajhungheenModalLabel">Tajhunghe'en</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><img src="a1/tajhunggheen.jpg" class="img-fluid mb-3" alt="Tajhunghe'en"><p>Deskripsi lengkap tentang paket wisata Tajhunghe'en...</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button><a href="booking.html" class="btn btn-success">Pesan Sekarang</a></div></div></div>
+        <div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="tajhungheenModalLabel">Tajhunghe'en</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><img src="../a1/tajhunggheen.jpg" class="img-fluid mb-3" alt="Tajhunghe'en"><p>Deskripsi lengkap tentang paket wisata Tajhunghe'en...</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button><a href="booking.html" class="btn btn-success">Pesan Sekarang</a></div></div></div>
     </div>
 
     <div class="modal fade" id="kastobaModal" tabindex="-1" aria-labelledby="kastobaModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="kastobaModalLabel">Kastoba Lake</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><img src="a1/kastoba.jpg" class="img-fluid mb-3" alt="Kastoba Lake"><p>Deskripsi lengkap tentang paket wisata Danau Kastoba...</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button><a href="booking.html" class="btn btn-success">Pesan Sekarang</a></div></div></div>
+        <div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="kastobaModalLabel">Kastoba Lake</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><img src="../a1/kastoba.jpg" class="img-fluid mb-3" alt="Kastoba Lake"><p>Deskripsi lengkap tentang paket wisata Danau Kastoba...</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button><a href="booking.html" class="btn btn-success">Pesan Sekarang</a></div></div></div>
     </div>
 
     <div class="modal fade" id="laccarWaterfallModal" tabindex="-1" aria-labelledby="laccarWaterfallModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="laccarWaterfallModalLabel">Laccar Waterfall</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><img src="a1/air terjun.jpg" class="img-fluid mb-3" alt="Laccar Waterfall"><p>Deskripsi lengkap tentang paket wisata Air Terjun Laccar...</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button><a href="booking.html" class="btn btn-success">Pesan Sekarang</a></div></div></div>
+        <div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="laccarWaterfallModalLabel">Laccar Waterfall</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><img src="../a1/air terjun.jpg" class="img-fluid mb-3" alt="Laccar Waterfall"><p>Deskripsi lengkap tentang paket wisata Air Terjun Laccar...</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button><a href="booking.html" class="btn btn-success">Pesan Sekarang</a></div></div></div>
     </div>
 
     <div class="modal fade" id="nokoSelayarModal" tabindex="-1" aria-labelledby="nokoSelayarModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="nokoSelayarModalLabel">Noko Selayar</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><img src="a1/noko selayar.jpg" class="img-fluid mb-3" alt="Noko Selayar"><p>Deskripsi lengkap tentang paket wisata Noko Selayar...</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button><a href="booking.html" class="btn btn-success">Pesan Sekarang</a></div></div></div>
+        <div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="nokoSelayarModalLabel">Noko Selayar</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><img src="../a1/noko selayar.jpg" class="img-fluid mb-3" alt="Noko Selayar"><p>Deskripsi lengkap tentang paket wisata Noko Selayar...</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button><a href="booking.html" class="btn btn-success">Pesan Sekarang</a></div></div></div>
     </div>
 
     <div class="modal fade" id="chinaIslandModal" tabindex="-1" aria-labelledby="chinaIslandModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="chinaIslandModalLabel">China Island</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><img src="a1/cina.jpg" class="img-fluid mb-3" alt="China Island"><p>Deskripsi lengkap tentang paket wisata Pulau Cina...</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button><a href="booking.html" class="btn btn-success">Pesan Sekarang</a></div></div></div>
+        <div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="chinaIslandModalLabel">China Island</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><img src="../a1/cina.jpg" class="img-fluid mb-3" alt="China Island"><p>Deskripsi lengkap tentang paket wisata Pulau Cina...</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button><a href="booking.html" class="btn btn-success">Pesan Sekarang</a></div></div></div>
     </div>
 
     <div class="modal fade" id="airPanasModal" tabindex="-1" aria-labelledby="airPanasModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="airPanasModalLabel">Pemandian Air Panas</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><img src="a1/air panas.jpg" class="img-fluid mb-3" alt="Pemandian Air Panas"><p>Deskripsi lengkap tentang paket wisata Pemandian Air Panas...</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button><a href="booking.html" class="btn btn-success">Pesan Sekarang</a></div></div></div>
+        <div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="airPanasModalLabel">Pemandian Air Panas</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><img src="../a1/air panas.jpg" class="img-fluid mb-3" alt="Pemandian Air Panas"><p>Deskripsi lengkap tentang paket wisata Pemandian Air Panas...</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button><a href="booking.html" class="btn btn-success">Pesan Sekarang</a></div></div></div>
     </div>
 
     <div class="modal fade" id="rusaBaweanModal" tabindex="-1" aria-labelledby="rusaBaweanModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="rusaBaweanModalLabel">Bawean Deer Breeding</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><img src="a1/rusa.jpg" class="img-fluid mb-3" alt="Bawean Deer Breeding"><p>Deskripsi lengkap tentang paket wisata Penangkaran Rusa Bawean...</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button><a href="booking.html" class="btn btn-success">Pesan Sekarang</a></div></div></div>
+        <div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="rusaBaweanModalLabel">Bawean Deer Breeding</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><img src="../a1/rusa.jpg" class="img-fluid mb-3" alt="Bawean Deer Breeding"><p>Deskripsi lengkap tentang paket wisata Penangkaran Rusa Bawean...</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button><a href="booking.html" class="btn btn-success">Pesan Sekarang</a></div></div></div>
     </div>
 
     <div class="modal fade" id="underwaterModal" tabindex="-1" aria-labelledby="underwaterModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="underwaterModalLabel">Bawean Underwater</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><img src="a1/snorkeling.jpg" class="img-fluid mb-3" alt="Bawean Underwater"><p>Deskripsi lengkap tentang paket wisata bawah laut Bawean...</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button><a href="booking.html" class="btn btn-success">Pesan Sekarang</a></div></div></div>
+        <div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="underwaterModalLabel">Bawean Underwater</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><img src="../a1/snorkeling.jpg" class="img-fluid mb-3" alt="Bawean Underwater"><p>Deskripsi lengkap tentang paket wisata bawah laut Bawean...</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button><a href="booking.html" class="btn btn-success">Pesan Sekarang</a></div></div></div>
     </div>
 
     <div class="modal fade" id="mombhulModal" tabindex="-1" aria-labelledby="mombhulModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="mombhulModalLabel">Mombhul Beach</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><img src="a1/mombhul.png" class="img-fluid mb-3" alt="Mombhul Beach"><p>Deskripsi lengkap tentang paket wisata Pantai Mombhul...</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button><a href="booking.html" class="btn btn-success">Pesan Sekarang</a></div></div></div>
+        <div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="mombhulModalLabel">Mombhul Beach</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><img src="../a1/mombhul.png" class="img-fluid mb-3" alt="Mombhul Beach"><p>Deskripsi lengkap tentang paket wisata Pantai Mombhul...</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button><a href="booking.html" class="btn btn-success">Pesan Sekarang</a></div></div></div>
     </div>
 
     <div class="modal fade" id="lantongModal" tabindex="-1" aria-labelledby="lantongModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="lantongModalLabel">Lantong Waterfall</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><img src="a1/lantong.jpg" class="img-fluid mb-3" alt="Lantong Waterfall"><p>Deskripsi lengkap tentang paket wisata Air Terjun Lantong...</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button><a href="booking.html" class="btn btn-success">Pesan Sekarang</a></div></div></div>
+        <div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="lantongModalLabel">Lantong Waterfall</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><img src="../a1/lantong.jpg" class="img-fluid mb-3" alt="Lantong Waterfall"><p>Deskripsi lengkap tentang paket wisata Air Terjun Lantong...</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button><a href="booking.html" class="btn btn-success">Pesan Sekarang</a></div></div></div>
     </div>
     
     <div class="modal fade" id="mangroveModal" tabindex="-1" aria-labelledby="mangroveModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="mangroveModalLabel">Mangrove</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><img src="a1/mangrove.jpg" class="img-fluid mb-3" alt="Mangrove"><p>Deskripsi lengkap tentang paket wisata Hutan Mangrove...</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button><a href="booking.html" class="btn btn-success">Pesan Sekarang</a></div></div></div>
+        <div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="mangroveModalLabel">Mangrove</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><img src="../a1/mangrove.jpg" class="img-fluid mb-3" alt="Mangrove"><p>Deskripsi lengkap tentang paket wisata Hutan Mangrove...</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button><a href="booking.html" class="btn btn-success">Pesan Sekarang</a></div></div></div>
     </div>
 
 
@@ -277,8 +282,8 @@
 
     <button id="scrollToTopBtn" title="Kembali ke Atas">
       <i class="bi bi-arrow-up"></i>
-      <script src="Jstombolkecil.js"></script>
+      <script src="../JS/Jstombolkecil.js"></script>
     </button>
-    <script src="JsAbout.js"></script>
+    <script src="../JS/JsAbout.js"></script>
   </body>
 </html>

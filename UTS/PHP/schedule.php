@@ -1,3 +1,8 @@
+<?php
+  if (!defined('BASE_URL')) {
+    define('BASE_URL', '../'); 
+  }
+  ?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -7,10 +12,10 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
-  <link rel="stylesheet" href="navbar.css">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="schedule.css">
-  <link rel="stylesheet" href="about.css">
+  <link rel="stylesheet" href="../CSS/navbar.css">
+  <link rel="stylesheet" href="../CSS/style.css">
+  <link rel="stylesheet" href="../CSS/schedule.css">
+  <link rel="stylesheet" href="../CSS/about.css">
 </head>
 <body>
   <!-- Header Navbar -->

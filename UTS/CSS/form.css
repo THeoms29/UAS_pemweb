@@ -16,7 +16,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url('a1/baguss.jpg');
+    background-image: url('../a1/baguss.jpg');
     background-size: cover;
     background-position: center;
     color: white;
