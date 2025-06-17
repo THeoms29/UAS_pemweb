@@ -2,6 +2,22 @@
   if (!defined('BASE_URL')) {
     define('BASE_URL', '../'); 
   }
+  require_once('koneksi.php');
+
+  $sql = "SELECT  s.schedule_id,
+    s.schedule_date,
+    s.start_time,
+    s.end_time,
+    s.daftar_orang,
+    s.status,
+    p.name AS package_name,
+    p.price
+        FROM schedules s
+        JOIN packages p ON s.package_id = p.package_id
+        ORDER BY s.schedule_date";
+
+$stmt = $pdo->query($sql);
+$schedules = $stmt->fetchAll();
   ?>
 <!DOCTYPE html>
 <html lang="id">
@@ -83,76 +99,30 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Senin</td>
-          <td>Free & Easy / Custom</td>
-          <td>--</td>
-          <td>--</td>
-          <td>--</td>
-          <td>--</td>
-          <td><span class="status request">By Request</span></td>
-          <td><button class="btn request">Request</button></td>
-        </tr>
-        <tr>
-          <td>Selasa</td>
-          <td>Laccar Waterfall</td>
-          <td>09.00</td>
-          <td>1 Hari</td>
-          <td>12 pax</td>
-          <td>12 pax</td>
-          <td><span class="status tersedia">Tersedia</span></td>
-          <td><button class="btn book">Book Now</button></td>
-        </tr>
-        <tr>
-          <td>Rabu</td>
-          <td>Tajhungghe'en</td>
-          <td>12.00</td>
-          <td>8 Jam</td>
-          <td>10 pax</td>
-          <td>10 pax</td>
-          <td><span class="status penuh">Penuh</span></td>
-          <td><button class="btn full">Full</button></td>
-        </tr>
-        <tr>
-          <td>Kamis</td>
-          <td>Kastoba Lake</td>
-          <td>09.00</td>
-          <td>8 Jam</td>
-          <td>10 pax</td>
-          <td>10 pax</td>
-          <td><span class="status tersedia">Tersedia</span></td>
-          <td><button class="btn book">Book Now</button></td>
-        </tr>
-        <tr>
-          <td>Jumat</td>
-          <td>Noko Selayar</td>
-          <td>15.00</td>
-          <td>5 Jam</td>
-          <td>10 pax</td>
-          <td>10 pax</td>
-          <td><span class="status tersedia">Tersedia</span></td>
-          <td><button class="btn book">Book Now</button></td>
-        </tr>
-        <tr>
-          <td>Sabtu</td>
-          <td>China Island</td>
-          <td>09.00</td>
-          <td>8 Jam</td>
-          <td>15 pax</td>
-          <td>15 pax</td>
-          <td><span class="status tersedia">Tersedia</span></td>
-          <td><button class="btn book">Book Now</button></td>
-        </tr>
-        <tr>
-          <td>Minggu</td>
-          <td>Noko Gili</td>
-          <td>12.00</td>
-          <td>8 Jam</td>
-          <td>20 pax</td>
-          <td>20 pax</td>
-          <td><span class="status tersedia">Tersedia</span></td>
-          <td><button class="btn book">Book Now</button></td>
-        </tr>
+         <?php foreach ($schedules as $row): ?>
+    <tr>
+      <td><?= date('l', strtotime($row['schedule_date'])) ?></td>
+      <td><?= htmlspecialchars($row['package_name']) ?></td>
+      <td><?= htmlspecialchars(substr($row['start_time'], 0, 5)) ?></td>
+      <td>
+        <?= 
+          round((strtotime($row['end_time']) - strtotime($row['start_time'])) / 3600) . ' Jam'; 
+        ?>
+      </td>
+      <td><?= htmlspecialchars($row['status']) ?> pax</td>
+      <td><?= htmlspecialchars($row['daftar_orang']) ?> orang</td>
+      <td><span class="status <?= $row['status'] ?>"><?= ucfirst($row['status']) ?></span></td>
+      <td>
+        <?php if ($row['status'] == 'tersedia'): ?>
+          <button class="btn book">Book Now</button>
+        <?php elseif ($row['status'] == 'penuh'): ?>
+          <button class="btn full" disabled>Full</button>
+        <?php else: ?>
+          <button class="btn request">Request</button>
+        <?php endif; ?>
+      </td>
+    </tr>
+  <?php endforeach; ?>
       </tbody>
     </table>
   </div>
