@@ -113,3 +113,89 @@
 [2025-06-17 04:24:52] Insert executed successfully
 [2025-06-17 04:24:52] New user ID: 7
 [2025-06-17 04:24:52] === Debug signup process ended ===
+[2025-06-17 04:41:42] === Debug signup process started ===
+[2025-06-17 04:41:42] Database connection included
+[2025-06-17 04:41:42] Method: POST
+[2025-06-17 04:41:42] POST data: Array
+(
+    [full_name] => Manuela Siska Adir
+    [email] => manuelasiska37@gmail.com
+    [password] => 654321
+    [confirm_password] => 654321
+    [terms] => on
+)
+
+[2025-06-17 04:41:42] Data received - Name: Manuela Siska Adir, Email: manuelasiska37@gmail.com
+[2025-06-17 04:41:42] Validation passed, checking database connection
+[2025-06-17 04:41:42] Database connected successfully
+[2025-06-17 04:41:42] Email check passed, proceeding with insert
+[2025-06-17 04:41:42] Password hashed successfully
+[2025-06-17 04:41:42] Current time: 2025-06-17 04:41:42
+[2025-06-17 04:41:42] Insert query prepared successfully
+[2025-06-17 04:41:42] Parameters bound, executing insert
+[2025-06-17 04:41:42] Insert executed successfully
+[2025-06-17 04:41:42] New user ID: 8
+[2025-06-17 04:41:42] === Debug signup process ended ===
+[2025-06-17 04:44:55] === Debug signup process started ===
+[2025-06-17 04:44:55] Database connection included
+[2025-06-17 04:44:55] Method: POST
+[2025-06-17 04:44:55] POST data: Array
+(
+    [full_name] => Nabilah Farah
+    [email] => nabilahfarah123@gmail.com
+    [password] => 654321
+    [confirm_password] => 654321
+    [terms] => on
+)
+
+[2025-06-17 04:44:55] Data received - Name: Nabilah Farah, Email: nabilahfarah123@gmail.com
+[2025-06-17 04:44:55] Validation passed, checking database connection
+[2025-06-17 04:44:55] Database connected successfully
+[2025-06-17 04:44:55] Email already exists: nabilahfarah123@gmail.com
+[2025-06-17 04:44:55] === Debug signup process ended ===
+[2025-06-17 04:45:26] === Debug signup process started ===
+[2025-06-17 04:45:26] Database connection included
+[2025-06-17 04:45:26] Method: POST
+[2025-06-17 04:45:26] POST data: Array
+(
+    [full_name] => Nabilah Farah
+    [email] => nabilahfarah12@gmail.com
+    [password] => 654321
+    [confirm_password] => 654321
+    [terms] => on
+)
+
+[2025-06-17 04:45:26] Data received - Name: Nabilah Farah, Email: nabilahfarah12@gmail.com
+[2025-06-17 04:45:26] Validation passed, checking database connection
+[2025-06-17 04:45:26] Database connected successfully
+[2025-06-17 04:45:26] Email check passed, proceeding with insert
+[2025-06-17 04:45:26] Password hashed successfully
+[2025-06-17 04:45:26] Current time: 2025-06-17 04:45:26
+[2025-06-17 04:45:26] Insert query prepared successfully
+[2025-06-17 04:45:26] Parameters bound, executing insert
+[2025-06-17 04:45:26] Insert executed successfully
+[2025-06-17 04:45:26] New user ID: 9
+[2025-06-17 04:45:26] === Debug signup process ended ===
+[2025-06-17 05:10:37] === Debug signup process started ===
+[2025-06-17 05:10:37] Database connection included
+[2025-06-17 05:10:37] Method: POST
+[2025-06-17 05:10:37] POST data: Array
+(
+    [full_name] => Telo Dalang
+    [email] => telodalang12@gmail.com
+    [password] => 654321
+    [confirm_password] => 654321
+    [terms] => on
+)
+
+[2025-06-17 05:10:37] Data received - Name: Telo Dalang, Email: telodalang12@gmail.com
+[2025-06-17 05:10:37] Validation passed, checking database connection
+[2025-06-17 05:10:37] Database connected successfully
+[2025-06-17 05:10:37] Email check passed, proceeding with insert
+[2025-06-17 05:10:37] Password hashed successfully
+[2025-06-17 05:10:37] Current time: 2025-06-17 05:10:37
+[2025-06-17 05:10:37] Insert query prepared successfully
+[2025-06-17 05:10:37] Parameters bound, executing insert
+[2025-06-17 05:10:37] Insert executed successfully
+[2025-06-17 05:10:37] New user ID: 10
+[2025-06-17 05:10:37] === Debug signup process ended ===

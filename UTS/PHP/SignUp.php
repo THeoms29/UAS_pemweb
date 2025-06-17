@@ -163,12 +163,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 // Clear form data after successful registration
                                 $form_data = ['full_name' => '', 'email' => ''];
                                 
-                                // Optional: Redirect to login page after a delay
-                                echo "<script>
-                                    setTimeout(function() {
-                                        window.location.href = 'Login.html';
-                                    }, 2000);
-                                </script>";
                             } else {
                                 write_log("ERROR: Insert execution failed: " . mysqli_stmt_error($insert_stmt));
                                 mysqli_stmt_close($insert_stmt);
