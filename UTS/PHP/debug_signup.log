@@ -113,3 +113,140 @@
 [2025-06-17 04:24:52] Insert executed successfully
 [2025-06-17 04:24:52] New user ID: 7
 [2025-06-17 04:24:52] === Debug signup process ended ===
+[2025-06-17 04:29:43] === Debug signup process started ===
+[2025-06-17 04:29:43] Database connection included
+[2025-06-17 04:29:43] Method: POST
+[2025-06-17 04:29:43] POST data: Array
+(
+    [full_name] => Nabila Farah Hanani
+    [email] => nabilafarahh2137@gmail.com
+    [password] => 123456
+    [confirm_password] => 123456
+    [terms] => on
+)
+
+[2025-06-17 04:29:43] Data received - Name: Nabila Farah Hanani, Email: nabilafarahh2137@gmail.com
+[2025-06-17 04:29:43] Validation passed, checking database connection
+[2025-06-17 04:29:43] Database connected successfully
+[2025-06-17 04:29:43] Email already exists: nabilafarahh2137@gmail.com
+[2025-06-17 04:29:43] === Debug signup process ended ===
+[2025-06-17 04:30:10] === Debug signup process started ===
+[2025-06-17 04:30:10] Database connection included
+[2025-06-17 04:30:10] Method: POST
+[2025-06-17 04:30:10] POST data: Array
+(
+    [full_name] => Nabila Farah Hanani
+    [email] => nabilafarahh2135@gmail.com
+    [password] => 123456
+    [confirm_password] => 123456
+    [terms] => on
+)
+
+[2025-06-17 04:30:10] Data received - Name: Nabila Farah Hanani, Email: nabilafarahh2135@gmail.com
+[2025-06-17 04:30:10] Validation passed, checking database connection
+[2025-06-17 04:30:10] Database connected successfully
+[2025-06-17 04:30:10] Email already exists: nabilafarahh2135@gmail.com
+[2025-06-17 04:30:10] === Debug signup process ended ===
+[2025-06-17 04:30:20] === Debug signup process started ===
+[2025-06-17 04:30:20] Database connection included
+[2025-06-17 04:30:20] Method: POST
+[2025-06-17 04:30:20] POST data: Array
+(
+    [full_name] => Nabila Farah Hanani
+    [email] => 23081010003@upnjatim.ac.id
+    [password] => 123456
+    [confirm_password] => 123456
+    [terms] => on
+)
+
+[2025-06-17 04:30:20] Data received - Name: Nabila Farah Hanani, Email: 23081010003@upnjatim.ac.id
+[2025-06-17 04:30:20] Validation passed, checking database connection
+[2025-06-17 04:30:20] Database connected successfully
+[2025-06-17 04:30:20] Email check passed, proceeding with insert
+[2025-06-17 04:30:20] Password hashed successfully
+[2025-06-17 04:30:20] Current time: 2025-06-17 04:30:20
+[2025-06-17 04:30:20] Insert query prepared successfully
+[2025-06-17 04:30:20] Parameters bound, executing insert
+[2025-06-17 04:30:20] Insert executed successfully
+[2025-06-17 04:30:20] New user ID: 226
+[2025-06-17 04:30:20] === Debug signup process ended ===
+[2025-06-17 04:31:28] === Debug signup process started ===
+[2025-06-17 04:31:28] Database connection included
+[2025-06-17 04:31:28] Method: POST
+[2025-06-17 04:31:28] POST data: Array
+(
+    [full_name] => Nabila Farah Hanani
+    [email] => 23081010003@upnjatim.ac.id
+    [password] => 123456
+    [confirm_password] => 123456
+    [terms] => on
+)
+
+[2025-06-17 04:31:28] Data received - Name: Nabila Farah Hanani, Email: 23081010003@upnjatim.ac.id
+[2025-06-17 04:31:28] Validation passed, checking database connection
+[2025-06-17 04:31:28] Database connected successfully
+[2025-06-17 04:31:28] Email already exists: 23081010003@upnjatim.ac.id
+[2025-06-17 04:31:28] === Debug signup process ended ===
+[2025-06-17 04:31:38] === Debug signup process started ===
+[2025-06-17 04:31:38] Database connection included
+[2025-06-17 04:31:38] Method: POST
+[2025-06-17 04:31:38] POST data: Array
+(
+    [full_name] => Nabila Farah Hanani
+    [email] => 23081010002@upnjatim.ac.id
+    [password] => 123456
+    [confirm_password] => 123456
+    [terms] => on
+)
+
+[2025-06-17 04:31:38] Data received - Name: Nabila Farah Hanani, Email: 23081010002@upnjatim.ac.id
+[2025-06-17 04:31:38] Validation passed, checking database connection
+[2025-06-17 04:31:38] Database connected successfully
+[2025-06-17 04:31:38] Email check passed, proceeding with insert
+[2025-06-17 04:31:38] Password hashed successfully
+[2025-06-17 04:31:38] Current time: 2025-06-17 04:31:38
+[2025-06-17 04:31:38] Insert query prepared successfully
+[2025-06-17 04:31:38] Parameters bound, executing insert
+[2025-06-17 04:31:38] Insert executed successfully
+[2025-06-17 04:31:38] New user ID: 227
+[2025-06-17 04:31:38] === Debug signup process ended ===
+[2025-06-17 04:45:24] === Debug signup process started ===
+[2025-06-17 04:45:24] Database connection included
+[2025-06-17 04:45:24] Method: POST
+[2025-06-17 04:45:24] POST data: Array
+(
+    [full_name] => Nabila Farah Hanani
+    [email] => 23081010002@upnjatim.ac.id
+    [password] => 123456
+    [confirm_password] => 123456
+    [terms] => on
+)
+
+[2025-06-17 04:45:24] Data received - Name: Nabila Farah Hanani, Email: 23081010002@upnjatim.ac.id
+[2025-06-17 04:45:24] Validation passed, checking database connection
+[2025-06-17 04:45:24] Database connected successfully
+[2025-06-17 04:45:24] Email already exists: 23081010002@upnjatim.ac.id
+[2025-06-17 04:45:24] === Debug signup process ended ===
+[2025-06-17 04:45:28] === Debug signup process started ===
+[2025-06-17 04:45:28] Database connection included
+[2025-06-17 04:45:28] Method: POST
+[2025-06-17 04:45:28] POST data: Array
+(
+    [full_name] => Nabila Farah Hanani
+    [email] => 23081010001@upnjatim.ac.id
+    [password] => 123456
+    [confirm_password] => 123456
+    [terms] => on
+)
+
+[2025-06-17 04:45:28] Data received - Name: Nabila Farah Hanani, Email: 23081010001@upnjatim.ac.id
+[2025-06-17 04:45:28] Validation passed, checking database connection
+[2025-06-17 04:45:28] Database connected successfully
+[2025-06-17 04:45:28] Email check passed, proceeding with insert
+[2025-06-17 04:45:28] Password hashed successfully
+[2025-06-17 04:45:28] Current time: 2025-06-17 04:45:28
+[2025-06-17 04:45:28] Insert query prepared successfully
+[2025-06-17 04:45:28] Parameters bound, executing insert
+[2025-06-17 04:45:28] Insert executed successfully
+[2025-06-17 04:45:28] New user ID: 228
+[2025-06-17 04:45:28] === Debug signup process ended ===
