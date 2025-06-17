@@ -26,7 +26,7 @@
         </div>
 
       <!-- Center Menu -->
-      <div class="d-flex gap-4">
+      <div class="d-flex justify-center gap-4">
         <a href="<?php echo BASE_URL; ?>PHP/Index.php" class="nav-link text-center">
           <i class="bi bi-house-door"></i>
           <b>Home</b>
@@ -56,11 +56,11 @@
     <div class="d-flex gap-2 align-items-center">
     <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true): ?>
       
-      <span class="text-white">
-        Welcome, <b><?php echo htmlspecialchars($_SESSION['user_name']); ?></b>
+      <span class="text-welcome">
+        Welcome, <br><b><?php echo htmlspecialchars($_SESSION['user_name']); ?>!</b></br>
       </span>
       <a href="<?php echo BASE_URL; ?>PHP/logout.php" class="btn btn-danger">
-        <span>Logout</span>
+        <span></span>
         <i class="bi bi-box-arrow-right"></i>
       </a>
 
@@ -78,9 +78,17 @@
   </div>
   </nav>
 
-    <div class="search-bar">
-      <input type="text" class="form-control search-input" placeholder="Search..." />
-    </div>
+  <div class="info-box">
+    <div class="white-center-line"></div>
+    <style>
+    .info-box {
+      width: 100%;
+      height: 60px;
+      background-color: #0d6fb1;
+      padding: 10px;
+    }
+    </style>
+  </div>
 
     <!--slider-->
     <div id="simpleSlider" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
@@ -232,5 +240,6 @@
   <script src="../JS/Jstombolkecil.js"></script>
 </button>
 <script src="../JS/JsAbout.js"></script>
+<script src="../JS/JsSearch.js"></script>
   </body>
   </html>

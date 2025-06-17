@@ -11,6 +11,9 @@
       .navbar-nav .nav-link.active {
         color: #0d6fb1;
       }
+      .text-welcome{
+        color:#0d6fb1;
+      }
       .search-bar {
         background-color: #0d6fb1;
         padding: 1rem 2rem;
@@ -58,4 +61,4 @@
       .custom-login-btn {
         border: 1px solid #333;
       }
-      
+

@@ -136,3 +136,49 @@
 [2025-06-17 05:24:15] Insert executed successfully
 [2025-06-17 05:24:15] New user ID: 226
 [2025-06-17 05:24:15] === Debug signup process ended ===
+[2025-06-17 06:27:11] === Debug signup process started ===
+[2025-06-17 06:27:11] Database connection included
+[2025-06-17 06:27:11] Method: POST
+[2025-06-17 06:27:11] POST data: Array
+(
+    [full_name] => Nabilafarahh21
+    [email] => 9@gmail.com
+    [password] => 111111
+    [confirm_password] => 111111
+    [terms] => on
+)
+
+[2025-06-17 06:27:11] Data received - Name: Nabilafarahh21, Email: 9@gmail.com
+[2025-06-17 06:27:11] Validation passed, checking database connection
+[2025-06-17 06:27:11] Database connected successfully
+[2025-06-17 06:27:11] Email check passed, proceeding with insert
+[2025-06-17 06:27:11] Password hashed successfully
+[2025-06-17 06:27:11] Current time: 2025-06-17 06:27:11
+[2025-06-17 06:27:11] Insert query prepared successfully
+[2025-06-17 06:27:11] Parameters bound, executing insert
+[2025-06-17 06:27:11] Insert executed successfully
+[2025-06-17 06:27:11] New user ID: 239
+[2025-06-17 06:27:11] === Debug signup process ended ===
+[2025-06-17 06:37:18] === Debug signup process started ===
+[2025-06-17 06:37:18] Database connection included
+[2025-06-17 06:37:18] Method: POST
+[2025-06-17 06:37:18] POST data: Array
+(
+    [full_name] => Nabilafarahh21
+    [email] => 10@gmail.com
+    [password] => 111111
+    [confirm_password] => 111111
+    [terms] => on
+)
+
+[2025-06-17 06:37:18] Data received - Name: Nabilafarahh21, Email: 10@gmail.com
+[2025-06-17 06:37:18] Validation passed, checking database connection
+[2025-06-17 06:37:18] Database connected successfully
+[2025-06-17 06:37:18] Email check passed, proceeding with insert
+[2025-06-17 06:37:18] Password hashed successfully
+[2025-06-17 06:37:18] Current time: 2025-06-17 06:37:18
+[2025-06-17 06:37:18] Insert query prepared successfully
+[2025-06-17 06:37:18] Parameters bound, executing insert
+[2025-06-17 06:37:18] Insert executed successfully
+[2025-06-17 06:37:18] New user ID: 240
+[2025-06-17 06:37:18] === Debug signup process ended ===

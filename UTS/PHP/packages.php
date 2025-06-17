@@ -59,7 +59,7 @@
       </nav>
 
       <div class="search-bar">
-        <input type="text" class="form-control search-input" placeholder="Search..." />
+        <input type="text" class="form-control search-input" placeholder="Search Destination..." />
       </div>
       
     <div class="container mt-5">
@@ -75,7 +75,12 @@
                 <div class="card-body">
                   <h5 class="card-title">Noko Gili</h5>
                   <p class="card-text">Pulau pasir putih yang menakjubkan ini hanya muncul saat air laut surut. Jelajahi keindahan bawah lautnya.</p>
-                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#nokoGiliModal">More Info</button>
+                  <button type="button" class="btn btn-primary"
+                          data-bs-toggle="modal"
+                          data-bs-target="#nokoGiliModal"
+                          data-keyword="noko">
+                          More Info
+                  </button>
                 </div>
               </div>
             </div>
@@ -84,8 +89,13 @@
                 <img src="../a1/tajhunggheen.jpg" class="card-img-top" alt="Tajhunghe'en">
                 <div class="card-body">
                   <h5 class="card-title">Tajhunghe'en</h5>
-                  <p class="card-text">Nikmati pemandangan tebing karang yang megah dan ombak yang menenangkan di spot terbaik untuk bersantai.</p>
-                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tajhungheenModal">More Info</button>
+                  <p class="card-text">Nikmati pemandangan tebing karang dan ombak yang menenangkan di spot terbaik untuk bersantai.</p>
+                  <button type="button" class="btn btn-primary"
+                          data-bs-toggle="modal"
+                          data-bs-target="#tajhungheenModal"
+                          data-keyword="tajhungheen">
+                          More Info
+                  </button>
                 </div>
               </div>
             </div>
@@ -95,7 +105,12 @@
                 <div class="card-body">
                   <h5 class="card-title">Kastoba Lake</h5>
                   <p class="card-text">Danau alami di tengah pulau yang dikelilingi oleh hutan hijau, menawarkan ketenangan dan udara yang sejuk.</p>
-                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kastobaModal">More Info</button>
+                  <button type="button" class="btn btn-primary"
+                          data-bs-toggle="modal"
+                          data-bs-target="#kastobaModal"
+                          data-keyword="kastoba">
+                          More Info
+                  </button>
                 </div>
               </div>
             </div>
@@ -104,8 +119,13 @@
                 <img src="../a1/air terjun.jpg" class="card-img-top" alt="Laccar Waterfall">
                 <div class="card-body">
                   <h5 class="card-title">Laccar Waterfall</h5>
-                  <p class="card-text">Rasakan kesegaran air terjun yang tersembunyi di pedalaman pulau Bawean, petualangan seru menanti Anda.</p>
-                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#laccarWaterfallModal">More Info</button>
+                  <p class="card-text">Rasakan kesegaran air terjun yang tersembunyi di pedalaman pulau Bawean.</p>
+                  <button type="button" class="btn btn-primary"
+                          data-bs-toggle="modal"
+                          data-bs-target="#laccarWaterfallModal"
+                          data-keyword="laccar">
+                          More Info
+                  </button>
                 </div>
               </div>
             </div>
@@ -115,7 +135,12 @@
                 <div class="card-body">
                   <h5 class="card-title">Noko Selayar</h5>
                   <p class="card-text">Gundukan pasir berbentuk hati yang romantis, menjadi ikon unik dan spot foto favorit di Bawean.</p>
-                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#nokoSelayarModal">More Info</button>
+                  <button type="button" class="btn btn-primary"
+                          data-bs-toggle="modal"
+                          data-bs-target="#nokoSelayarModal"
+                          data-keyword="selayar">
+                          More Info
+                  </button>
                 </div>
               </div>
             </div>
@@ -125,7 +150,12 @@
                 <div class="card-body">
                   <h5 class="card-title">China Island</h5>
                   <p class="card-text">Pulau kecil dengan dermaga ikonik, cocok untuk berenang dan menikmati pemandangan laut yang jernih.</p>
-                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#chinaIslandModal">More Info</button>
+                  <button type="button" class="btn btn-primary"
+                          data-bs-toggle="modal"
+                          data-bs-target="#chinaIslandModal"
+                          data-keyword="china">
+                          More Info
+                  </button>
                 </div>
               </div>
             </div>
@@ -135,7 +165,12 @@
                 <div class="card-body">
                   <h5 class="card-title">Pemandian Air Panas</h5>
                   <p class="card-text">Relaksasikan tubuh Anda di pemandian air panas alami yang dipercaya memiliki khasiat untuk kesehatan.</p>
-                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#airPanasModal">More Info</button>
+                  <button type="button" class="btn btn-primary"
+                          data-bs-toggle="modal"
+                          data-bs-target="#airPanasModal"
+                          data-keyword="air panas">
+                          More Info
+                  </button>
                 </div>
               </div>
             </div>
@@ -145,7 +180,12 @@
                 <div class="card-body">
                   <h5 class="card-title">Bawean Deer Breeding</h5>
                   <p class="card-text">Lihat dari dekat Rusa Bawean (Axis kuhlii), spesies endemik yang dilindungi dan menjadi kebanggaan pulau ini.</p>
-                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#rusaBaweanModal">More Info</button>
+                  <button type="button" class="btn btn-primary"
+                          data-bs-toggle="modal"
+                          data-bs-target="#rusaBaweanModal"
+                          data-keyword="deer breeding">
+                          More Info
+                  </button>
                 </div>
               </div>
             </div>
@@ -155,7 +195,12 @@
                 <div class="card-body">
                   <h5 class="card-title">Bawean Underwater</h5>
                   <p class="card-text">Selami keindahan bawah laut Bawean yang kaya akan terumbu karang dan biota laut yang beragam.</p>
-                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#underwaterModal">More Info</button>
+                  <button type="button" class="btn btn-primary"
+                          data-bs-toggle="modal"
+                          data-bs-target="#underwaterModal"
+                          data-keyword="underwater">
+                          More Info
+                  </button>
                 </div>
               </div>
             </div>
@@ -165,7 +210,12 @@
                 <div class="card-body">
                   <h5 class="card-title">Mombhul Beach</h5>
                   <p class="card-text">Pantai dengan jajaran perahu nelayan tradisional dan pemandangan sunset yang memukau.</p>
-                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mombhulModal">More Info</button>
+                  <button type="button" class="btn btn-primary"
+                          data-bs-toggle="modal"
+                          data-bs-target="#mombhulModal"
+                          data-keyword="mombhul">
+                          More Info
+                  </button>
                 </div>
               </div>
             </div>
@@ -175,7 +225,12 @@
                 <div class="card-body">
                   <h5 class="card-title">Lantong Waterfall</h5>
                   <p class="card-text">Air terjun cantik lainnya yang menawarkan suasana asri dan kolam alami untuk berenang.</p>
-                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#lantongModal">More Info</button>
+                  <button type="button" class="btn btn-primary"
+                          data-bs-toggle="modal"
+                          data-bs-target="#lantongModal"
+                          data-keyword="lantong">
+                          More Info
+                  </button>
                 </div>
               </div>
             </div>
@@ -185,7 +240,12 @@
                 <div class="card-body">
                   <h5 class="card-title">Mangrove</h5>
                   <p class="card-text">Jelajahi ekosistem hutan bakau yang penting dengan jembatan kayu yang melintas di tengahnya.</p>
-                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mangroveModal">More Info</button>
+                  <button type="button" class="btn btn-primary"
+                          data-bs-toggle="modal"
+                          data-bs-target="#mangroveModal"
+                          data-keyword="mangrove">
+                          More Info
+                  </button>
                 </div>
               </div>
             </div>
@@ -241,7 +301,6 @@
         <div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="mangroveModalLabel">Mangrove</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><img src="../a1/mangrove.jpg" class="img-fluid mb-3" alt="Mangrove"><p>Deskripsi lengkap tentang paket wisata Hutan Mangrove...</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button><a href="booking.html" class="btn btn-success">Pesan Sekarang</a></div></div></div>
     </div>
 
-
     <section id="about" class="text-white py-5" style="background-color: #0d6fb1;">
       <div class="container">
         <div class="row align-items-center">
@@ -282,6 +341,7 @@
 
     <button id="scrollToTopBtn" title="Kembali ke Atas">
       <i class="bi bi-arrow-up"></i>
+      <script src="../JS/JsSearch.js"></script>
       <script src="../JS/Jstombolkecil.js"></script>
     </button>
     <script src="../JS/JsAbout.js"></script>
