@@ -2,6 +2,7 @@
   if (!defined('BASE_URL')) {
     define('BASE_URL', '../'); 
   }
+  session_start();
   ?>
   <!DOCTYPE html>
   <html lang="en">
@@ -52,7 +53,19 @@
         </a>        
       </div>
 
-    <div class="d-flex gap-2">
+    <div class="d-flex gap-2 align-items-center">
+    <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true): ?>
+      
+      <span class="text-white">
+        Welcome, <b><?php echo htmlspecialchars($_SESSION['user_name']); ?></b>
+      </span>
+      <a href="<?php echo BASE_URL; ?>PHP/logout.php" class="btn btn-danger">
+        <span>Logout</span>
+        <i class="bi bi-box-arrow-right"></i>
+      </a>
+
+    <?php else: ?>
+
       <a href="<?php echo BASE_URL; ?>PHP/login.php" class="btn btn-outline-dark custom-login-btn d-flex align-items-center gap-1">
         <span>Login</span>
         <i class="bi bi-box-arrow-in-right small"></i>
@@ -60,7 +73,9 @@
       <a href="<?php echo BASE_URL; ?>PHP/SignUp.php" class="btn btn-primary">
         <span>Sign-up</span>
       </a>
-    </div>
+      
+    <?php endif; ?>
+  </div>
   </nav>
 
     <div class="search-bar">
