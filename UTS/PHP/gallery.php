@@ -1,3 +1,9 @@
+<?php
+  if (!defined('BASE_URL')) {
+  define('BASE_URL', '../'); 
+  }
+  @session_start();
+?>
 <!doctype html>
 <html lang="en">
   <head>
