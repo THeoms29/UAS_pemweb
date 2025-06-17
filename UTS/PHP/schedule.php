@@ -75,15 +75,6 @@ $schedules = $stmt->fetchAll();
 
   <div class="container-schedule">
     <h1><b>Jadwal Tour Mingguan</b></h1>
-    <div class="filter-wrapper">
-      <label for="statusFilter">Sort By:</label>
-      <select id="statusFilter">
-        <option value="all">Semua</option>
-        <option value="tersedia">Tersedia</option>
-        <option value="penuh">Penuh</option>
-        <option value="request">By Request</option>
-      </select>
-    </div>
 
     <table class="schedule-table font-table">
       <thead>
