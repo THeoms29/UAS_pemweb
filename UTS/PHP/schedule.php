@@ -1,5 +1,4 @@
 <?php
-  session_start();
   if (!defined('BASE_URL')) {
     define('BASE_URL', '../'); 
   }
@@ -64,29 +63,14 @@ $schedules = $stmt->fetchAll();
       </a>
     </div>
     
-    <div class="d-flex gap-2 align-items-center">
-    <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true): ?>
-      
-      <span class="text-welcome">
-        Welcome, <br><b><?php echo htmlspecialchars($_SESSION['user_name']); ?>!</b></br>
-      </span>
-      <a href="<?php echo BASE_URL; ?>PHP/logout.php" class="btn btn-danger">
-        <span></span>
-        <i class="bi bi-box-arrow-right"></i>
+    <div class="d-flex gap-2">
+      <a href="<?php echo BASE_URL; ?>PHP/login.php" class="btn btn-outline-dark custom-login-btn d-flex align-items-center gap-1 rounded-pill">
+        <span>Login</span><i class="bi bi-box-arrow-in-right small"></i>
       </a>
-
-    <?php else: ?>
-
-      <a href="<?php echo BASE_URL; ?>PHP/login.php" class="btn btn-outline-dark custom-login-btn d-flex align-items-center gap-1">
-        <span>Login</span>
-        <i class="bi bi-box-arrow-in-right small"></i>
-      </a>
-      <a href="<?php echo BASE_URL; ?>PHP/SignUp.php" class="btn btn-primary">
+      <a href="<?php echo BASE_URL; ?>PHP/SignUp.php" class="btn btn-primary rounded-pill">
         <span>Sign-up</span>
       </a>
-      
-    <?php endif; ?>
-  </div>
+    </div>
   </nav>
 
   <div class="container-schedule">
@@ -108,16 +92,26 @@ $schedules = $stmt->fetchAll();
           <th>Destinasi</th>
           <th>Waktu</th>
           <th>Durasi</th>
-          <th>Kuota</th>
-          <th>Sisa Kuota</th>
           <th>Status</th>
           <th>Aksi</th>
         </tr>
       </thead>
       <tbody>
          <?php foreach ($schedules as $row): ?>
+          <?php
+          $hari_en = date('l', strtotime($row['schedule_date']));
+          $hari_id = [
+          'Sunday'    => 'Minggu',
+          'Monday'    => 'Senin',
+          'Tuesday'   => 'Selasa',
+          'Wednesday' => 'Rabu',
+          'Thursday'  => 'Kamis',
+          'Friday'    => 'Jumat',
+          'Saturday'  => 'Sabtu'
+          ]
+          ?>
     <tr>
-      <td><?= date('l', strtotime($row['schedule_date'])) ?></td>
+      <td><?= $hari_id[$hari_en] ?? $hari_en ?></td>
       <td><?= htmlspecialchars($row['package_name']) ?></td>
       <td><?= htmlspecialchars(substr($row['start_time'], 0, 5)) ?></td>
       <td>
@@ -125,12 +119,10 @@ $schedules = $stmt->fetchAll();
           round((strtotime($row['end_time']) - strtotime($row['start_time'])) / 3600) . ' Jam'; 
         ?>
       </td>
-      <td><?= htmlspecialchars($row['status']) ?> pax</td>
-      <td><?= htmlspecialchars($row['daftar_orang']) ?> orang</td>
       <td><span class="status <?= $row['status'] ?>"><?= ucfirst($row['status']) ?></span></td>
       <td>
         <?php if ($row['status'] == 'tersedia'): ?>
-          <button class="btn book">Book Now</button>
+          <a href="booking.php" class="btn book">Book Now</a>
         <?php elseif ($row['status'] == 'penuh'): ?>
           <button class="btn full" disabled>Full</button>
         <?php else: ?>
