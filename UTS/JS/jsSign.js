@@ -107,18 +107,29 @@ document.addEventListener('DOMContentLoaded', function() {
         alertContainer.innerHTML = '';
         
         // Lakukan AJAX request ke server
-        fetch('SignUp.php', {
-            method: 'POST',
+        const currentUrl = window.location.href;
+
+        fetch(currentUrl, {
+            method: 'POST', 
             body: formData,
             headers: {
-                'X-Requested-With': 'XMLHttpRequest' // Identifier untuk AJAX request
+                'X-Requested-With': 'XMLHttpRequest',
+                'Cache-Control': 'no-cache'
             }
         })
+        // YANG BARU:
         .then(response => {
-            // Check if response is ok
+            console.log('Response status:', response.status);
+            
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
+            
+            const contentType = response.headers.get('content-type');
+            if (!contentType || !contentType.includes('application/json')) {
+                throw new Error('Response is not JSON');
+            }
+            
             return response.json();
         })
         .then(data => {
