@@ -70,7 +70,6 @@
         <div class="d-flex flex-wrap gap-3 justify-content-center">
           <div class="row">
             <div class="col-md-4 mb-4">
-              <div class="card h-100 shadow-sm">
                 <div class="card">
                   <span class="badge bg-success position-absolute top-0 end-0 m-2 fs-6">Rp 350.000</span>
                   <img src="../a1/noko.jpg" class="card-img-top" alt="Noko Gili">
@@ -85,10 +84,8 @@
                     </button>
                   </div>
                 </div>
-              </div>
             </div>
             <div class="col-md-4 mb-4">
-              <div class="card h-100 shadow-sm">
                 <div class="card">
                   <span class="badge bg-success position-absolute top-0 end-0 m-2 fs-6">Rp 350.000</span>
                   <img src="../a1/tajhunggheen.jpg" class="card-img-top" alt="Tajhunghe'en">
@@ -103,7 +100,6 @@
                     </button>
                   </div>
                 </div>
-              </div>
             </div>
             <div class="col-md-4 mb-4">
               <div class="card">
