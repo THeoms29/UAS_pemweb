@@ -177,7 +177,17 @@
     color: #0d6fb1;
     margin-top: 1rem;
 }
-
+.price-tag {
+            background-color: #e9f5e9;
+            color: #198754;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-block;
+            border: 1px solid #c3e6cb;
+        }
+        
 .modal-footer .btn-success {
     background-color: #198754; /* Warna hijau untuk tombol pesan */
 }
+
