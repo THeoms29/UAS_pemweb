@@ -22,24 +22,24 @@
   <nav class="navbar navbar-dark d-flex justify-content-between px-4 py-3">
     <!-- Logo -->
     <div>
-      <img src="BAWEANIQUE.png" width="190" height="85" alt="" />
+      <img src="../a1/BAWEANIQUE.png" width="190" height="85" alt="" />
     </div>
 
     <!-- Center Menu -->
     <div class="d-flex gap-4">
-      <a href="Index.html" class="nav-link text-center">
+      <a href="<?php echo BASE_URL; ?>PHP/Index.php" class="nav-link text-center">
         <i class="bi bi-house-door"></i><b>Home</b>
       </a>
-      <a href="packages.html" class="nav-link text-center">
+      <a href="<?php echo BASE_URL; ?>PHP/packages.php" class="nav-link text-center">
         <i class="bi bi-map"></i><b>Packages</b>
       </a>
-      <a href="schedule.html" class="nav-link text-center">
+      <a href="<?php echo BASE_URL; ?>PHP/schedule.php" class="nav-link text-center">
         <i class="bi bi-table"></i><b>Schedule</b>
       </a>
-      <a href="gallery.html" class="nav-link text-center">
+      <a href="<?php echo BASE_URL; ?>PHP/gallery.php" class="nav-link text-center">
         <i class="bi bi-camera"></i><b>Gallery</b>
       </a>
-      <a href="booking.html" class="nav-link text-center">
+      <a href="<?php echo BASE_URL; ?>PHP/booking.php" class="nav-link text-center">
           <i class="bi bi-cart2"></i><b>My Book</b>
      </a>
       <a href="#about" class="nav-link text-center" id="about-link">
@@ -48,10 +48,10 @@
     </div>
     
     <div class="d-flex gap-2">
-      <a href="login.html" class="btn btn-outline-dark custom-login-btn d-flex align-items-center gap-1 rounded-pill">
+      <a href="<?php echo BASE_URL; ?>PHP/login.php" class="btn btn-outline-dark custom-login-btn d-flex align-items-center gap-1 rounded-pill">
         <span>Login</span><i class="bi bi-box-arrow-in-right small"></i>
       </a>
-      <a href="signup.html" class="btn btn-primary rounded-pill">
+      <a href="<?php echo BASE_URL; ?>PHP/SignUp.php" class="btn btn-primary rounded-pill">
         <span>Sign-up</span>
       </a>
     </div>
@@ -163,7 +163,7 @@
       <div class="row align-items-center">
         <!-- Logo dan Deskripsi -->
         <div class="col-md-3 mb-4">
-          <img src="baweanique2.png" width="150" height="auto" alt="Logo Baweanique" class="mb-3">
+          <img src="../a1/baweanique2.png" width="150" height="auto" alt="Logo Baweanique" class="mb-3">
           <p>Baweanique adalah perusahaan penyedia layanan tour dan travel di Pulau Bawean.</p>
         </div>
 
@@ -212,8 +212,8 @@
   </button>
 
   <!-- Script -->
-  <script src="JsSchedule.js"></script>
-  <script src="Jstombolkecil.js"></script>
-  <script src="JsAbout.js"></script>
+  <script src="../JS/JsSchedule.js"></script>
+  <script src="../JS/Jstombolkecil.js"></script>
+  <script src="../JS/JsAbout.js"></script>
 </body>
 </html>

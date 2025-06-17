@@ -80,25 +80,25 @@
       </div>
         <div class="carousel-inner" style="height: 400px; overflow: hidden;">
           <div class="carousel-item active">
-            <img src="a1/1.jpg" class="d-block w-100" alt="Slide 1" style="height: 100%; object-fit: cover;">
+            <img src="../a1/1.jpg" class="d-block w-100" alt="Slide 1" style="height: 100%; object-fit: cover;">
           </div>
           <div class="carousel-item">
-            <img src="a1/2.jpg" class="d-block w-100" alt="Slide 2" style="height: 100%; object-fit: cover;">
+            <img src="../a1/2.jpg" class="d-block w-100" alt="Slide 2" style="height: 100%; object-fit: cover;">
           </div>
           <div class="carousel-item">
-            <img src="a1/3.jpg" class="d-block w-100" alt="Slide 3" style="height: 100%; object-fit: cover;">
+            <img src="../a1/3.jpg" class="d-block w-100" alt="Slide 3" style="height: 100%; object-fit: cover;">
           </div>
           <div class="carousel-item">
-            <img src="a1/4.jpg" class="d-block w-100" alt="Slide 4" style="height: 100%; object-fit: cover;">
+            <img src="../a1/4.jpg" class="d-block w-100" alt="Slide 4" style="height: 100%; object-fit: cover;">
           </div>
           <div class="carousel-item">
-            <img src="a1/9.jpg" class="d-block w-100" alt="Slide 5" style="height: 100%; object-fit: cover;">
+            <img src="../a1/9.jpg" class="d-block w-100" alt="Slide 5" style="height: 100%; object-fit: cover;">
           </div>
           <div class="carousel-item">
-            <img src="a1/11.jpg" class="d-block w-100" alt="Slide 6" style="height: 100%; object-fit: cover;">
+            <img src="../a1/11.jpg" class="d-block w-100" alt="Slide 6" style="height: 100%; object-fit: cover;">
           </div>
           <div class="carousel-item">
-            <img src="a1/12.jpg" class="d-block w-100" alt="Slide 7" style="height: 100%; object-fit: cover;">
+            <img src="../a1/12.jpg" class="d-block w-100" alt="Slide 7" style="height: 100%; object-fit: cover;">
           </div>
         </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#simpleSlider" data-bs-slide="prev">
@@ -117,7 +117,7 @@
     <div class="row align-items-center">
       <div class="col-lg-6">
         <div class="city-image-container shadow">
-          <img src="a1/2.jpg" class="city-image" alt="Pesona Kota Baweanique">
+          <img src="../a1/2.jpg" class="city-image" alt="Pesona Kota Baweanique">
         </div>
       </div>
       
