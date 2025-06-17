@@ -22,42 +22,42 @@
 
     <!-- Center Menu -->
     <div class="d-flex gap-4">
-      <a href="Index.html" class="nav-link text-center">
-        <i class="bi bi-house-door"></i>
-        <b>Home</b>
-      </a>
-      <a href="packages.html" class="nav-link text-center">
-        <i class="bi bi-map"></i>
-        <b>Packages</b>
-      </a>
-      <a href="schedule.html" class="nav-link text-center">
-        <i class="bi bi-table"></i>
-        <b>Schedule</b>
-      </a>
-      <a href="gallery.html" class="nav-link text-center">
-        <i class="bi bi-camera"></i>
-        <b>Gallery</b>
-      </a>
-      <a href="booking.html" class="nav-link text-center">
+        <a href="<?php echo BASE_URL; ?>PHP/Index.php" class="nav-link text-center">
+          <i class="bi bi-house-door"></i>
+          <b>Home</b>
+        </a>
+        <a href="<?php echo BASE_URL; ?>PHP/packages.php" class="nav-link text-center">
+          <i class="bi bi-map"></i>
+          <b>Packages</b>
+        </a>
+        <a href="<?php echo BASE_URL; ?>PHP/schedule.php" class="nav-link text-center">
+          <i class="bi bi-table"></i>
+          <b>Schedule</b>
+        </a>
+        <a href="<?php echo BASE_URL; ?>PHP/gallery.php" class="nav-link text-center">
+          <i class="bi bi-camera"></i>
+          <b>Gallery</b>
+        </a>
+        <a href="<?php echo BASE_URL; ?>PHP/booking.php" class="nav-link text-center">
           <i class="bi bi-cart2"></i>
           <b>My Book</b>
         </a>
-      <a href="#about" class="nav-link text-center" id="about-link">
-        <i class="bi bi-person-circle"></i>
-        <b>About Us</b>
-      </a>
-    </div>
+        <a href="#about" class="nav-link text-center" id="about-link">
+          <i class="bi bi-person-circle"></i>
+          <b>About Us</b>
+        </a>        
+      </div>
 
-    <!-- Right Buttons -->
     <div class="d-flex gap-2">
-      <a href="login.html" class="btn btn-outline-dark custom-login-btn d-flex align-items-center gap-1 rounded-pill">
+      <a href="<?php echo BASE_URL; ?>PHP/login.php" class="btn btn-outline-dark custom-login-btn d-flex align-items-center gap-1">
         <span>Login</span>
         <i class="bi bi-box-arrow-in-right small"></i>
       </a>
-      <a href="signup.html" class="btn btn-primary rounded-pill">
+      <a href="<?php echo BASE_URL; ?>PHP/SignUp.php" class="btn btn-primary">
         <span>Sign-up</span>
       </a>
     </div>
+  </nav>
   </nav>
 
   <!-- Tombol Scroll to Top -->
