@@ -24,6 +24,8 @@ $form_data = [
     'email' => ''
 ];
 
+$is_ajax = isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] === 'XMLHttpRequest';
+
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     write_log("=== Debug signup process started ===");
@@ -183,6 +185,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     
     write_log("=== Debug signup process ended ===");
+
+    if ($is_ajax) {
+        header('Content-Type: application/json');
+        
+        if (!empty($success_message)) {
+            echo json_encode([
+                'success' => true,
+                'message' => $success_message,
+                'redirect' => BASE_URL . 'PHP/Login.php'
+            ]);
+        } else {
+            echo json_encode([
+                'success' => false,
+                'message' => $error_message ? $error_message : 'Terjadi kesalahan yang tidak diketahui'
+            ]);
+        }
+        exit; // Stop execution untuk AJAX request
+    }
 }
 ?>
 

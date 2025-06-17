@@ -21,3 +21,95 @@
 [2025-06-11 14:52:39] Insert executed successfully
 [2025-06-11 14:52:39] New user ID: 3
 [2025-06-11 14:52:39] === Debug signup process ended ===
+[2025-06-17 04:11:59] === Debug signup process started ===
+[2025-06-17 04:11:59] Database connection included
+[2025-06-17 04:11:59] Method: POST
+[2025-06-17 04:11:59] POST data: Array
+(
+    [full_name] => Manuela Siska Adi
+    [email] => manuelasiska35@gmail.com
+    [password] => 123456
+    [confirm_password] => 123456
+    [terms] => on
+)
+
+[2025-06-17 04:11:59] Data received - Name: Manuela Siska Adi, Email: manuelasiska35@gmail.com
+[2025-06-17 04:11:59] Validation passed, checking database connection
+[2025-06-17 04:11:59] Database connected successfully
+[2025-06-17 04:11:59] Email check passed, proceeding with insert
+[2025-06-17 04:11:59] Password hashed successfully
+[2025-06-17 04:11:59] Current time: 2025-06-17 04:11:59
+[2025-06-17 04:11:59] Insert query prepared successfully
+[2025-06-17 04:11:59] Parameters bound, executing insert
+[2025-06-17 04:11:59] Insert executed successfully
+[2025-06-17 04:11:59] New user ID: 4
+[2025-06-17 04:11:59] === Debug signup process ended ===
+[2025-06-17 04:16:01] === Debug signup process started ===
+[2025-06-17 04:16:01] Database connection included
+[2025-06-17 04:16:01] Method: POST
+[2025-06-17 04:16:01] POST data: Array
+(
+    [full_name] => Sahasika Manuel
+    [email] => sahasikamanuel29@gmail.com
+    [password] => 654321
+    [confirm_password] => 654321
+    [terms] => on
+)
+
+[2025-06-17 04:16:01] Data received - Name: Sahasika Manuel, Email: sahasikamanuel29@gmail.com
+[2025-06-17 04:16:01] Validation passed, checking database connection
+[2025-06-17 04:16:01] Database connected successfully
+[2025-06-17 04:16:01] Email check passed, proceeding with insert
+[2025-06-17 04:16:01] Password hashed successfully
+[2025-06-17 04:16:01] Current time: 2025-06-17 04:16:01
+[2025-06-17 04:16:01] Insert query prepared successfully
+[2025-06-17 04:16:01] Parameters bound, executing insert
+[2025-06-17 04:16:01] Insert executed successfully
+[2025-06-17 04:16:01] New user ID: 5
+[2025-06-17 04:16:01] === Debug signup process ended ===
+[2025-06-17 04:17:31] === Debug signup process started ===
+[2025-06-17 04:17:31] Database connection included
+[2025-06-17 04:17:31] Method: POST
+[2025-06-17 04:17:31] POST data: Array
+(
+    [full_name] => Sahasika Manuel
+    [email] => sahasikamanuel19@gmail.com
+    [password] => 654321
+    [confirm_password] => 654321
+    [terms] => on
+)
+
+[2025-06-17 04:17:31] Data received - Name: Sahasika Manuel, Email: sahasikamanuel19@gmail.com
+[2025-06-17 04:17:31] Validation passed, checking database connection
+[2025-06-17 04:17:31] Database connected successfully
+[2025-06-17 04:17:31] Email check passed, proceeding with insert
+[2025-06-17 04:17:31] Password hashed successfully
+[2025-06-17 04:17:31] Current time: 2025-06-17 04:17:31
+[2025-06-17 04:17:31] Insert query prepared successfully
+[2025-06-17 04:17:31] Parameters bound, executing insert
+[2025-06-17 04:17:31] Insert executed successfully
+[2025-06-17 04:17:31] New user ID: 6
+[2025-06-17 04:17:31] === Debug signup process ended ===
+[2025-06-17 04:24:52] === Debug signup process started ===
+[2025-06-17 04:24:52] Database connection included
+[2025-06-17 04:24:52] Method: POST
+[2025-06-17 04:24:52] POST data: Array
+(
+    [full_name] => Nabilah Farah
+    [email] => nabilahfarah123@gmail.com
+    [password] => 123456
+    [confirm_password] => 123456
+    [terms] => on
+)
+
+[2025-06-17 04:24:52] Data received - Name: Nabilah Farah, Email: nabilahfarah123@gmail.com
+[2025-06-17 04:24:52] Validation passed, checking database connection
+[2025-06-17 04:24:52] Database connected successfully
+[2025-06-17 04:24:52] Email check passed, proceeding with insert
+[2025-06-17 04:24:52] Password hashed successfully
+[2025-06-17 04:24:52] Current time: 2025-06-17 04:24:52
+[2025-06-17 04:24:52] Insert query prepared successfully
+[2025-06-17 04:24:52] Parameters bound, executing insert
+[2025-06-17 04:24:52] Insert executed successfully
+[2025-06-17 04:24:52] New user ID: 7
+[2025-06-17 04:24:52] === Debug signup process ended ===

@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         })
         .catch(error => {
-            console.error('Error:', error);
+            console.error('', error);
             showAlert('Terjadi kesalahan saat menghubungi server. Silakan coba lagi.', 'danger');
         })
         .finally(() => {
