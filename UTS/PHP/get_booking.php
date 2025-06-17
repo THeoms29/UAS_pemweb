@@ -16,15 +16,18 @@ if ($status === 'all') {
             b.booking_id,
             b.user_id,
             b.schedule_id,
+            s.departure_date,
             b.status,
             b.booking_date,
             b.package_id,
             p.name AS package_name,
-            p.price AS total_price
+            p.price * b.participants AS total_price,
+            b.participants
         FROM 
             bookings b
         LEFT JOIN 
             packages p ON b.package_id = p.package_id
+            LEFT JOIN schedules s ON b.schedule_id = s.schedule_id
     ";
 
     $stmt = mysqli_prepare($conn, $query);

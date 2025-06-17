@@ -151,33 +151,61 @@ document.addEventListener("DOMContentLoaded", function () {
             <table class="table table-bordered table-striped">
               <thead>
                 <tr>
-                  <th>ID</th>
-                  <th>User</th>
-                  <th>Schedule</th>
-                  <th>ID Package</th>
+                  <th>No</th>
                   <th>Nama Package</th>
-                  <th>Status</th>
+                  <th>Tanggal Keberangkatan</th>
                   <th>Tanggal Booking</th>
+                  <th>Jumlah Orang</th>
+                  <th>Status</th>
                   <th>Total Harga</th>
+                  <th>Aksi</th>
                 </tr>
               </thead>
               <tbody>
           `;
-          data.forEach(row => {
-            html += `
-              <tr>
-                <td>${row.booking_id}</td>
-                <td>${row.user_id}</td>
-                <td>${row.schedule_id}</td>
-                <td>${row.package_id}</td>
-                <td>${row.package_name}</td>
-                <td>${row.status}</td>
-                <td>${row.booking_date}</td>
-                <td>${row.total_price}</td>
-              </tr>
-            `;
-          });
-          html += "</tbody></table>";
+let no = 1;
+html += `
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Nama Package</th>
+        <th>Tanggal Keberangkatan</th>
+        <th>Tanggal Booking</th>
+        <th>Jumlah Orang</th>
+        <th>Status</th>
+        <th>Total Harga</th>
+        <th>Aksi</th>
+      </tr>
+    </thead>
+    <tbody>
+`;
+
+data.forEach(row => {
+  let badgeClass = "secondary";
+  if (row.status === "disetujui" || row.status === "Confirmed") badgeClass = "success";
+  else if (row.status === "menunggu" || row.status === "Pending") badgeClass = "warning";
+
+  html += `
+    <tr>
+      <td>${no++}</td>
+      <td>${row.package_name}</td>
+      <td>${new Date(row.departure_date).toLocaleDateString("id-ID", { day: '2-digit', month: 'long', year: 'numeric' })}</td>
+      <td>${new Date(row.booking_date).toLocaleDateString("id-ID", { day: '2-digit', month: 'long', year: 'numeric' })}</td>
+      <td>${row.participants} Orang</td>
+      <td><span class="badge bg-${badgeClass}">${row.status}</span></td>
+      <td>Rp ${parseInt(row.total_price).toLocaleString("id-ID")}</td>
+      <td>
+        <a href="bookingDetail.php?id=${row.booking_id}" class="btn btn-sm btn-primary">Detail</a>
+        <button class="btn btn-sm btn-secondary" disabled>Edit</button>
+        <button class="btn btn-sm btn-danger" disabled>Batal</button>
+      </td>
+    </tr>
+  `;
+});
+
+html += "</tbody></table>";
+            
         }
         resultContainer.innerHTML = html;
       })
