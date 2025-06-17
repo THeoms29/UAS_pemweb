@@ -1,4 +1,5 @@
 <?php
+  session_start();
   if (!defined('BASE_URL')) {
     define('BASE_URL', '../'); 
   }
@@ -63,13 +64,28 @@ $schedules = $stmt->fetchAll();
       </a>
     </div>
     
-    <div class="d-flex gap-2">
-      <a href="<?php echo BASE_URL; ?>PHP/login.php" class="btn btn-outline-dark custom-login-btn d-flex align-items-center gap-1 rounded-pill">
-        <span>Login</span><i class="bi bi-box-arrow-in-right small"></i>
-      </a>
-      <a href="<?php echo BASE_URL; ?>PHP/SignUp.php" class="btn btn-primary rounded-pill">
-        <span>Sign-up</span>
-      </a>
+    <div class="d-flex gap-2 align-items-center">
+  <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true): ?>
+    
+    <span class="text-white me-2">
+      Welcome, <b><?php echo htmlspecialchars($_SESSION['user_name']); ?></b>
+    </span>
+    <a href="<?php echo BASE_URL; ?>PHP/logout.php" class="btn btn-danger rounded-pill">
+      <span>Logout</span>
+      <i class="bi bi-box-arrow-right"></i>
+    </a>
+
+      <?php else: ?>
+
+        <a href="<?php echo BASE_URL; ?>PHP/login.php" class="btn btn-outline-dark custom-login-btn d-flex align-items-center gap-1 rounded-pill">
+          <span>Login</span>
+          <i class="bi bi-box-arrow-in-right small"></i>
+        </a>
+        <a href="<?php echo BASE_URL; ?>PHP/SignUp.php" class="btn btn-primary rounded-pill">
+          <span>Sign-up</span>
+        </a>
+        
+      <?php endif; ?>
     </div>
   </nav>
 

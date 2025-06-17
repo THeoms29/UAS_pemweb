@@ -1,4 +1,5 @@
 <?php
+  session_start(); // Memulai sesi untuk mengakses variabel sesi
   if (!defined('BASE_URL')) {
     define('BASE_URL', '../'); 
   }
@@ -47,15 +48,51 @@
             <b>About Us</b>
           </a>
         </div>
-        <div class="d-flex gap-2">
+        <div class="d-flex gap-2 align-items-center">
+        <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true): ?>
+          
+          <span class="text-white me-2">
+            Welcome, <b><?php echo htmlspecialchars($_SESSION['user_name']); ?></b>
+          </span>
+          <a href="<?php echo BASE_URL; ?>PHP/logout.php" class="btn btn-danger rounded-pill">
+            <span>Logout</span>
+            <i class="bi bi-box-arrow-right"></i>
+          </a>
+
+        <?php else: ?>
+
           <a href="<?php echo BASE_URL; ?>PHP/login.php" class="btn btn-outline-dark custom-login-btn d-flex align-items-center gap-1 rounded-pill">
             <span>Login</span>
             <i class="bi bi-box-arrow-in-right small"></i>
           </a>
-          <a href="<?php echo BASE_URL; ?>PHP/signup.php" class="btn btn-primary rounded-pill">
+          <a href="<?php echo BASE_URL; ?>PHP/SignUp.php" class="btn btn-primary rounded-pill">
             <span>Sign-up</span>
           </a>
-        </div>
+          
+        <?php endif; ?>
+      </div><div class="d-flex gap-2 align-items-center">
+        <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true): ?>
+          
+          <span class="text-white me-2">
+            Welcome, <b><?php echo htmlspecialchars($_SESSION['user_name']); ?></b>
+          </span>
+          <a href="<?php echo BASE_URL; ?>PHP/logout.php" class="btn btn-danger rounded-pill">
+            <span>Logout</span>
+            <i class="bi bi-box-arrow-right"></i>
+          </a>
+
+        <?php else: ?>
+
+          <a href="<?php echo BASE_URL; ?>PHP/login.php" class="btn btn-outline-dark custom-login-btn d-flex align-items-center gap-1 rounded-pill">
+            <span>Login</span>
+            <i class="bi bi-box-arrow-in-right small"></i>
+          </a>
+          <a href="<?php echo BASE_URL; ?>PHP/SignUp.php" class="btn btn-primary rounded-pill">
+            <span>Sign-up</span>
+          </a>
+          
+        <?php endif; ?>
+      </div>
       </nav>
 
       <div class="search-bar">
@@ -70,40 +107,37 @@
         <div class="d-flex flex-wrap gap-3 justify-content-center">
           <div class="row">
             <div class="col-md-4 mb-4">
-                <div class="card">
-                  <span class="badge bg-success position-absolute top-0 end-0 m-2 fs-6">Rp 350.000</span>
-                  <img src="../a1/noko.jpg" class="card-img-top" alt="Noko Gili">
-                  <div class="card-body">
-                    <h5 class="card-title">Noko Gili</h5>
-                    <p class="card-text">Pulau pasir putih yang menakjubkan ini hanya muncul saat air laut surut. Jelajahi keindahan bawah lautnya.</p>
-                    <button type="button" class="btn btn-primary"
-                            data-bs-toggle="modal"
-                            data-bs-target="#nokoGiliModal"
-                            data-keyword="noko">
-                            More Info
-                    </button>
-                  </div>
+              <div class="card">
+                <img src="../a1/noko.jpg" class="card-img-top" alt="Noko Gili">
+                <div class="card-body">
+                  <h5 class="card-title">Noko Gili</h5>
+                  <p class="card-text">Pulau pasir putih yang menakjubkan ini hanya muncul saat air laut surut. Jelajahi keindahan bawah lautnya.</p>
+                  <button type="button" class="btn btn-primary"
+                          data-bs-toggle="modal"
+                          data-bs-target="#nokoGiliModal"
+                          data-keyword="noko">
+                          More Info
+                  </button>
                 </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                  <span class="badge bg-success position-absolute top-0 end-0 m-2 fs-6">Rp 350.000</span>
-                  <img src="../a1/tajhunggheen.jpg" class="card-img-top" alt="Tajhunghe'en">
-                  <div class="card-body">
-                    <h5 class="card-title">Tajhunghe'en</h5>
-                    <p class="card-text">Nikmati pemandangan tebing karang dan ombak yang menenangkan di spot terbaik untuk bersantai.</p>
-                    <button type="button" class="btn btn-primary"
-                            data-bs-toggle="modal"
-                            data-bs-target="#tajhungheenModal"
-                            data-keyword="tajhungheen">
-                            More Info
-                    </button>
-                  </div>
-                </div>
+              </div>
             </div>
             <div class="col-md-4 mb-4">
               <div class="card">
-                <span class="badge bg-success position-absolute top-0 end-0 m-2 fs-6">Rp 350.000</span>
+                <img src="../a1/tajhunggheen.jpg" class="card-img-top" alt="Tajhunghe'en">
+                <div class="card-body">
+                  <h5 class="card-title">Tajhunghe'en</h5>
+                  <p class="card-text">Nikmati pemandangan tebing karang dan ombak yang menenangkan di spot terbaik untuk bersantai.</p>
+                  <button type="button" class="btn btn-primary"
+                          data-bs-toggle="modal"
+                          data-bs-target="#tajhungheenModal"
+                          data-keyword="tajhungheen">
+                          More Info
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-4">
+              <div class="card">
                 <img src="../a1/kastoba.jpg" class="card-img-top" alt="Kastoba Lake">
                 <div class="card-body">
                   <h5 class="card-title">Kastoba Lake</h5>
@@ -119,7 +153,6 @@
             </div>
             <div class="col-md-4 mb-4">
               <div class="card">
-                <span class="badge bg-success position-absolute top-0 end-0 m-2 fs-6">Rp 350.000</span>
                 <img src="../a1/air terjun.jpg" class="card-img-top" alt="Laccar Waterfall">
                 <div class="card-body">
                   <h5 class="card-title">Laccar Waterfall</h5>
@@ -135,7 +168,6 @@
             </div>
             <div class="col-md-4 mb-4">
               <div class="card">
-                <span class="badge bg-success position-absolute top-0 end-0 m-2 fs-6">Rp 350.000</span>
                 <img src="../a1/noko selayar.jpg" class="card-img-top" alt="Noko Selayar">
                 <div class="card-body">
                   <h5 class="card-title">Noko Selayar</h5>
@@ -151,7 +183,6 @@
             </div>
             <div class="col-md-4 mb-4">
               <div class="card">
-                <span class="badge bg-success position-absolute top-0 end-0 m-2 fs-6">Rp 350.000</span>
                 <img src="../a1/cina.jpg" class="card-img-top" alt="China Island">
                 <div class="card-body">
                   <h5 class="card-title">China Island</h5>
@@ -167,7 +198,6 @@
             </div>
             <div class="col-md-4 mb-4">
               <div class="card">
-                <span class="badge bg-success position-absolute top-0 end-0 m-2 fs-6">Rp 350.000</span>
                 <img src="../a1/air panas.jpg" class="card-img-top" alt="Pemandian Air Panas">
                 <div class="card-body">
                   <h5 class="card-title">Pemandian Air Panas</h5>
@@ -183,7 +213,6 @@
             </div>
             <div class="col-md-4 mb-4">
               <div class="card">
-                <span class="badge bg-success position-absolute top-0 end-0 m-2 fs-6">Rp 350.000</span>
                 <img src="../a1/rusa.jpg" class="card-img-top" alt="Bawean Deer Breeding">
                 <div class="card-body">
                   <h5 class="card-title">Bawean Deer Breeding</h5>
@@ -199,7 +228,6 @@
             </div>
             <div class="col-md-4 mb-4">
               <div class="card">
-                <span class="badge bg-success position-absolute top-0 end-0 m-2 fs-6">Rp 350.000</span>
                 <img src="../a1/snorkeling.jpg" class="card-img-top" alt="Bawean Underwater">
                 <div class="card-body">
                   <h5 class="card-title">Bawean Underwater</h5>
@@ -215,7 +243,6 @@
             </div>
             <div class="col-md-4 mb-4">
               <div class="card">
-                <span class="badge bg-success position-absolute top-0 end-0 m-2 fs-6">Rp 350.000</span>
                 <img src="../a1/mombhul.png" class="card-img-top" alt="Mombhul Beach">
                 <div class="card-body">
                   <h5 class="card-title">Mombhul Beach</h5>
@@ -231,7 +258,6 @@
             </div>
             <div class="col-md-4 mb-4">
               <div class="card">
-                <span class="badge bg-success position-absolute top-0 end-0 m-2 fs-6">Rp 350.000</span>
                 <img src="../a1/lantong.jpg" class="card-img-top" alt="Lantong Waterfall">
                 <div class="card-body">
                   <h5 class="card-title">Lantong Waterfall</h5>
@@ -247,7 +273,6 @@
             </div>
             <div class="col-md-4 mb-4">
               <div class="card">
-                <span class="badge bg-success position-absolute top-0 end-0 m-2 fs-6">Rp 350.000</span>
                 <img src="../a1/mangrove.jpg" class="card-img-top" alt="Mangrove">
                 <div class="card-body">
                   <h5 class="card-title">Mangrove</h5>
@@ -266,54 +291,11 @@
       </div>
 
     <div class="modal fade" id="nokoGiliModal" tabindex="-1" aria-labelledby="nokoGiliModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="nokoGiliModalLabel">Noko Gili</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <img src="../a1/noko.jpg" class="img-fluid mb-3" alt="Noko Gili">
-            <h6>Keunggulan & Karakteristik</h6>
-              <p>Keunggulan utama Noko Gili adalah fenomena alamnya sebagai pulau pasir yang timbul dan tenggelam.
-                Dikelilingi perairan jernih, tempat ini menawarkan pengalaman eksklusif seolah berada di pulau pribadi dengan pemandangan bawah laut yang masih sangat alami.</p>
-                <h6>Kegiatan yang Ditawarkan</h6>
-                <ul>
-                  <li><strong>Snorkeling:</strong> Menyelami keindahan terumbu karang dan melihat berbagai jenis ikan berwarna-warni.</li>
-                  <li><strong>Berenang & Bersantai:</strong> Menikmati kesegaran air laut yang tenang atau sekadar bersantai di hamparan pasir putih yang halus.</li>
-                  <li><strong>Fotografi:</strong> Mengabadikan momen di lanskap yang unik dan fotogenik, terutama saat pulau pasir ini muncul sepenuhnya.</li>
-                </ul>
-                <hr>
-                <div class="text-end">
-                  <h4 class="price-tag">Harga: Rp 350.000/orang</h4>
-                </div>
-            </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                <a href="<?php echo BASE_URL; ?>PHP/booking.php" class="btn btn-success">Pesan Sekarang</a>
-            </div>
-            </div>
-      </div>
+      <div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="nokoGiliModalLabel">Noko Gili</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><img src="../a1/noko.jpg" class="img-fluid mb-3" alt="Noko Gili"><p>Deskripsi lengkap tentang paket wisata Noko Gili...</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button><a href="booking.html" class="btn btn-success">Pesan Sekarang</a></div></div></div>
     </div>
-  
-  
+    
     <div class="modal fade" id="tajhungheenModal" tabindex="-1" aria-labelledby="tajhungheenModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="tajhungheenModalLabel">Tajhunghe'en</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <img src="../a1/tajhunggheen.jpg" class="img-fluid mb-3" alt="Tajhunghe'en">
-              <p>Deskripsi lengkap tentang paket wisata Tajhunghe'en...</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-              <a href="booking.html" class="btn btn-success">Pesan Sekarang</a>
-            </div>
-          </div>
-        </div>
+        <div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="tajhungheenModalLabel">Tajhunghe'en</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><img src="../a1/tajhunggheen.jpg" class="img-fluid mb-3" alt="Tajhunghe'en"><p>Deskripsi lengkap tentang paket wisata Tajhunghe'en...</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button><a href="booking.html" class="btn btn-success">Pesan Sekarang</a></div></div></div>
     </div>
 
     <div class="modal fade" id="kastobaModal" tabindex="-1" aria-labelledby="kastobaModalLabel" aria-hidden="true">
