@@ -96,13 +96,13 @@
         <div class="caption">Noko Selayar</div>
       </div>
     </div>
-    <div class="gallery-item size-2">
+    <div class="gallery-item size-10">
       <img src="../album/a2.jpg" alt="European city street" class="gallery-img">
       <div class="overlay">
         <div class="caption">Lantong Waterfall</div>
       </div>
     </div>
-    <div class="gallery-item size-2">
+    <div class="gallery-item size-1">
       <img src="../album/a3.jpg" alt="Palm trees and lake" class="gallery-img">
       <div class="overlay">
         <div class="caption">Noko Gili</div>
@@ -126,7 +126,7 @@
         <div class="caption">Lantong Waterfall</div>
       </div>
     </div>
-    <div class="gallery-item size-2">
+    <div class="gallery-item size-1">
       <img src="../album/a7.jpg " alt="Cabin by the lake" class="gallery-img">
       <div class="overlay">
         <div class="caption">Summer Splash</div>
@@ -144,13 +144,13 @@
         <div class="caption">Tajhunghe'en</div>
       </div>
     </div>
-    <div class="gallery-item size-2">
+    <div class="gallery-item size-1">
       <img src="../album/a8.jpg" alt="Cabin by the lake" class="gallery-img">
       <div class="overlay">
         <div class="caption">Kano</div>
       </div>
     </div>
-    <div class="gallery-item size-3">
+    <div class="gallery-item size-1">
       <img src="../album/a9.jpg" alt="Cabin by the lake" class="gallery-img">
       <div class="overlay">
         <div class="caption">Banana Boat</div>
@@ -168,19 +168,19 @@
         <div class="caption">Pudakit Village</div>
       </div>
     </div>
-    <div class="gallery-item size-2">
+    <div class="gallery-item size-1">
       <img src="../album/b7.jpg" alt="Cabin by the lake" class="gallery-img">
       <div class="overlay">
         <div class="caption">Sunset</div>
       </div>
     </div>
-    <div class="gallery-item size-2">
+    <div class="gallery-item size-1">
       <img src="../album/b4.jpg" alt="Cabin by the lake" class="gallery-img">
       <div class="overlay">
         <div class="caption">Sippin' on the Boa</div>
       </div>
     </div>
-    <div class="gallery-item size-2">
+    <div class="gallery-item size-1">
       <img src="../album/c3.jpg" alt="Cabin by the lake" class="gallery-img">
       <div class="overlay">
         <div class="caption">Kastoba lake</div>

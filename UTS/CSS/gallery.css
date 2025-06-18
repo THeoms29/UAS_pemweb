@@ -63,6 +63,10 @@
     grid-column: span 3;
     grid-row: span 2;
   }
+  .size-10{
+    grid-column: span 4;
+    grid-row: span 4;
+  }
 
   .gallery-img {
     width: 100%;
