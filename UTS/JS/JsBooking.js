@@ -45,7 +45,7 @@ const scrollBtn = document.getElementById('scrollToTopBtn');
         .then(response => response.json())
         .then(data => {
           if (data.success) {
-            alert('Booking berhasil dikonfirmasi!');
+            alert('Booking berhasil dikonfirmasi!, silahkan konfirmasi ulang ke https://wa.me/+62 888-0532-7491');
             // Perbarui tampilan baris di tabel tanpa perlu reload halaman penuh
             const row = document.getElementById(`booking-row-${bookingId}`);
             if (row) {

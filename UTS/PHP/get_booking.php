@@ -10,8 +10,7 @@ if ($status === 'confirmed') {
     $status = 'menunggu';
 }
 
-$query = "
-    SELECT 
+$query = "SELECT 
         b.booking_id,
         b.user_id,
         b.schedule_id,
