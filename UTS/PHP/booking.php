@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (data.length === 0) {
           html = "<p>Tidak ada data booking yang sesuai.</p>";
         } else {
-          html = `
+          html = 
             <table class="table table-bordered table-striped">
               <thead>
                 <tr>
@@ -176,10 +176,9 @@ document.addEventListener("DOMContentLoaded", function () {
                   <th>Aksi</th>
                 </tr>
               </thead>
-              <tbody>
-          `;
+              <tbody>;
 let no = 1;
-html += `
+html += 
   <table class="table table-bordered table-striped">
     <thead>
       <tr>
@@ -193,15 +192,14 @@ html += `
         <th>Aksi</th>
       </tr>
     </thead>
-    <tbody>
-`;
+    <tbody>;
 
 data.forEach(row => {
   let badgeClass = "secondary";
   if (row.status === "disetujui" || row.status === "Confirmed") badgeClass = "success";
   else if (row.status === "menunggu" || row.status === "Pending") badgeClass = "warning";
 
-  html += `
+  html +=
     <tr>
       <td>${no++}</td>
       <td>${row.package_name}</td>
@@ -216,7 +214,7 @@ data.forEach(row => {
         <button class="btn btn-sm btn-danger" disabled>Batal</button>
       </td>
     </tr>
-  `;
+  ;
 });
 
 html += "</tbody></table>";
