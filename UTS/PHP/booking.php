@@ -64,9 +64,9 @@ $bookings = $stmt->fetchAll();
 
 <!-- Tabel Booking -->
 <div class="container mt-5 mb-5">
-  <h2 class="text-center mb-4">Booking Anda</h2>
-  <table class="table table-bordered text-center align-middle" id="bookingTable">
-    <thead style="background-color: #007bff; color: white;">
+  <h2 class="text-center mb-4"><b>My Booking</b></h2>
+  <table class="table-booking" id="bookingTable">
+    <thead style="background-color: #0d6fb1; color: white;">
       <tr>
         <th>No</th>
         <th>Packages Name</th>
