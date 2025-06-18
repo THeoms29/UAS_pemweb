@@ -11,7 +11,6 @@
       p.name           AS package_name,
       s.schedule_date  AS departure_date,
       b.booking_date,
-      b.quantity,
       b.status,
       b.total_price
           FROM bookings b
@@ -113,8 +112,6 @@
             <th>No</th>
             <th>Nama Package</th>
             <th>Tanggal Keberangkatan</th>
-            <th>Tanggal Booking</th>
-            <th>Jumlah Orang</th>
             <th>Status</th>
             <th>Total Harga</th>
             <th>Aksi</th>
@@ -136,8 +133,6 @@
             <td><?= $no++ ?></td>
             <td><?= htmlspecialchars($row['package_name']) ?></td>
             <td><?= date('d-m-Y', strtotime($row['departure_date'])) ?></td>
-            <td><?= date('d-m-Y H:i', strtotime($row['booking_date'])) ?></td>
-            <td><?= intval($row['quantity']) ?> Orang</td>
             <td>
               <span class="badge bg-<?= $badge ?>">
                 <?= ucfirst(htmlspecialchars($row['status'])) ?>
