@@ -207,54 +207,49 @@ $schedules = $stmt->fetchAll();
     </div>
   </div>
 
-  <!-- Section About Us -->
-  <section id="about" class="text-white py-5" style="background-color: #0d6fb1;">
-    <div class="container">
-      <div class="row align-items-center">
-        <!-- Logo dan Deskripsi -->
+  <!-- Bagian about us-->
+<section id="about" class="text-white py-5" style="background-color: #0d6fb1;">
+  <div class="container">
+    <div class="row align-items-center">
+      <!--logo-->
         <div class="col-md-3 mb-4">
           <img src="../a1/baweanique2.png" width="150" height="auto" alt="Logo Baweanique" class="mb-3">
           <p>Baweanique adalah perusahaan penyedia layanan tour dan travel di Pulau Bawean.</p>
         </div>
-
-        <!-- Kontak -->
-        <div class="col-md-3 mb-4 text-center text-md-start">
-          <h5 class="text-uppercase mb-3">Contact Us</h5>
-          <ul class="list-unstyled">
-            <li class="mb-2"><i class="bi bi-geo-alt"></i> Jl. Purbonegoro No.01, Sangkapura, Bawean, Gresik</li>
-            <li class="mb-2"><i class="bi bi-telephone"></i> +62xx-xxxx-xxxx</li>
-            <li class="mb-2"><i class="bi bi-envelope"></i> info@baweanique.com</li>
-          </ul>
-        </div>
-
-        <!-- Support -->
-        <div class="col-md-3 mb-4 text-center text-md-start">
-          <h5 class="text-uppercase mb-3">Support</h5>
-          <ul class="list-unstyled">
-            <li class="mb-2">- Documentation</li>
-            <li class="mb-2">- Experience</li>
-            <li class="mb-2">- Knowledge</li>
-            <li class="mb-2">- Forum</li>
-          </ul>
-        </div>
-
-        <!-- Sosial Media -->
-        <div class="col-md-3 mb-4 text-center text-md-end">
-          <div class="d-flex justify-content-center justify-content-md-end gap-4">
-            <a href="#" class="social-icon"><i class="bi bi-facebook fs-1"></i></a>
-            <a href="#" class="social-icon"><i class="bi bi-youtube fs-1"></i></a>
-            <a href="#" class="social-icon"><i class="bi bi-instagram fs-1"></i></a>
-            <a href="#" class="social-icon"><i class="bi bi-tiktok fs-1"></i></a>
-          </div>
-        </div>
-
-        <!-- Copyright -->
-        <div class="copyright text-center">
-          Copyright © Nabilafarahh - Theodore
-        </div>
+    <!-- contact us -->
+    <div class="col-md-3 mb-4 text-center text-md-start">
+      <h5 class="text-uppercase mb-3">Contact Us</h5>
+      <ul class="list-unstyled">
+        <li class="mb-2"><i class="bi bi-geo-alt"></i> Jl. Purbonegoro No.01, Sangkapura, Bawean, Gresik</li>
+        <li class="mb-2"><i class="bi bi-telephone"></i> +62xx-xxxx-xxxx</li>
+        <li class="mb-2"><i class="bi bi-envelope"></i> info@baweanique.com</li>
+      </ul>
+    </div>
+    <!-- Support -->
+    <div class="col-md-3 mb-4 text-center text-md-start">
+      <h5 class="text-uppercase mb-3">Support</h5>
+      <ul class="list-unstyled">
+        <li class="mb-2">- Documentation</li>
+        <li class="mb-2">- Experience</li>
+        <li class="mb-2">- Knowledge</li>
+        <li class="mb-2">- Forum</li>
+      </ul>
+    </div>
+    <!-- Sosmed -->
+    <div class="col-md-3 mb-4 text-center text-md-end">
+      <div class="d-flex justify-content-center justify-content-md-end gap-4">
+        <a href="#" class="social-icon"><i class="bi bi-facebook fs-1"></i></a>
+        <a href="https://youtu.be/vSa8xdmPTy0?si=RZM8l5BH_cZ261CH" class="social-icon"><i class="bi bi-youtube fs-1"></i></a>
+        <a href="https://www.instagram.com/ouwchiee_/" class="social-icon"><i class="bi bi-instagram fs-1"></i></a>
+        <a href="https://www.tiktok.com/@babynacho6" class="social-icon"><i class="bi bi-tiktok fs-1"></i></a>
       </div>
     </div>
-  </section>
+
+    <div class="copyright text-center">
+        Copyright - Baweanique Team 
+    </div> 
+  </div> 
+</section>
 
   <!-- Tombol Scroll ke Atas -->
   <button id="scrollToTopBtn" title="Kembali ke Atas">

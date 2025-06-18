@@ -218,7 +218,7 @@
           <img src="../a1/baweanique2.png" width="150" height="auto" alt="Logo Baweanique" class="mb-3">
           <p>Baweanique adalah perusahaan penyedia layanan tour dan travel di Pulau Bawean.</p>
         </div>
-    <!-- Info -->
+    <!-- contact us -->
     <div class="col-md-3 mb-4 text-center text-md-start">
       <h5 class="text-uppercase mb-3">Contact Us</h5>
       <ul class="list-unstyled">
@@ -237,19 +237,22 @@
         <li class="mb-2">- Forum</li>
       </ul>
     </div>
+    <!-- Sosmed -->
     <div class="col-md-3 mb-4 text-center text-md-end">
       <div class="d-flex justify-content-center justify-content-md-end gap-4">
         <a href="#" class="social-icon"><i class="bi bi-facebook fs-1"></i></a>
-        <a href="#" class="social-icon"><i class="bi bi-youtube fs-1"></i></a>
-        <a href="#" class="social-icon"><i class="bi bi-instagram fs-1"></i></a>
-        <a href="#" class="social-icon"><i class="bi bi-tiktok fs-1"></i></a>
+        <a href="https://youtu.be/vSa8xdmPTy0?si=RZM8l5BH_cZ261CH" class="social-icon"><i class="bi bi-youtube fs-1"></i></a>
+        <a href="https://www.instagram.com/ouwchiee_/" class="social-icon"><i class="bi bi-instagram fs-1"></i></a>
+        <a href="https://www.tiktok.com/@babynacho6" class="social-icon"><i class="bi bi-tiktok fs-1"></i></a>
       </div>
     </div>
+
     <div class="copyright text-center">
-        Copyright © Nabilafarahh - Theodore
+        Copyright - Baweanique Team 
     </div> 
   </div> 
 </section>
+
 <button id="scrollToTopBtn" title="Kembali ke Atas">
   <i class="bi bi-arrow-up"></i>
   <script src="../JS/Jstombolkecil.js"></script>

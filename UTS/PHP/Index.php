@@ -222,14 +222,14 @@
     <div class="col-md-3 mb-4 text-center text-md-end">
       <div class="d-flex justify-content-center justify-content-md-end gap-4">
         <a href="#" class="social-icon"><i class="bi bi-facebook fs-1"></i></a>
-        <a href="#" class="social-icon"><i class="bi bi-youtube fs-1"></i></a>
-        <a href="#" class="social-icon"><i class="bi bi-instagram fs-1"></i></a>
-        <a href="#" class="social-icon"><i class="bi bi-tiktok fs-1"></i></a>
+        <a href="https://youtu.be/vSa8xdmPTy0?si=RZM8l5BH_cZ261CH" class="social-icon"><i class="bi bi-youtube fs-1"></i></a>
+        <a href="https://www.instagram.com/ouwchiee_/" class="social-icon"><i class="bi bi-instagram fs-1"></i></a>
+        <a href="https://www.tiktok.com/@babynacho6" class="social-icon"><i class="bi bi-tiktok fs-1"></i></a>
       </div>
     </div>
 
     <div class="copyright text-center">
-        Copyright 
+        Copyright - Baweanique Team 
     </div> 
   </div> 
 </section>
