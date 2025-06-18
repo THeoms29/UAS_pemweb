@@ -281,29 +281,31 @@
       </div>
 
     <div class="modal fade" id="nokoGiliModal" tabindex="-1" aria-labelledby="nokoGiliModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg"><div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="nokoGiliModalLabel">Noko Gili</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-          </button>
-        </div>
-        <div class="modal-body">
-          <img src="../a1/noko.jpg" class="img-fluid mb-3" alt="Noko Gili">
-          <h6>Keunggulan & Karakteristik</h6>
-            <p>Keunggulan utama Noko Gili adalah fenomena alamnya sebagai pulau pasir yang timbul dan tenggelam.
-              Dikelilingi perairan jernih, tempat ini menawarkan pengalaman eksklusif seolah berada di pulau pribadi dengan pemandangan bawah laut yang masih sangat alami.</p>
-              <h6>Include</h6>
-              <ul>
-                <li><strong>Snorkeling:</strong> Menyelami keindahan terumbu karang dan melihat berbagai jenis ikan berwarna-warni.</li>
-                <li><strong>Berenang & Bersantai:</strong> Menikmati kesegaran air laut yang tenang atau sekadar bersantai di hamparan pasir putih yang halus.</li>
-                <li><strong>Fotografi:</strong> Mengabadikan momen di lanskap yang unik dan fotogenik, terutama saat pulau pasir ini muncul sepenuhnya.</li>
-              </ul>
-              <hr>
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="nokoGiliModalLabel">Noko Gili</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="../a1/noko.jpg" class="img-fluid mb-3" alt="Noko Gili">
+            <h6>Keunggulan & Karakteristik</h6>
+              <p>Keunggulan utama Noko Gili adalah fenomena alamnya sebagai pulau pasir yang timbul dan tenggelam.
+                Dikelilingi perairan jernih, tempat ini menawarkan pengalaman eksklusif seolah berada di pulau pribadi dengan pemandangan bawah laut yang masih sangat alami.</p>
+                <h6>Include</h6>
+                <ul>
+                  <li><strong>Snorkeling:</strong> Menyelami keindahan terumbu karang dan melihat berbagai jenis ikan berwarna-warni.</li>
+                  <li><strong>Berenang & Bersantai:</strong> Menikmati kesegaran air laut yang tenang atau sekadar bersantai di hamparan pasir putih yang halus.</li>
+                  <li><strong>Fotografi:</strong> Mengabadikan momen di lanskap yang unik dan fotogenik, terutama saat pulau pasir ini muncul sepenuhnya.</li>
+                </ul>
+                <hr>
               <div class="text-end">
                 <h4 class="price-tag">Harga: Rp 450.000/Person</h4>
               </div>
           </div>
         </div>
+      </div>
     </div>
     
     <div class="modal fade" id="tajhungheenModal" tabindex="-1" aria-labelledby="tajhungheenModalLabel" aria-hidden="true">
@@ -315,50 +317,290 @@
             </div>
             <div class="modal-body">
               <img src="../a1/tajhunggheen.jpg" class="img-fluid mb-3" alt="Tajhunghe'en">
-              <p>Deskripsi lengkap tentang paket wisata Tajhunghe'en...</p>
+              <h6>Keunggulan & Karakteristik</h6>
+              <p>Keunggulan utama Noko Gili adalah fenomena alamnya sebagai pulau pasir yang timbul dan tenggelam.
+              Dikelilingi perairan jernih, tempat ini menawarkan pengalaman eksklusif seolah berada di pulau pribadi dengan pemandangan bawah laut yang masih sangat alami.</p>
+              <h6>Include</h6>
+                <ul>
+                  <li><strong>Snorkeling:</strong> Menyelami keindahan terumbu karang dan melihat berbagai jenis ikan berwarna-warni.</li>
+                  <li><strong>Berenang & Bersantai:</strong> Menikmati kesegaran air laut yang tenang atau sekadar bersantai di hamparan pasir putih yang halus.</li>
+                  <li><strong>Fotografi:</strong> Mengabadikan momen di lanskap yang unik dan fotogenik, terutama saat pulau pasir ini muncul sepenuhnya.</li>
+                </ul>
+              <hr>
+              <div class="text-end">
+                <h4 class="price-tag">Harga: Rp 450.000/Person</h4>
+              </div>
             </div>
           </div>
         </div>
       </div>
       
     <div class="modal fade" id="kastobaModal" tabindex="-1" aria-labelledby="kastobaModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="kastobaModalLabel">Kastoba Lake</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><img src="../a1/kastoba.jpg" class="img-fluid mb-3" alt="Kastoba Lake"><p>Deskripsi lengkap tentang paket wisata Danau Kastoba...</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</bu
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="kastobaModalLabel">Kastoba Lake</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <img src="../a1/kastoba.jpg" class="img-fluid mb-3" alt="Kastoba Lake">
+              <h6>Keunggulan & Karakteristik</h6>
+              <p>Keunggulan utama Noko Gili adalah fenomena alamnya sebagai pulau pasir yang timbul dan tenggelam.
+              Dikelilingi perairan jernih, tempat ini menawarkan pengalaman eksklusif seolah berada di pulau pribadi dengan pemandangan bawah laut yang masih sangat alami.</p>
+              <h6>Include</h6>
+                <ul>
+                  <li><strong>Snorkeling:</strong> Menyelami keindahan terumbu karang dan melihat berbagai jenis ikan berwarna-warni.</li>
+                  <li><strong>Berenang & Bersantai:</strong> Menikmati kesegaran air laut yang tenang atau sekadar bersantai di hamparan pasir putih yang halus.</li>
+                  <li><strong>Fotografi:</strong> Mengabadikan momen di lanskap yang unik dan fotogenik, terutama saat pulau pasir ini muncul sepenuhnya.</li>
+                </ul>
+              <hr>
+              <div class="text-end">
+                <h4 class="price-tag">Harga: Rp 450.000/Person</h4>
+              </div>
+            </div>
+          </div>
+      </div>
     </div>
 
     <div class="modal fade" id="laccarWaterfallModal" tabindex="-1" aria-labelledby="laccarWaterfallModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="laccarWaterfallModalLabel">Laccar Waterfall</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><img src="../a1/air terjun.jpg" class="img-fluid mb-3" alt="Laccar Waterfall"><p>Deskripsi lengkap tentang paket wisata Air Terjun Laccar...</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</bu
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="laccarWaterfallModalLabel">Laccar Waterfall</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <img src="../a1/air terjun.jpg" class="img-fluid mb-3" alt="Laccar Waterfall">
+              <h6>Keunggulan & Karakteristik</h6>
+              <p>Keunggulan utama Noko Gili adalah fenomena alamnya sebagai pulau pasir yang timbul dan tenggelam.
+              Dikelilingi perairan jernih, tempat ini menawarkan pengalaman eksklusif seolah berada di pulau pribadi dengan pemandangan bawah laut yang masih sangat alami.</p>
+              <h6>Include</h6>
+                <ul>
+                  <li><strong>Snorkeling:</strong> Menyelami keindahan terumbu karang dan melihat berbagai jenis ikan berwarna-warni.</li>
+                  <li><strong>Berenang & Bersantai:</strong> Menikmati kesegaran air laut yang tenang atau sekadar bersantai di hamparan pasir putih yang halus.</li>
+                  <li><strong>Fotografi:</strong> Mengabadikan momen di lanskap yang unik dan fotogenik, terutama saat pulau pasir ini muncul sepenuhnya.</li>
+                </ul>
+              <hr>
+              <div class="text-end">
+                <h4 class="price-tag">Harga: Rp 450.000/Person</h4>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
 
     <div class="modal fade" id="nokoSelayarModal" tabindex="-1" aria-labelledby="nokoSelayarModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="nokoSelayarModalLabel">Noko Selayar</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><img src="../a1/noko selayar.jpg" class="img-fluid mb-3" alt="Noko Selayar"><p>Deskripsi lengkap tentang paket wisata Noko Selayar...</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</bu
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="nokoSelayarModalLabel">Noko Selayar</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <img src="../a1/noko selayar.jpg" class="img-fluid mb-3" alt="Noko Selayar">
+              <h6>Keunggulan & Karakteristik</h6>
+              <p>Keunggulan utama Noko Gili adalah fenomena alamnya sebagai pulau pasir yang timbul dan tenggelam.
+              Dikelilingi perairan jernih, tempat ini menawarkan pengalaman eksklusif seolah berada di pulau pribadi dengan pemandangan bawah laut yang masih sangat alami.</p>
+              <h6>Include</h6>
+                <ul>
+                  <li><strong>Snorkeling:</strong> Menyelami keindahan terumbu karang dan melihat berbagai jenis ikan berwarna-warni.</li>
+                  <li><strong>Berenang & Bersantai:</strong> Menikmati kesegaran air laut yang tenang atau sekadar bersantai di hamparan pasir putih yang halus.</li>
+                  <li><strong>Fotografi:</strong> Mengabadikan momen di lanskap yang unik dan fotogenik, terutama saat pulau pasir ini muncul sepenuhnya.</li>
+                </ul>
+              <hr>
+              <div class="text-end">
+                <h4 class="price-tag">Harga: Rp 450.000/Person</h4>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
 
     <div class="modal fade" id="chinaIslandModal" tabindex="-1" aria-labelledby="chinaIslandModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="chinaIslandModalLabel">China Island</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><img src="../a1/cina.jpg" class="img-fluid mb-3" alt="China Island"><p>Deskripsi lengkap tentang paket wisata Pulau Cina...</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</bu
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="chinaIslandModalLabel">China Island</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <img src="../a1/cina.jpg" class="img-fluid mb-3" alt="China Island">
+              <h6>Keunggulan & Karakteristik</h6>
+              <p>Keunggulan utama Noko Gili adalah fenomena alamnya sebagai pulau pasir yang timbul dan tenggelam.
+              Dikelilingi perairan jernih, tempat ini menawarkan pengalaman eksklusif seolah berada di pulau pribadi dengan pemandangan bawah laut yang masih sangat alami.</p>
+              <h6>Include</h6>
+                <ul>
+                  <li><strong>Snorkeling:</strong> Menyelami keindahan terumbu karang dan melihat berbagai jenis ikan berwarna-warni.</li>
+                  <li><strong>Berenang & Bersantai:</strong> Menikmati kesegaran air laut yang tenang atau sekadar bersantai di hamparan pasir putih yang halus.</li>
+                  <li><strong>Fotografi:</strong> Mengabadikan momen di lanskap yang unik dan fotogenik, terutama saat pulau pasir ini muncul sepenuhnya.</li>
+                </ul>
+              <hr>
+              <div class="text-end">
+                <h4 class="price-tag">Harga: Rp 450.000/Person</h4>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
 
     <div class="modal fade" id="airPanasModal" tabindex="-1" aria-labelledby="airPanasModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="airPanasModalLabel">Pemandian Air Panas</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><img src="../a1/air panas.jpg" class="img-fluid mb-3" alt="Pemandian Air Panas"><p>Deskripsi lengkap tentang paket wisata Pemandian Air Panas...</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</bu
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="airPanasModalLabel">Pemandian Air Panas</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <img src="../a1/air panas.jpg" class="img-fluid mb-3" alt="Pemandian Air Panas">
+              <h6>Keunggulan & Karakteristik</h6>
+              <p>Keunggulan utama Noko Gili adalah fenomena alamnya sebagai pulau pasir yang timbul dan tenggelam.
+              Dikelilingi perairan jernih, tempat ini menawarkan pengalaman eksklusif seolah berada di pulau pribadi dengan pemandangan bawah laut yang masih sangat alami.</p>
+              <h6>Include</h6>
+                <ul>
+                  <li><strong>Snorkeling:</strong> Menyelami keindahan terumbu karang dan melihat berbagai jenis ikan berwarna-warni.</li>
+                  <li><strong>Berenang & Bersantai:</strong> Menikmati kesegaran air laut yang tenang atau sekadar bersantai di hamparan pasir putih yang halus.</li>
+                  <li><strong>Fotografi:</strong> Mengabadikan momen di lanskap yang unik dan fotogenik, terutama saat pulau pasir ini muncul sepenuhnya.</li>
+                </ul>
+              <hr>
+              <div class="text-end">
+                <h4 class="price-tag">Harga: Rp 450.000/Person</h4>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
 
     <div class="modal fade" id="rusaBaweanModal" tabindex="-1" aria-labelledby="rusaBaweanModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="rusaBaweanModalLabel">Bawean Deer Breeding</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><img src="../a1/rusa.jpg" class="img-fluid mb-3" alt="Bawean Deer Breeding"><p>Deskripsi lengkap tentang paket wisata Penangkaran Rusa Bawean...</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</bu
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="rusaBaweanModalLabel">Bawean Deer Breeding</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <img src="../a1/rusa.jpg" class="img-fluid mb-3" alt="Bawean Deer Breeding">
+              <h6>Keunggulan & Karakteristik</h6>
+              <p>Keunggulan utama Noko Gili adalah fenomena alamnya sebagai pulau pasir yang timbul dan tenggelam.
+              Dikelilingi perairan jernih, tempat ini menawarkan pengalaman eksklusif seolah berada di pulau pribadi dengan pemandangan bawah laut yang masih sangat alami.</p>
+              <h6>Include</h6>
+                <ul>
+                  <li><strong>Snorkeling:</strong> Menyelami keindahan terumbu karang dan melihat berbagai jenis ikan berwarna-warni.</li>
+                  <li><strong>Berenang & Bersantai:</strong> Menikmati kesegaran air laut yang tenang atau sekadar bersantai di hamparan pasir putih yang halus.</li>
+                  <li><strong>Fotografi:</strong> Mengabadikan momen di lanskap yang unik dan fotogenik, terutama saat pulau pasir ini muncul sepenuhnya.</li>
+                </ul>
+              <hr>
+              <div class="text-end">
+                <h4 class="price-tag">Harga: Rp 450.000/Person</h4>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
 
     <div class="modal fade" id="underwaterModal" tabindex="-1" aria-labelledby="underwaterModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="underwaterModalLabel">Bawean Underwater</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><img src="../a1/snorkeling.jpg" class="img-fluid mb-3" alt="Bawean Underwater"><p>Deskripsi lengkap tentang paket wisata bawah laut Bawean...</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</bu
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="underwaterModalLabel">Bawean Underwater</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <img src="../a1/snorkeling.jpg" class="img-fluid mb-3" alt="Bawean Underwater">
+              <h6>Keunggulan & Karakteristik</h6>
+              <p>Keunggulan utama Noko Gili adalah fenomena alamnya sebagai pulau pasir yang timbul dan tenggelam.
+              Dikelilingi perairan jernih, tempat ini menawarkan pengalaman eksklusif seolah berada di pulau pribadi dengan pemandangan bawah laut yang masih sangat alami.</p>
+              <h6>Include</h6>
+                <ul>
+                  <li><strong>Snorkeling:</strong> Menyelami keindahan terumbu karang dan melihat berbagai jenis ikan berwarna-warni.</li>
+                  <li><strong>Berenang & Bersantai:</strong> Menikmati kesegaran air laut yang tenang atau sekadar bersantai di hamparan pasir putih yang halus.</li>
+                  <li><strong>Fotografi:</strong> Mengabadikan momen di lanskap yang unik dan fotogenik, terutama saat pulau pasir ini muncul sepenuhnya.</li>
+                </ul>
+              <hr>
+              <div class="text-end">
+                <h4 class="price-tag">Harga: Rp 450.000/Person</h4>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
 
     <div class="modal fade" id="mombhulModal" tabindex="-1" aria-labelledby="mombhulModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="mombhulModalLabel">Mombhul Beach</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><img src="../a1/mombhul.png" class="img-fluid mb-3" alt="Mombhul Beach"><p>Deskripsi lengkap tentang paket wisata Pantai Mombhul...</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</bu
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="mombhulModalLabel">Mombhul Beach</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <img src="../a1/mombhul.png" class="img-fluid mb-3" alt="Mombhul Beach">
+              <h6>Keunggulan & Karakteristik</h6>
+              <p>Keunggulan utama Noko Gili adalah fenomena alamnya sebagai pulau pasir yang timbul dan tenggelam.
+              Dikelilingi perairan jernih, tempat ini menawarkan pengalaman eksklusif seolah berada di pulau pribadi dengan pemandangan bawah laut yang masih sangat alami.</p>
+              <h6>Include</h6>
+                <ul>
+                  <li><strong>Snorkeling:</strong> Menyelami keindahan terumbu karang dan melihat berbagai jenis ikan berwarna-warni.</li>
+                  <li><strong>Berenang & Bersantai:</strong> Menikmati kesegaran air laut yang tenang atau sekadar bersantai di hamparan pasir putih yang halus.</li>
+                  <li><strong>Fotografi:</strong> Mengabadikan momen di lanskap yang unik dan fotogenik, terutama saat pulau pasir ini muncul sepenuhnya.</li>
+                </ul>
+              <hr>
+              <div class="text-end">
+                <h4 class="price-tag">Harga: Rp 450.000/Person</h4>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
 
     <div class="modal fade" id="lantongModal" tabindex="-1" aria-labelledby="lantongModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="lantongModalLabel">Lantong Waterfall</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><img src="../a1/lantong.jpg" class="img-fluid mb-3" alt="Lantong Waterfall"><p>Deskripsi lengkap tentang paket wisata Air Terjun Lantong...</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</bu
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header"><h5 class="modal-title" id="lantongModalLabel">Lantong Waterfall</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img src="../a1/lantong.jpg" class="img-fluid mb-3" alt="Lantong Waterfall">
+            <h6>Keunggulan & Karakteristik</h6>
+              <p>Keunggulan utama Noko Gili adalah fenomena alamnya sebagai pulau pasir yang timbul dan tenggelam.
+              Dikelilingi perairan jernih, tempat ini menawarkan pengalaman eksklusif seolah berada di pulau pribadi dengan pemandangan bawah laut yang masih sangat alami.</p>
+              <h6>Include</h6>
+                <ul>
+                  <li><strong>Snorkeling:</strong> Menyelami keindahan terumbu karang dan melihat berbagai jenis ikan berwarna-warni.</li>
+                  <li><strong>Berenang & Bersantai:</strong> Menikmati kesegaran air laut yang tenang atau sekadar bersantai di hamparan pasir putih yang halus.</li>
+                  <li><strong>Fotografi:</strong> Mengabadikan momen di lanskap yang unik dan fotogenik, terutama saat pulau pasir ini muncul sepenuhnya.</li>
+                </ul>
+              <hr>
+              <div class="text-end">
+                <h4 class="price-tag">Harga: Rp 450.000/Person</h4>
+              </div>
+            </div>
+        </div>
+      </div>
     </div>
     
     <div class="modal fade" id="mangroveModal" tabindex="-1" aria-labelledby="mangroveModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="mangroveModalLabel">Mangrove</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><img src="../a1/mangrove.jpg" class="img-fluid mb-3" alt="Mangrove"><p>Deskripsi lengkap tentang paket wisata Hutan Mangrove...</p></div><div class="modal-footer"><button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</bu
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="mangroveModalLabel">Mangrove</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <h6>Keunggulan & Karakteristik</h6>
+              <p>Keunggulan utama Noko Gili adalah fenomena alamnya sebagai pulau pasir yang timbul dan tenggelam.
+              Dikelilingi perairan jernih, tempat ini menawarkan pengalaman eksklusif seolah berada di pulau pribadi dengan pemandangan bawah laut yang masih sangat alami.</p>
+              <h6>Include</h6>
+                <ul>
+                  <li><strong>Snorkeling:</strong> Menyelami keindahan terumbu karang dan melihat berbagai jenis ikan berwarna-warni.</li>
+                  <li><strong>Berenang & Bersantai:</strong> Menikmati kesegaran air laut yang tenang atau sekadar bersantai di hamparan pasir putih yang halus.</li>
+                  <li><strong>Fotografi:</strong> Mengabadikan momen di lanskap yang unik dan fotogenik, terutama saat pulau pasir ini muncul sepenuhnya.</li>
+                </ul>
+              <hr>
+              <div class="text-end">
+                <h4 class="price-tag">Harga: Rp 450.000/Person</h4>
+              </div>
+            </div>
+          </div>
+        </div>
     </div>
 
     <section id="about" class="text-white py-5" style="background-color: #0d6fb1;">
