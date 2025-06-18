@@ -92,61 +92,12 @@ $bookings = $stmt->fetchAll();
           <td>Rp <?= $total ?></td>
           <td class="d-flex justify-content-center gap-2">
             <button class="btn btn-primary btn-sm" <?= $disabled ?>><i class="bi bi-bag-check"></i> Book Now</button>
-            <button class="btn btn-warning btn-sm text-white btn-edit-booking" 
-              data-booking-id="<?= $b['booking_id'] ?>" 
-              data-package-id="<?= $b['package_id'] ?>" 
-              data-schedule-date="<?= $b['schedule_date'] ?>" <?= $disabled ?>>
-              <i class="bi bi-pencil"></i> Edit
-            </button>
             <button class="btn btn-danger btn-sm btn-batal-booking" data-booking-id="<?= $b['booking_id'] ?>" <?= $disabled ?>><i class="bi bi-x-circle"></i> Batal</button>
           </td>
         </tr>
       <?php endforeach; ?>
     </tbody>
   </table>
-</div>
-
-<!-- Modal Edit Booking -->
-<div class="modal fade" id="editBookingModal" tabindex="-1" aria-labelledby="editBookingLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <form id="editBookingForm">
-        <div class="modal-header">
-          <h5 class="modal-title" id="editBookingLabel">Edit Jadwal Booking</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
-        </div>
-        <div class="modal-body">
-
-          <input type="hidden" id="edit-booking-id" name="booking_id">
-          <input type="hidden" id="edit-schedule-date" name="schedule_date">
-
-          <div class="mb-3">
-            <label class="form-label">Tanggal Tour</label>
-            <div class="date-display border rounded p-2" id="editDateDisplay" style="cursor: pointer;">
-              <div>Tanggal: <span id="editSelectedDate">Pilih tanggal</span></div>
-              <small style="color: #666; font-size: 12px;">Klik untuk mengubah tanggal</small>
-            </div>
-          </div>
-
-          <!-- Date Picker Modal -->
-          <div class="date-picker-modal" id="editDatePickerModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.5);z-index:1055;justify-content:center;align-items:center;">
-            <div class="date-picker-content bg-white p-4 rounded" style="width:90%;max-width:400px;">
-              <div class="d-flex justify-content-between align-items-center mb-3">
-                <h5 class="m-0 text-primary">Pilih Tanggal</h5>
-                <button type="button" id="closeEditDatePicker" class="btn btn-sm btn-light">&times;</button>
-              </div>
-              <div id="editDateOptions"></div>
-            </div>
-          </div>
-
-        </div>
-        <div class="modal-footer">
-          <button type="submit" class="btn btn-success">Simpan Perubahan</button>
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-        </div>
-      </form>
-    </div>
-  </div>
 </div>
 
 <!-- Bagian about us-->
