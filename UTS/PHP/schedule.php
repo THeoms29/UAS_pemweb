@@ -97,6 +97,7 @@ $schedules = $stmt->fetchAll();
       <thead>
         <tr>
           <th>Hari</th>
+          <th>Tanggal</th>
           <th>Destinasi</th>
           <th>Waktu</th>
           <th>Durasi</th>
@@ -119,6 +120,7 @@ $schedules = $stmt->fetchAll();
           ?>
     <tr>
       <td><?= $hari_id[$hari_en] ?? $hari_en ?></td>
+      <td><?= date('d-m-Y', strtotime($row['schedule_date'])) ?></td>
       <td><?= htmlspecialchars($row['package_name']) ?></td>
       <td><?= htmlspecialchars(substr($row['start_time'], 0, 5)) ?></td>
       <td>
