@@ -5,6 +5,87 @@
   session_start();
   require_once('koneksi.php');
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    // Sertakan file koneksi database
+    require_once 'koneksi.php';
+
+    // Fungsi untuk mengirim respons JSON dan menghentikan skrip
+    function send_json_response($success, $message, $redirect = null) {
+    $resp = ['success' => $success, 'message' => $message];
+    if ($redirect) {
+        $resp['redirect'] = $redirect;
+    }
+    echo json_encode($resp);
+    exit;
+}
+
+// 1) Must be POST
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    send_json_response(false, "Metode request tidak valid.");
+}
+
+// 2) Must be logged in
+if (!isset($_SESSION['user_id'])) {
+    send_json_response(false, "Silakan login terlebih dahulu.");
+}
+
+// 3) Collect & validate inputs
+$schedule_id = trim($_POST['schedule_id']  ?? '');
+$quantity    = trim($_POST['quantity']     ?? '');
+$total_price = trim($_POST['total_price']  ?? '');
+
+if ($schedule_id === '' || $quantity === '' || $total_price === '') {
+    send_json_response(false, "Data booking tidak lengkap.");
+}
+
+// 4) Lookup package_id from schedules
+$sql  = "SELECT package_id FROM schedules WHERE schedule_id = ?";
+$stmt = $conn->prepare($sql);
+if (! $stmt) {
+    send_json_response(false, "Gagal menyiapkan query lookup jadwal.");
+}
+$stmt->bind_param("i", $schedule_id);
+$stmt->execute();
+$result = $stmt->get_result();
+$row    = $result->fetch_assoc();
+$stmt->close();
+
+if (! $row) {
+    send_json_response(false, "Jadwal tidak ditemukan.");
+}
+$package_id = $row['package_id'];
+
+// 5) Insert booking
+$sql  = "INSERT INTO bookings
+           (user_id, schedule_id, package_id, quantity, total_price, status)
+         VALUES (?, ?, ?, ?, ?, 'pending')";
+$stmt = $conn->prepare($sql);
+if (! $stmt) {
+    send_json_response(false, "Gagal menyiapkan query insert booking.");
+}
+$stmt->bind_param(
+    "iiiid",
+    $_SESSION['user_id'],
+    $schedule_id,
+    $package_id,
+    $quantity,
+    $total_price
+);
+$ok = $stmt->execute();
+$stmt->close();
+
+if ($ok) {
+    send_json_response(
+      true,
+      "Pemesanan berhasil! Anda akan dialihkan ke My Book.",
+      "booking.php"
+    );
+} else {
+    send_json_response(false, "Pemesanan gagal: " . $conn->error);
+}
+  }
+
   $sql = "SELECT  s.schedule_id,
     s.schedule_date,
     s.start_time,
@@ -134,7 +215,7 @@ $schedules = $stmt->fetchAll();
                                          '<?= date('d - m - Y', strtotime($row['schedule_date'])) ?>',
                                          <?= $row['schedule_id'] ?>,
                                          <?= $row['package_id'] ?>)">
-            Booking
+            Book Now
           </button>
         <?php elseif ($row['status'] == 'penuh'): ?>
           <button class="btn full" disabled>Full</button>
@@ -157,7 +238,9 @@ $schedules = $stmt->fetchAll();
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body modal-body-custom">
-          <img src="../a1/snorkeling.jpg" alt="Tour Image" class="tour-image" id="modalTourImage">
+          <!-- Tour Image -->
+          <div class="tour-image" id="modalTourImage">Tour Image</div>
+          
           <!-- Date Display -->
           <div class="date-display" id="dateDisplay">
             <div>Tanggal: <span id="selectedDate">01 - 01 - 2024</span></div>
@@ -182,7 +265,7 @@ $schedules = $stmt->fetchAll();
           
           <!-- Price -->
           <div class="text-center">
-            <span class="price-tag" id="modalPrice">/Person</span>
+            <span class="price-tag" id="modalPrice">Rp. 500.000/Person</span>
           </div>
           
           <!-- Include List -->
@@ -199,57 +282,69 @@ $schedules = $stmt->fetchAll();
           
           <!-- Action Buttons -->
           <div class="d-flex gap-3 justify-content-center">
-            <button type="button" class="btn btn-add-cart btn-custom" onclick="addToCart()">Add Cart</button>
-            <button type="button" class="btn btn-book-now btn-custom" onclick="bookNow()">Book Now</button>
+            <form id="booking-form">
+              <input type="hidden" name="schedule_id"    id="fd_schedule_id" value="">
+              <input type="hidden" name="package_id"     id="fd_package_id"  value="">
+              <input type="hidden" name="quantity"       id="fd_quantity"    value="1">
+              <input type="hidden" name="total_price"    id="fd_total_price" value="0">
+              <button type="submit" class="btn btn-book-now btn-custom" id="bookBtn">
+                Book Now
+              </button>
+            </form>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Bagian about us-->
-<section id="about" class="text-white py-5" style="background-color: #0d6fb1;">
-  <div class="container">
-    <div class="row align-items-center">
-      <!--logo-->
+  <!-- Section About Us -->
+  <section id="about" class="text-white py-5" style="background-color: #0d6fb1;">
+    <div class="container">
+      <div class="row align-items-center">
+        <!-- Logo dan Deskripsi -->
         <div class="col-md-3 mb-4">
           <img src="../a1/baweanique2.png" width="150" height="auto" alt="Logo Baweanique" class="mb-3">
           <p>Baweanique adalah perusahaan penyedia layanan tour dan travel di Pulau Bawean.</p>
         </div>
-    <!-- contact us -->
-    <div class="col-md-3 mb-4 text-center text-md-start">
-      <h5 class="text-uppercase mb-3">Contact Us</h5>
-      <ul class="list-unstyled">
-        <li class="mb-2"><i class="bi bi-geo-alt"></i> Jl. Purbonegoro No.01, Sangkapura, Bawean, Gresik</li>
-        <li class="mb-2"><i class="bi bi-telephone"></i> +62xx-xxxx-xxxx</li>
-        <li class="mb-2"><i class="bi bi-envelope"></i> info@baweanique.com</li>
-      </ul>
-    </div>
-    <!-- Support -->
-    <div class="col-md-3 mb-4 text-center text-md-start">
-      <h5 class="text-uppercase mb-3">Support</h5>
-      <ul class="list-unstyled">
-        <li class="mb-2">- Documentation</li>
-        <li class="mb-2">- Experience</li>
-        <li class="mb-2">- Knowledge</li>
-        <li class="mb-2">- Forum</li>
-      </ul>
-    </div>
-    <!-- Sosmed -->
-    <div class="col-md-3 mb-4 text-center text-md-end">
-      <div class="d-flex justify-content-center justify-content-md-end gap-4">
-        <a href="#" class="social-icon"><i class="bi bi-facebook fs-1"></i></a>
-        <a href="https://youtu.be/vSa8xdmPTy0?si=RZM8l5BH_cZ261CH" class="social-icon"><i class="bi bi-youtube fs-1"></i></a>
-        <a href="https://www.instagram.com/ouwchiee_/" class="social-icon"><i class="bi bi-instagram fs-1"></i></a>
-        <a href="https://www.tiktok.com/@babynacho6" class="social-icon"><i class="bi bi-tiktok fs-1"></i></a>
+
+        <!-- Kontak -->
+        <div class="col-md-3 mb-4 text-center text-md-start">
+          <h5 class="text-uppercase mb-3">Contact Us</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="bi bi-geo-alt"></i> Jl. Purbonegoro No.01, Sangkapura, Bawean, Gresik</li>
+            <li class="mb-2"><i class="bi bi-telephone"></i> +62xx-xxxx-xxxx</li>
+            <li class="mb-2"><i class="bi bi-envelope"></i> info@baweanique.com</li>
+          </ul>
+        </div>
+
+        <!-- Support -->
+        <div class="col-md-3 mb-4 text-center text-md-start">
+          <h5 class="text-uppercase mb-3">Support</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2">- Documentation</li>
+            <li class="mb-2">- Experience</li>
+            <li class="mb-2">- Knowledge</li>
+            <li class="mb-2">- Forum</li>
+          </ul>
+        </div>
+
+        <!-- Sosial Media -->
+        <div class="col-md-3 mb-4 text-center text-md-end">
+          <div class="d-flex justify-content-center justify-content-md-end gap-4">
+            <a href="#" class="social-icon"><i class="bi bi-facebook fs-1"></i></a>
+            <a href="#" class="social-icon"><i class="bi bi-youtube fs-1"></i></a>
+            <a href="#" class="social-icon"><i class="bi bi-instagram fs-1"></i></a>
+            <a href="#" class="social-icon"><i class="bi bi-tiktok fs-1"></i></a>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="copyright text-center">
+          Copyright © Nabilafarahh - Theodore
+        </div>
       </div>
     </div>
-
-    <div class="copyright text-center">
-        Copyright - Baweanique Team 
-    </div> 
-  </div> 
-</section>
+  </section>
 
   <!-- Tombol Scroll ke Atas -->
   <button id="scrollToTopBtn" title="Kembali ke Atas">

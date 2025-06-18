@@ -1,50 +1,53 @@
 <?php
-session_start();
-require_once('koneksi.php');
+  if (!defined('BASE_URL')) {
+    define('BASE_URL', '../'); 
+  }
+  session_start();
+  require_once('koneksi.php');
 
-if (!isset($_SESSION['user_id'])) {
-  header("Location: login.php");
-  exit;
-}
 
-$user_id = $_SESSION['user_id'];
+  $sql = "SELECT 
+      b.booking_id,
+      p.name           AS package_name,
+      s.schedule_date  AS departure_date,
+      b.booking_date,
+      b.quantity,
+      b.status,
+      b.total_price
+          FROM bookings b
+          JOIN schedules s  ON b.schedule_id = s.schedule_id
+          JOIN packages p   ON b.package_id  = p.package_id
+    WHERE b.user_id = ?
+    ORDER BY b.booking_date DESC
+  ";
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute([ $_SESSION['user_id'] ]);
+  $bookings = $stmt->fetchAll();
 
-$sql = "SELECT b.*, p.name AS package_name, s.schedule_date 
-        FROM bookings b
-        JOIN packages p ON b.package_id = p.package_id
-        JOIN schedules s ON b.schedule_id = s.schedule_id
-        WHERE b.user_id = ?
-        ORDER BY b.created_at DESC";
-
-$stmt = $pdo->prepare($sql);
-$stmt->execute([$user_id]);
-$bookings = $stmt->fetchAll();
-?>
-
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My Book</title>
+  ?>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BAWEANIQUE</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../CSS/navbar.css">
     <link rel="stylesheet" href="../CSS/style.css">
-    <link rel="stylesheet" href="../CSS/gallery.css">
+    <link rel="stylesheet" href="../CSS/navbar.css">
     <link rel="stylesheet" href="../CSS/about.css">
   </head>
-<body>
-  <!-- Header Navbar -->
-  <nav class="navbar navbar-dark d-flex justify-content-between px-4 py-3">
-    <!-- Logo -->
-    <div>
-        <img src="../a1/BAWEANIQUE.png" width="190" height="85" alt="" />
-      </div>
+  <body>
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-dark d-flex justify-content-between px-4 py-3">
+      <!-- Logo -->
+      <div>
+          <img src="../a1/BAWEANIQUE.png" width="190" height="85" alt="" />
+        </div>
 
-    <!-- Center Menu -->
-    <div class="d-flex gap-4">
+      <!-- Center Menu -->
+      <div class="d-flex gap-4">
         <a href="<?php echo BASE_URL; ?>PHP/Index.php" class="nav-link text-center">
           <i class="bi bi-house-door"></i>
           <b>Home</b>
@@ -71,68 +74,88 @@ $bookings = $stmt->fetchAll();
         </a>        
       </div>
 
-          <div class="d-flex gap-2 align-items-center">
-    <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true): ?>
-      
-      <span class="text-welcome">
-        Welcome, <br><b><?php echo htmlspecialchars($_SESSION['user_name']); ?>!</b></br>
-      </span>
-      <a href="<?php echo BASE_URL; ?>PHP/logout.php" class="btn btn-danger">
-        <span></span>
-        <i class="bi bi-box-arrow-right"></i>
-      </a>
+      <div class="d-flex gap-2 align-items-center">
+      <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true): ?>
+        
+        <span class="text-welcome">
+          Welcome, <br><b><?php echo htmlspecialchars($_SESSION['user_name']); ?>!</b></br>
+        </span>
+        <a href="<?php echo BASE_URL; ?>PHP/logout.php" class="btn btn-danger">
+          <span></span>
+          <i class="bi bi-box-arrow-right"></i>
+        </a>
+
+      <?php else: ?>
+
+        <a href="<?php echo BASE_URL; ?>PHP/login.php" class="btn btn-outline-dark custom-login-btn d-flex align-items-center gap-1">
+          <span>Login</span>
+          <i class="bi bi-box-arrow-in-right small"></i>
+        </a>
+        <a href="<?php echo BASE_URL; ?>PHP/SignUp.php" class="btn btn-primary">
+          <span>Sign-up</span>
+        </a>
+        
+      <?php endif; ?>
+    </div>
+  </nav>
+    
+  <!--Header-->
+  <div class="container mt-5">
+    <h1 class="mb-4"><b>My Booking</b></h1>
+
+    <?php if (count($bookings) === 0): ?>
+      <p class="text-muted">Anda belum melakukan pemesanan apa pun.</p>
 
     <?php else: ?>
-
-      <a href="<?php echo BASE_URL; ?>PHP/login.php" class="btn btn-outline-dark custom-login-btn d-flex align-items-center gap-1">
-        <span>Login</span>
-        <i class="bi bi-box-arrow-in-right small"></i>
-      </a>
-      <a href="<?php echo BASE_URL; ?>PHP/SignUp.php" class="btn btn-primary">
-        <span>Sign-up</span>
-      </a>
-      
+      <table class="table table-bordered table-striped">
+        <thead class="table-primary">
+          <tr>
+            <th>No</th>
+            <th>Nama Package</th>
+            <th>Tanggal Keberangkatan</th>
+            <th>Tanggal Booking</th>
+            <th>Jumlah Orang</th>
+            <th>Status</th>
+            <th>Total Harga</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php 
+            $no = 1;
+            foreach ($bookings as $row): 
+              // translate status to Indonesian badge
+              $badge = match(strtolower($row['status'])) {
+                'confirmed' => 'success',
+                'pending'   => 'warning',
+                'cancelled' => 'danger',
+                default     => 'secondary',
+              };
+          ?>
+          <tr>
+            <td><?= $no++ ?></td>
+            <td><?= htmlspecialchars($row['package_name']) ?></td>
+            <td><?= date('d-m-Y', strtotime($row['departure_date'])) ?></td>
+            <td><?= date('d-m-Y H:i', strtotime($row['booking_date'])) ?></td>
+            <td><?= intval($row['quantity']) ?> Orang</td>
+            <td>
+              <span class="badge bg-<?= $badge ?>">
+                <?= ucfirst(htmlspecialchars($row['status'])) ?>
+              </span>
+            </td>
+            <td>Rp <?= number_format($row['total_price'], 0, ',', '.') ?></td>
+            <td>
+              <a href="bookingDetail.php?id=<?= $row['booking_id'] ?>" 
+                 class="btn btn-sm btn-primary">Detail</a>
+            </td>
+          </tr>
+          <?php endforeach; ?>
+        </tbody>
+      </table>
     <?php endif; ?>
   </div>
-  </nav>
-<h2>Booking Anda</h2>
-<table border="1">
-<tr>
-  <th>Nama Paket</th>
-  <th>Tanggal</th>
-  <th>Status</th>
-</tr>
-<?php foreach ($bookings as $b): ?>
-<tr>
-  <td><?= htmlspecialchars($b['package_name']) ?></td>
-  <td><?= date('d-m-Y', strtotime($b['schedule_date'])) ?></td>
-  <td><?= htmlspecialchars($b['status']) ?></td>
-</tr>
-<?php endforeach; ?>
-<h2 class="text-center my-4">Booking Anda</h2>
 
-<div class="container mb-5">
-  <table class="table table-striped table-bordered table-hover">
-    <thead class="table-dark">
-      <tr>
-        <th>Nama Paket</th>
-        <th>Tanggal</th>
-        <th>Status</th>
-      </tr>
-    </thead>
-    <tbody>
-      <?php foreach ($bookings as $b): ?>
-      <tr>
-        <td><?= htmlspecialchars($b['package_name']) ?></td>
-        <td><?= date('d-m-Y', strtotime($b['schedule_date'])) ?></td>
-        <td><?= htmlspecialchars($b['status']) ?></td>
-      </tr>
-      <?php endforeach; ?>
-    </tbody>
-  </table>
-</div>
 
-</table>
 <!-- Bagian about us-->
 <section id="about" class="text-white py-5" style="background-color: #0d6fb1;">
   <div class="container">
@@ -177,12 +200,18 @@ $bookings = $stmt->fetchAll();
   </div> 
 </section>
 
+<button id="scrollToTopBtn" title="Kembali ke Atas">
+  <i class="bi bi-arrow-up"></i>
+  <script src="../JS/Jstombolkecil.js"></script>
+</button>
+
+<!-- Tombol Scroll-->
     <button id="scrollToTopBtn" title="Kembali ke Atas">
       <i class="bi bi-arrow-up"></i>
       <script src="../JS/Jstombolkecil.js"></script>
     </button>
-    <script src="../JS/JsAbout.js"></script>
-    <script src="../JS/JsSchedule.js"></script>
-    <script src="../JS/JsScheduleModal.js"></script>
-  </body>
+    <script src="JsAbout.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
 </html>
