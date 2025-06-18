@@ -3,55 +3,39 @@ include 'koneksi.php';
 
 $status = $_GET['status'] ?? 'all';
 
-// Mapping status ke bentuk database
+// Mapping status untuk konsistensi (jika diperlukan)
 if ($status === 'confirmed') {
     $status = 'disetujui';
 } elseif ($status === 'pending') {
     $status = 'menunggu';
 }
 
-if ($status === 'all') {
-    $query = "
-        SELECT 
-            b.booking_id,
-            b.user_id,
-            b.schedule_id,
-            s.departure_date,
-            b.status,
-            b.booking_date,
-            b.package_id,
-            p.name AS package_name,
-            p.price * b.participants AS total_price,
-            b.participants
-        FROM 
-            bookings b
-        LEFT JOIN 
-            packages p ON b.package_id = p.package_id
-            LEFT JOIN schedules s ON b.schedule_id = s.schedule_id
-    ";
+$query = "
+    SELECT 
+        b.booking_id,
+        b.user_id,
+        b.schedule_id,
+        s.departure_date,
+        b.status,
+        b.booking_date,
+        b.package_id,
+        p.name AS package_name,
+        p.price AS package_price,
+        COALESCE(p.price, 0) AS total_price
+    FROM 
+        bookings b
+    LEFT JOIN 
+        packages p ON b.package_id = p.package_id
+    LEFT JOIN 
+        schedules s ON b.schedule_id = s.schedule_id
+";
 
-    $stmt = mysqli_prepare($conn, $query);
-} else {
-    $query = "
-        SELECT 
-            b.booking_id,
-            b.user_id,
-            b.schedule_id,
-            b.status,
-            b.booking_date,
-            b.package_id,
-            p.name AS package_name,
-            p.price AS total_price
-        FROM 
-            bookings b
-        LEFT JOIN 
-            packages p ON b.package_id = p.package_id
-        WHERE 
-            b.status = ?
-    ";
-
+if ($status !== 'all') {
+    $query .= " WHERE b.status = ?";
     $stmt = mysqli_prepare($conn, $query);
     mysqli_stmt_bind_param($stmt, "s", $status);
+} else {
+    $stmt = mysqli_prepare($conn, $query);
 }
 
 if (!$stmt) {
@@ -69,6 +53,7 @@ if (!$result) {
 
 $bookings = [];
 while ($row = mysqli_fetch_assoc($result)) {
+    $row['total_price'] = (float) $row['total_price'];
     $bookings[] = $row;
 }
 
