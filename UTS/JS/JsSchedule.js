@@ -284,7 +284,7 @@ function bookNow() {
   if (weeklyDatePicker) {
     const selectedDate = weeklyDatePicker.formatDate(weeklyDatePicker.getSelectedDate());
     if (currentScheduleId && currentPackageId) {
-      alert(`Booking berhasil!\nTanggal: ${selectedDate}`);
+      alert(`Booking Succeddddddddddddddd bolooo!\nTanggal: ${selectedDate}`);
       // Redirect ke halaman booking dengan parameter
       // window.location.href = `booking.php?schedule_id=${currentScheduleId}&package_id=${currentPackageId}&date=${encodeURIComponent(selectedDate)}`;
     } else {
