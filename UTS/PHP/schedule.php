@@ -182,7 +182,7 @@ $schedules = $stmt->fetchAll();
           
           <!-- Price -->
           <div class="text-center">
-            <span class="price-tag" id="modalPrice">Rp. 500.000/Person</span>
+            <span class="price-tag" id="modalPrice">/Person</span>
           </div>
           
           <!-- Include List -->
