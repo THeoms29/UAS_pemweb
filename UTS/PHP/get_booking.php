@@ -21,7 +21,6 @@ $query = "
         b.package_id,
         p.name AS package_name,
         p.price AS package_price,
-        COALESCE(p.price, 0) AS total_price
     FROM 
         bookings b
     LEFT JOIN 

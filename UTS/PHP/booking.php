@@ -16,7 +16,7 @@ $sql = "SELECT b.*, p.name AS package_name, p.price AS package_price, s.schedule
         JOIN packages p ON b.package_id = p.package_id
         JOIN schedules s ON b.schedule_id = s.schedule_id
         WHERE b.user_id = ?
-        ORDER BY b.created_at DESC";
+        ORDER BY b.booking_date DESC";
 
 $stmt = $pdo->prepare($sql);
 $stmt->execute([$user_id]);
