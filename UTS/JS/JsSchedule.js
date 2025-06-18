@@ -221,56 +221,34 @@ function updateModalContent(packageName) {
   if (!modalImage || !modalIncludeList) return;
   
   if (packageName.toLowerCase().includes('snorkeling')) {
-    modalImage.textContent = 'Snorkeling Image';
-    modalImage.style.backgroundColor = '#4fc3f7';
-    modalIncludeList.innerHTML = `
-      <li>Tiket snorkeling dan akses area wisata</li>
-      <li>Peralatan snorkeling lengkap</li>
-      <li>Pemandu wisata lokal (guide berpengalaman)</li>
-      <li>Dokumentasi foto underwater</li>
-      <li>Transportasi</li>
-    `;
-  } else if (packageName.toLowerCase().includes('pantai')) {
-    modalImage.textContent = 'Beach Image';
-    modalImage.style.backgroundColor = '#81c784';
-    modalIncludeList.innerHTML = `
-      <li>Tiket masuk pantai</li>
-      <li>Pemandu wisata profesional</li>
-      <li>Transportasi antar jemput</li>
-      <li>Dokumentasi foto</li>
-      <li>Makanan ringan</li>
-    `;
-  } else if (packageName.toLowerCase().includes('mangrove')) {
-    modalImage.textContent = 'Mangrove Image';
-    modalImage.style.backgroundColor = '#66bb6a';
-    modalIncludeList.innerHTML = `
-      <li>Tiket masuk area mangrove</li>
-      <li>Perahu tradisional</li>
-      <li>Pemandu wisata lokal</li>
-      <li>Dokumentasi foto</li>
-      <li>Air mineral</li>
-    `;
-  } else {
-    modalImage.textContent = 'Tour Image';
-    modalImage.style.backgroundColor = '#e3f2fd';
-    modalIncludeList.innerHTML = `
-      <li>Tiket masuk tempat wisata</li>
-      <li>Pemandu wisata profesional</li>
-      <li>Transportasi antar jemput</li>
-      <li>Dokumentasi foto</li>
-      <li>Makan siang</li>
-    `;
-  }
-}
-
-function addToCart() {
-  if (weeklyDatePicker) {
-    const selectedDate = weeklyDatePicker.formatDate(weeklyDatePicker.getSelectedDate());
-    alert(`Item berhasil ditambahkan ke cart!\nTanggal: ${selectedDate}`);
-  } else {
-    alert('Item berhasil ditambahkan ke cart!');
-  }
-}
+        modalImage.src = '../a1/snorkeling.jpg';
+        modalIncludeList.innerHTML = `
+          <li>Tiket snorkeling dan akses area wisata</li>
+          <li>Peralatan snorkeling lengkap</li>
+          <li>Pemandu wisata lokal (guide berpengalaman)</li>
+          <li>Dokumentasi foto underwater</li>
+          <li>Transportasi</li>
+        `;
+      } else if (packageName.toLowerCase().includes('wisata')) {
+        modalImage.src = '../a1/wisata.jpg';
+        modalIncludeList.innerHTML = `
+          <li>Tiket masuk tempat wisata</li>
+          <li>Pemandu wisata profesional</li>
+          <li>Transportasi antar jemput</li>
+          <li>Dokumentasi foto</li>
+          <li>Makan siang</li>
+        `;
+      } else {
+        modalImage.src = '../a1/default-tour.jpg';
+        modalIncludeList.innerHTML = `
+          <li>Tiket masuk</li>
+          <li>Pemandu wisata</li>
+          <li>Transportasi</li>
+          <li>Dokumentasi</li>
+          <li>Fasilitas pendukung</li>
+        `;
+      }
+    }
 
 function bookNow() {
   if (weeklyDatePicker) {

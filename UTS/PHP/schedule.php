@@ -156,9 +156,7 @@ $schedules = $stmt->fetchAll();
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body modal-body-custom">
-          <!-- Tour Image -->
-          <div class="tour-image" id="modalTourImage">Tour Image</div>
-          
+          <img src="../a1/snorkeling.jpg" alt="Tour Image" class="tour-image" id="modalTourImage">
           <!-- Date Display -->
           <div class="date-display" id="dateDisplay">
             <div>Tanggal: <span id="selectedDate">01 - 01 - 2024</span></div>
