@@ -119,6 +119,7 @@
     .modal-body-custom {
       padding: 25px;
       background-color: white;
+      border-radius: 15px;
     }
     
     .tour-image {

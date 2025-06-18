@@ -229,32 +229,62 @@ function updateModalContent(packageName) {
           <li>Dokumentasi foto underwater</li>
           <li>Transportasi</li>
         `;
-      } else if (packageName.toLowerCase().includes('wisata')) {
-        modalImage.src = '../a1/wisata.jpg';
+      } else if (packageName.toLowerCase().includes('kastoba')) {
+        modalImage.src = '../a1/kastoba.jpg';
         modalIncludeList.innerHTML = `
           <li>Tiket masuk tempat wisata</li>
           <li>Pemandu wisata profesional</li>
           <li>Transportasi antar jemput</li>
           <li>Dokumentasi foto</li>
-          <li>Makan siang</li>
         `;
-      } else {
-        modalImage.src = '../a1/default-tour.jpg';
+      } else if (packageName.toLowerCase().includes('gili')) {
+        modalImage.src = '../a1/noko.jpg';
         modalIncludeList.innerHTML = `
-          <li>Tiket masuk</li>
-          <li>Pemandu wisata</li>
-          <li>Transportasi</li>
-          <li>Dokumentasi</li>
-          <li>Fasilitas pendukung</li>
+          <li>Tiket masuk tempat wisata</li>
+          <li>Pemandu wisata profesional</li>
+          <li>Transportasi antar jemput</li>
+          <li>Dokumentasi foto</li>
         `;
-      }
+        } else if (packageName.toLowerCase().includes('lantong')) {
+        modalImage.src = '../a1/lantong.jpg';
+        modalIncludeList.innerHTML = `
+          <li>Tiket masuk tempat wisata</li>
+          <li>Pemandu wisata profesional</li>
+          <li>Transportasi antar jemput</li>
+          <li>Dokumentasi foto</li>
+        `;
+        } else if (packageName.toLowerCase().includes('china')) {
+        modalImage.src = '../a1/cina.jpg';
+        modalIncludeList.innerHTML = `
+          <li>Tiket masuk tempat wisata</li>
+          <li>Pemandu wisata profesional</li>
+          <li>Transportasi antar jemput</li>
+          <li>Dokumentasi foto</li>
+        `;
+        } else if (packageName.toLowerCase().includes('selayar')) {
+        modalImage.src = '../a1/noko selayar.jpg';
+        modalIncludeList.innerHTML = `
+          <li>Tiket masuk tempat wisata</li>
+          <li>Pemandu wisata profesional</li>
+          <li>Transportasi antar jemput</li>
+          <li>Dokumentasi foto</li>
+        `;
+        } else if (packageName.toLowerCase().includes('tajhungheen')) {
+        modalImage.src = '../a1/tajhunggheen.jpg';
+        modalIncludeList.innerHTML = `
+          <li>Tiket masuk tempat wisata</li>
+          <li>Pemandu wisata profesional</li>
+          <li>Transportasi antar jemput</li>
+          <li>Dokumentasi foto</li>
+        `;
+      } 
     }
 
 function bookNow() {
   if (weeklyDatePicker) {
     const selectedDate = weeklyDatePicker.formatDate(weeklyDatePicker.getSelectedDate());
     if (currentScheduleId && currentPackageId) {
-      alert(`Booking berhasil!\nSchedule ID: ${currentScheduleId}\nPackage ID: ${currentPackageId}\nTanggal: ${selectedDate}`);
+      alert(`Booking berhasil!\nTanggal: ${selectedDate}`);
       // Redirect ke halaman booking dengan parameter
       // window.location.href = `booking.php?schedule_id=${currentScheduleId}&package_id=${currentPackageId}&date=${encodeURIComponent(selectedDate)}`;
     } else {
@@ -262,7 +292,25 @@ function bookNow() {
     }
   } else {
     if (currentScheduleId && currentPackageId) {
-      alert(`Booking berhasil!\nSchedule ID: ${currentScheduleId}\nPackage ID: ${currentPackageId}`);
+      alert(`Booking berhasil!`);
+    } else {
+      alert('Terjadi kesalahan. Silakan coba lagi.');
+    }
+  }
+}
+function addToCart() {
+  if (weeklyDatePicker) {
+    const selectedDate = weeklyDatePicker.formatDate(weeklyDatePicker.getSelectedDate());
+    if (currentScheduleId && currentPackageId) {
+      alert(`Item has been added to the cart`);
+      // Redirect ke halaman booking dengan parameter
+      // window.location.href = `booking.php?schedule_id=${currentScheduleId}&package_id=${currentPackageId}&date=${encodeURIComponent(selectedDate)}`;
+    } else {
+      alert('Terjadi kesalahan. Silakan coba lagi.');
+    }
+  } else {
+    if (currentScheduleId && currentPackageId) {
+      alert(`Item has been added to the cart`);
     } else {
       alert('Terjadi kesalahan. Silakan coba lagi.');
     }
