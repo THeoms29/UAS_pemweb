@@ -39,7 +39,6 @@ $bookings = $stmt->fetchAll();
 </head>
 <body>
 
-<!-- Navbar -->
 <nav class="navbar navbar-dark d-flex justify-content-between px-4 py-3">
   <div><img src="../a1/BAWEANIQUE.png" width="190" height="85" alt="Logo" /></div>
   <div class="d-flex gap-4">
@@ -61,7 +60,6 @@ $bookings = $stmt->fetchAll();
   </div>
 </nav>
 
-<!-- Tabel Booking -->
 <div class="container-booking">
   <h2 class="text-center mb-4"><b>My Booking</b></h2>
   <table class="table-booking" id="bookingTable">
@@ -80,6 +78,7 @@ $bookings = $stmt->fetchAll();
       $no = 1;
       foreach ($bookings as $b): 
         $status = strtolower($b['status']);
+        // Pastikan kelas badge yang benar digunakan
         $badgeClass = $status === 'pending' ? 'badge-pending' : ($status === 'confirmed' ? 'badge-confirmed' : 'badge-cancelled');
         $disabled = $status !== 'pending' ? 'disabled' : '';
         $total = is_numeric($b['package_price']) ? number_format($b['package_price'], 0, ',', '.') : '0';
@@ -91,7 +90,7 @@ $bookings = $stmt->fetchAll();
           <td><span class="badge <?= $badgeClass ?> px-3 py-2 fw-semibold text-capitalize"><?= $b['status'] ?></span></td>
           <td>Rp <?= $total ?></td>
           <td class="d-flex justify-content-center gap-2">
-            <button class="btn btn-primary btn-sm" <?= $disabled ?>><i class="bi bi-bag-check"></i> Book Now</button>
+            <button class="btn btn-primary btn-sm btn-book-now-mybooking" data-booking-id="<?= $b['booking_id'] ?>" <?= $disabled ?>><i class="bi bi-bag-check"></i> Book Now</button>
             <button class="btn btn-danger btn-sm btn-batal-booking" data-booking-id="<?= $b['booking_id'] ?>" <?= $disabled ?>><i class="bi bi-x-circle"></i> Batal</button>
           </td>
         </tr>
@@ -100,16 +99,13 @@ $bookings = $stmt->fetchAll();
   </table>
 </div>
 
-<!-- Bagian about us-->
 <section id="about" class="text-white py-5" style="background-color: #0d6fb1;">
   <div class="container">
     <div class="row align-items-center">
-      <!--logo-->
-        <div class="col-md-3 mb-4">
+      <div class="col-md-3 mb-4">
           <img src="../a1/baweanique2.png" width="150" height="auto" alt="Logo Baweanique" class="mb-3">
           <p>Baweanique adalah perusahaan penyedia layanan tour dan travel di Pulau Bawean.</p>
         </div>
-    <!-- contact us -->
     <div class="col-md-3 mb-4 text-center text-md-start">
       <h5 class="text-uppercase mb-3">Contact Us</h5>
       <ul class="list-unstyled">
@@ -118,7 +114,6 @@ $bookings = $stmt->fetchAll();
         <li class="mb-2"><i class="bi bi-envelope"></i> info@baweanique.com</li>
       </ul>
     </div>
-    <!-- Support -->
     <div class="col-md-3 mb-4 text-center text-md-start">
       <h5 class="text-uppercase mb-3">Support</h5>
       <ul class="list-unstyled">
@@ -128,7 +123,6 @@ $bookings = $stmt->fetchAll();
         <li class="mb-2">- Forum</li>
       </ul>
     </div>
-    <!-- Sosmed -->
     <div class="col-md-3 mb-4 text-center text-md-end">
       <div class="d-flex justify-content-center justify-content-md-end gap-4">
         <a href="#" class="social-icon"><i class="bi bi-facebook fs-1"></i></a>
@@ -144,12 +138,9 @@ $bookings = $stmt->fetchAll();
   </div> 
 </section>
 
-<!-- Tombol Scroll -->
 <button id="scrollToTopBtn" title="Kembali ke Atas"><i class="bi bi-arrow-up"></i></button>
 
 <script src="../JS/Jstombolkecil.js"></script>
 <script src="../JS/JsBooking.js"></script>
-<script src="../JS/WeeklyDatePickerEdit.js"></script>
-
 </body>
 </html>

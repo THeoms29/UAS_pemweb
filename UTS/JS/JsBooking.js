@@ -1,4 +1,4 @@
-  const scrollBtn = document.getElementById('scrollToTopBtn');
+const scrollBtn = document.getElementById('scrollToTopBtn');
   window.onscroll = () => {
     scrollBtn.style.display = (document.documentElement.scrollTop > 300) ? 'block' : 'none';
   };
@@ -32,6 +32,50 @@
     });
   });
 
+  // Logika baru untuk tombol "Book Now" di halaman My Booking
+  document.querySelectorAll('.btn-book-now-mybooking').forEach(button => {
+    button.addEventListener('click', () => {
+      const bookingId = button.getAttribute('data-booking-id');
+      if (confirm('Yakin ingin mengkonfirmasi booking ini?')) {
+        fetch('update_booking_status.php', { // Ganti dengan nama file baru Anda
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams({ booking_id: bookingId })
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            alert('Booking berhasil dikonfirmasi!');
+            // Perbarui tampilan baris di tabel tanpa perlu reload halaman penuh
+            const row = document.getElementById(`booking-row-${bookingId}`);
+            if (row) {
+              const statusCell = row.querySelector('.badge');
+              if (statusCell) {
+                statusCell.textContent = 'confirmed';
+                statusCell.classList.remove('badge-pending');
+                statusCell.classList.add('badge-confirmed');
+              }
+              // Nonaktifkan atau sembunyikan tombol "Book Now" dan "Batal" setelah dikonfirmasi
+              button.setAttribute('disabled', 'disabled');
+              const batalButton = row.querySelector('.btn-batal-booking');
+              if (batalButton) {
+                batalButton.setAttribute('disabled', 'disabled');
+              }
+            }
+          } else {
+            alert(data.message || 'Gagal mengkonfirmasi booking.');
+          }
+        })
+        .catch(error => {
+          alert('Terjadi kesalahan saat mengkonfirmasi booking.');
+          console.error(error);
+        });
+      }
+    });
+  });
+
+  // Kode untuk .btn-edit-booking dan editBookingForm (jika masih diperlukan)
+  // ... (biarkan kode ini tetap ada jika Anda menggunakannya di tempat lain)
   document.querySelectorAll('.btn-edit-booking').forEach(button => {
     button.addEventListener('click', () => {
       const bookingId = button.getAttribute('data-booking-id');
