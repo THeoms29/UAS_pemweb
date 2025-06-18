@@ -18,12 +18,8 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
     
-    galleryItems.forEach(item => {
-      item.addEventListener('click', function() {
-        const imgSrc = this.querySelector('.gallery-img').src;
-        window.open(imgSrc, '_blank');
-      });
-    });
+    // Blok kode yang menambahkan fungsi klik telah dihapus dari sini.
+
   });
 
   // JSgallery.js
