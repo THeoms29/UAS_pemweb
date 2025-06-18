@@ -2,6 +2,7 @@
   if (!defined('BASE_URL')) {
     define('BASE_URL', '../'); 
   }
+  session_start();
   require_once('koneksi.php');
 
   $sql = "SELECT  s.schedule_id,

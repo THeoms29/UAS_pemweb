@@ -1,26 +1,63 @@
 document.addEventListener('DOMContentLoaded', function() {
- 
+    // Create modal elements dynamically
+    const modal = document.createElement('div');
+    modal.id = 'imageModal';
+    
+    const modalContent = document.createElement('div');
+    modalContent.id = 'modalContent'
+    
+    const modalImg = document.createElement('img');
+    modalImg.id = 'modalImage';
+   
+    
+    const closeBtn = document.createElement('span');
+    closeBtn.id = 'closeModal';
+    closeBtn.innerHTML = '&times;';
+    
+    
+    document.body.appendChild(modal);
+    modal.appendChild(closeBtn);
+    modal.appendChild(modalContent);
+    modalContent.appendChild(modalImg);
+
+    // Event listeners for modal
+    closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+    
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+    // Gallery functionality
     const galleryItems = document.querySelectorAll('.gallery-item');
     const searchInput = document.querySelector('.search-input');
     
     if (searchInput) {
-      searchInput.addEventListener('input', function() {
-        const searchTerm = this.value.toLowerCase();
-        
-        galleryItems.forEach(item => {
-          const caption = item.querySelector('.caption').textContent.toLowerCase();
-          if (caption.includes(searchTerm)) {
-            item.style.display = 'block';
-          } else {
-            item.style.display = 'none';
-          }
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            
+            galleryItems.forEach(item => {
+                const caption = item.querySelector('.caption').textContent.toLowerCase();
+                if (caption.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
         });
-      });
     }
     
-    // Blok kode yang menambahkan fungsi klik telah dihapus dari sini.
-
-  });
+    galleryItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const imgSrc = this.querySelector('.gallery-img').src;
+            modalImg.src = imgSrc;
+            modal.style.display = 'block';
+        });
+    });
+});
 
   // JSgallery.js
 document.addEventListener('DOMContentLoaded', () => {
