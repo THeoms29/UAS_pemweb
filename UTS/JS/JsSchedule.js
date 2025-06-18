@@ -37,7 +37,6 @@ class WeeklyDatePicker {
   }
 
   setupEventListeners() {
-    // Klik pada date display untuk buka modal
     const dateDisplay = document.getElementById('dateDisplay');
     if (dateDisplay) {
       dateDisplay.addEventListener('click', () => {
@@ -45,7 +44,6 @@ class WeeklyDatePicker {
       });
     }
 
-    // Close modal
     const closeDatePicker = document.getElementById('closeDatePicker');
     if (closeDatePicker) {
       closeDatePicker.addEventListener('click', () => {
@@ -53,7 +51,6 @@ class WeeklyDatePicker {
       });
     }
 
-    // Close modal ketika klik di luar
     const datePickerModal = document.getElementById('datePickerModal');
     if (datePickerModal) {
       datePickerModal.addEventListener('click', (e) => {
@@ -82,21 +79,17 @@ class WeeklyDatePicker {
   generateDateOptions() {
     const container = document.getElementById('dateOptions');
     if (!container) return;
-    
     container.innerHTML = '';
 
-    // Generate tanggal untuk 1 tahun ke depan (52 minggu)
     const startDate = new Date();
     const dayNames = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
     const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
 
-    // Cari tanggal pertama dengan hari yang sama
     let currentDate = new Date(startDate);
     while (currentDate.getDay() !== this.selectedDayOfWeek) {
       currentDate.setDate(currentDate.getDate() + 1);
     }
 
-    // Generate 52 minggu ke depan
     for (let week = 0; week < 52; week++) {
       const dateOption = new Date(currentDate);
       dateOption.setDate(currentDate.getDate() + (week * 7));
@@ -121,7 +114,6 @@ class WeeklyDatePicker {
         <div style="font-size: 12px; opacity: 0.7;">${monthYear}</div>
       `;
 
-      // Click handler
       dateButton.addEventListener('click', () => {
         this.selectDate(dateOption);
         this.closeModal();
@@ -178,7 +170,6 @@ let currentScheduleId = null;
 let currentPackageId = null;
 let weeklyDatePicker = null;
 
-// Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
   weeklyDatePicker = new WeeklyDatePicker();
 });
@@ -186,30 +177,26 @@ document.addEventListener('DOMContentLoaded', function() {
 function openBookingModal(packageName, price, date, scheduleId, packageId) {
   currentScheduleId = scheduleId;
   currentPackageId = packageId;
-  
-  // Update modal content
+
   const modalPackageName = document.getElementById('modalPackageName');
   const modalPrice = document.getElementById('modalPrice');
-  
+
   if (modalPackageName) {
     modalPackageName.textContent = packageName.toUpperCase();
   }
-  
+
   if (modalPrice) {
     modalPrice.textContent = 'Rp. ' + new Intl.NumberFormat('id-ID').format(price) + '/Person';
   }
-  
-  // Set initial date untuk date picker
+
   if (weeklyDatePicker && date) {
     const [day, month, year] = date.split(' - ');
     const initialDate = new Date(year, month - 1, day);
     weeklyDatePicker.setInitialDate(initialDate);
   }
-  
-  // Update modal content based on package
+
   updateModalContent(packageName);
-  
-  // Show modal
+
   const modal = new bootstrap.Modal(document.getElementById('bookingModal'));
   modal.show();
 }
@@ -217,102 +204,104 @@ function openBookingModal(packageName, price, date, scheduleId, packageId) {
 function updateModalContent(packageName) {
   const modalImage = document.getElementById('modalTourImage');
   const modalIncludeList = document.getElementById('modalIncludeList');
-  
-  if (!modalImage || !modalIncludeList) return;
-  
-  if (packageName.toLowerCase().includes('snorkeling')) {
-        modalImage.src = '../a1/snorkeling.jpg';
-        modalIncludeList.innerHTML = `
-          <li>Tiket snorkeling dan akses area wisata</li>
-          <li>Peralatan snorkeling lengkap</li>
-          <li>Pemandu wisata lokal (guide berpengalaman)</li>
-          <li>Dokumentasi foto underwater</li>
-          <li>Transportasi</li>
-        `;
-      } else if (packageName.toLowerCase().includes('kastoba')) {
-        modalImage.src = '../a1/kastoba.jpg';
-        modalIncludeList.innerHTML = `
-          <li>Tiket masuk tempat wisata</li>
-          <li>Pemandu wisata profesional</li>
-          <li>Transportasi antar jemput</li>
-          <li>Dokumentasi foto</li>
-        `;
-      } else if (packageName.toLowerCase().includes('gili')) {
-        modalImage.src = '../a1/noko.jpg';
-        modalIncludeList.innerHTML = `
-          <li>Tiket masuk tempat wisata</li>
-          <li>Pemandu wisata profesional</li>
-          <li>Transportasi antar jemput</li>
-          <li>Dokumentasi foto</li>
-        `;
-        } else if (packageName.toLowerCase().includes('lantong')) {
-        modalImage.src = '../a1/lantong.jpg';
-        modalIncludeList.innerHTML = `
-          <li>Tiket masuk tempat wisata</li>
-          <li>Pemandu wisata profesional</li>
-          <li>Transportasi antar jemput</li>
-          <li>Dokumentasi foto</li>
-        `;
-        } else if (packageName.toLowerCase().includes('china')) {
-        modalImage.src = '../a1/cina.jpg';
-        modalIncludeList.innerHTML = `
-          <li>Tiket masuk tempat wisata</li>
-          <li>Pemandu wisata profesional</li>
-          <li>Transportasi antar jemput</li>
-          <li>Dokumentasi foto</li>
-        `;
-        } else if (packageName.toLowerCase().includes('selayar')) {
-        modalImage.src = '../a1/noko selayar.jpg';
-        modalIncludeList.innerHTML = `
-          <li>Tiket masuk tempat wisata</li>
-          <li>Pemandu wisata profesional</li>
-          <li>Transportasi antar jemput</li>
-          <li>Dokumentasi foto</li>
-        `;
-        } else if (packageName.toLowerCase().includes('tajhungheen')) {
-        modalImage.src = '../a1/tajhunggheen.jpg';
-        modalIncludeList.innerHTML = `
-          <li>Tiket masuk tempat wisata</li>
-          <li>Pemandu wisata profesional</li>
-          <li>Transportasi antar jemput</li>
-          <li>Dokumentasi foto</li>
-        `;
-      } 
-    }
 
-function bookNow() {
-  if (weeklyDatePicker) {
-    const selectedDate = weeklyDatePicker.formatDate(weeklyDatePicker.getSelectedDate());
-    if (currentScheduleId && currentPackageId) {
-      alert(`Booking Succeddddddddddddddd bolooo!\nTanggal: ${selectedDate}`);
-      // Redirect ke halaman booking dengan parameter
-      // window.location.href = `booking.php?schedule_id=${currentScheduleId}&package_id=${currentPackageId}&date=${encodeURIComponent(selectedDate)}`;
-    } else {
-      alert('Terjadi kesalahan. Silakan coba lagi.');
-    }
-  } else {
-    if (currentScheduleId && currentPackageId) {
-      alert(`Booking berhasil!`);
-    } else {
-      alert('Terjadi kesalahan. Silakan coba lagi.');
-    }
+  if (!modalImage || !modalIncludeList) return;
+
+  const pkg = packageName.toLowerCase();
+
+  if (pkg.includes('snorkeling')) {
+    modalImage.src = '../a1/snorkeling.jpg';
+    modalIncludeList.innerHTML = `
+      <li>Tiket snorkeling dan akses area wisata</li>
+      <li>Peralatan snorkeling lengkap</li>
+      <li>Pemandu wisata lokal (guide berpengalaman)</li>
+      <li>Dokumentasi foto underwater</li>
+      <li>Transportasi</li>
+    `;
+  } else if (pkg.includes('kastoba')) {
+    modalImage.src = '../a1/kastoba.jpg';
+    modalIncludeList.innerHTML = `
+      <li>Tiket masuk tempat wisata</li>
+      <li>Pemandu wisata profesional</li>
+      <li>Transportasi antar jemput</li>
+      <li>Dokumentasi foto</li>
+    `;
+  } else if (pkg.includes('gili')) {
+    modalImage.src = '../a1/noko.jpg';
+    modalIncludeList.innerHTML = `
+      <li>Tiket masuk tempat wisata</li>
+      <li>Pemandu wisata profesional</li>
+      <li>Transportasi antar jemput</li>
+      <li>Dokumentasi foto</li>
+    `;
+  } else if (pkg.includes('lantong')) {
+    modalImage.src = '../a1/lantong.jpg';
+    modalIncludeList.innerHTML = `
+      <li>Tiket masuk tempat wisata</li>
+      <li>Pemandu wisata profesional</li>
+      <li>Transportasi antar jemput</li>
+      <li>Dokumentasi foto</li>
+    `;
+  } else if (pkg.includes('china')) {
+    modalImage.src = '../a1/cina.jpg';
+    modalIncludeList.innerHTML = `
+      <li>Tiket masuk tempat wisata</li>
+      <li>Pemandu wisata profesional</li>
+      <li>Transportasi antar jemput</li>
+      <li>Dokumentasi foto</li>
+    `;
+  } else if (pkg.includes('selayar')) {
+    modalImage.src = '../a1/noko selayar.jpg';
+    modalIncludeList.innerHTML = `
+      <li>Tiket masuk tempat wisata</li>
+      <li>Pemandu wisata profesional</li>
+      <li>Transportasi antar jemput</li>
+      <li>Dokumentasi foto</li>
+    `;
+  } else if (pkg.includes('tajhungheen')) {
+    modalImage.src = '../a1/tajhunggheen.jpg';
+    modalIncludeList.innerHTML = `
+      <li>Tiket masuk tempat wisata</li>
+      <li>Pemandu wisata profesional</li>
+      <li>Transportasi antar jemput</li>
+      <li>Dokumentasi foto</li>
+    `;
   }
 }
+
 function addToCart() {
-  if (weeklyDatePicker) {
-    const selectedDate = weeklyDatePicker.formatDate(weeklyDatePicker.getSelectedDate());
-    if (currentScheduleId && currentPackageId) {
-      alert(`Item has been added to the cart`);
-      // Redirect ke halaman booking dengan parameter
-      // window.location.href = `booking.php?schedule_id=${currentScheduleId}&package_id=${currentPackageId}&date=${encodeURIComponent(selectedDate)}`;
+  fetch("process_boking.php", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: `schedule_id=${currentScheduleId}&package_id=${currentPackageId}&action=cart`,
+  })
+  .then(res => res.text())
+  .then(msg => {
+    alert("Berhasil ditambahkan ke keranjang!");
+  });
+}
+
+function bookNow() {
+  const scheduleId = currentScheduleId;
+  const packageId = currentPackageId;
+
+  fetch('process_boking.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: `schedule_id=${scheduleId}&package_id=${packageId}`
+  })
+  .then(response => response.text())
+  .then(text => {
+    console.log("Raw response: ", text);
+    const data = JSON.parse(text);
+    if (data.success) {
+      alert('Booking berhasil!');
+      location.reload();
     } else {
-      alert('Terjadi kesalahan. Silakan coba lagi.');
+      alert('Booking gagal: ' + data.message);
     }
-  } else {
-    if (currentScheduleId && currentPackageId) {
-      alert(`Item has been added to the cart`);
-    } else {
-      alert('Terjadi kesalahan. Silakan coba lagi.');
-    }
-  }
+  })
+  .catch(error => {
+    alert('Terjadi kesalahan: ' + error);
+  });
 }

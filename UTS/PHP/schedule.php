@@ -134,7 +134,7 @@ $schedules = $stmt->fetchAll();
                                          '<?= date('d - m - Y', strtotime($row['schedule_date'])) ?>',
                                          <?= $row['schedule_id'] ?>,
                                          <?= $row['package_id'] ?>)">
-            Book Now
+            Booking
           </button>
         <?php elseif ($row['status'] == 'penuh'): ?>
           <button class="btn full" disabled>Full</button>

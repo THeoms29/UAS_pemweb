@@ -1,32 +1,50 @@
 <?php
-  if (!defined('BASE_URL')) {
-    define('BASE_URL', '../'); 
-  }
-  session_start();
-  ?>
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BAWEANIQUE</title>
+session_start();
+require_once('koneksi.php');
+
+if (!isset($_SESSION['user_id'])) {
+  header("Location: login.php");
+  exit;
+}
+
+$user_id = $_SESSION['user_id'];
+
+$sql = "SELECT b.*, p.name AS package_name, s.schedule_date 
+        FROM bookings b
+        JOIN packages p ON b.package_id = p.package_id
+        JOIN schedules s ON b.schedule_id = s.schedule_id
+        WHERE b.user_id = ?
+        ORDER BY b.created_at DESC";
+
+$stmt = $pdo->prepare($sql);
+$stmt->execute([$user_id]);
+$bookings = $stmt->fetchAll();
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Book</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/navbar.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/gallery.css">
     <link rel="stylesheet" href="../CSS/about.css">
   </head>
-  <body>
-    <!-- Header Navbar -->
-    <nav class="navbar navbar-dark d-flex justify-content-between px-4 py-3">
-      <!-- Logo -->
-      <div>
-          <img src="../a1/BAWEANIQUE.png" width="190" height="85" alt="" />
-        </div>
+<body>
+  <!-- Header Navbar -->
+  <nav class="navbar navbar-dark d-flex justify-content-between px-4 py-3">
+    <!-- Logo -->
+    <div>
+        <img src="../a1/BAWEANIQUE.png" width="190" height="85" alt="" />
+      </div>
 
-      <!-- Center Menu -->
-      <div class="d-flex gap-4">
+    <!-- Center Menu -->
+    <div class="d-flex gap-4">
         <a href="<?php echo BASE_URL; ?>PHP/Index.php" class="nav-link text-center">
           <i class="bi bi-house-door"></i>
           <b>Home</b>
@@ -53,46 +71,68 @@
         </a>        
       </div>
 
-      <div class="d-flex gap-2 align-items-center">
-      <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true): ?>
-        
-        <span class="text-welcome">
-          Welcome, <br><b><?php echo htmlspecialchars($_SESSION['user_name']); ?>!</b></br>
-        </span>
-        <a href="<?php echo BASE_URL; ?>PHP/logout.php" class="btn btn-danger">
-          <span></span>
-          <i class="bi bi-box-arrow-right"></i>
-        </a>
+          <div class="d-flex gap-2 align-items-center">
+    <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true): ?>
+      
+      <span class="text-welcome">
+        Welcome, <br><b><?php echo htmlspecialchars($_SESSION['user_name']); ?>!</b></br>
+      </span>
+      <a href="<?php echo BASE_URL; ?>PHP/logout.php" class="btn btn-danger">
+        <span></span>
+        <i class="bi bi-box-arrow-right"></i>
+      </a>
 
-      <?php else: ?>
+    <?php else: ?>
 
-        <a href="<?php echo BASE_URL; ?>PHP/login.php" class="btn btn-outline-dark custom-login-btn d-flex align-items-center gap-1">
-          <span>Login</span>
-          <i class="bi bi-box-arrow-in-right small"></i>
-        </a>
-        <a href="<?php echo BASE_URL; ?>PHP/SignUp.php" class="btn btn-primary">
-          <span>Sign-up</span>
-        </a>
-        
-      <?php endif; ?>
-    </div>
-  </nav>
-    
-  <!--Header-->
-  <div class="container-booking">
-    <h1><b>My Booking</b></h1>
-    <div class="filter-wrapper">
-      <label for="statusFilter">Sort By:</label>
-      <select id="statusFilter">
-        <option value="all">Semua</option>
-        <option value="disetujui">Confirmed</option>
-        <option value="menunggu">Pending</option>
-      </select>
-    </div>
+      <a href="<?php echo BASE_URL; ?>PHP/login.php" class="btn btn-outline-dark custom-login-btn d-flex align-items-center gap-1">
+        <span>Login</span>
+        <i class="bi bi-box-arrow-in-right small"></i>
+      </a>
+      <a href="<?php echo BASE_URL; ?>PHP/SignUp.php" class="btn btn-primary">
+        <span>Sign-up</span>
+      </a>
+      
+    <?php endif; ?>
   </div>
-  <div id="bookingResult" class="mt-4"></div>
+  </nav>
+<h2>Booking Anda</h2>
+<table border="1">
+<tr>
+  <th>Nama Paket</th>
+  <th>Tanggal</th>
+  <th>Status</th>
+</tr>
+<?php foreach ($bookings as $b): ?>
+<tr>
+  <td><?= htmlspecialchars($b['package_name']) ?></td>
+  <td><?= date('d-m-Y', strtotime($b['schedule_date'])) ?></td>
+  <td><?= htmlspecialchars($b['status']) ?></td>
+</tr>
+<?php endforeach; ?>
+<h2 class="text-center my-4">Booking Anda</h2>
 
+<div class="container mb-5">
+  <table class="table table-striped table-bordered table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th>Nama Paket</th>
+        <th>Tanggal</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php foreach ($bookings as $b): ?>
+      <tr>
+        <td><?= htmlspecialchars($b['package_name']) ?></td>
+        <td><?= date('d-m-Y', strtotime($b['schedule_date'])) ?></td>
+        <td><?= htmlspecialchars($b['status']) ?></td>
+      </tr>
+      <?php endforeach; ?>
+    </tbody>
+  </table>
+</div>
 
+</table>
 <!-- Bagian about us-->
 <section id="about" class="text-white py-5" style="background-color: #0d6fb1;">
   <div class="container">
@@ -137,106 +177,12 @@
   </div> 
 </section>
 
-<button id="scrollToTopBtn" title="Kembali ke Atas">
-  <i class="bi bi-arrow-up"></i>
-  <script src="../JS/Jstombolkecil.js"></script>
-</button>
-
-<!-- Tombol Scroll-->
     <button id="scrollToTopBtn" title="Kembali ke Atas">
       <i class="bi bi-arrow-up"></i>
       <script src="../JS/Jstombolkecil.js"></script>
     </button>
-    <script src="JsAbout.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-  <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const statusFilter = document.getElementById("statusFilter");
-  const resultContainer = document.getElementById("bookingResult");
-
-  function loadBookings(status = "all") {
-    let statusQuery = status === "disetujui" ? "confirmed" : (status === "menunggu" ? "pending" : "all");
-    fetch(`get_booking.php?status=${statusQuery}`)
-      .then(response => response.json())
-      .then(data => {
-        let html = "";
-        if (data.length === 0) {
-          html = "<p>Tidak ada data booking yang sesuai.</p>";
-        } else {
-          html = 
-            <table class="table table-bordered table-striped">
-              <thead>
-                <tr>
-                  <th>No</th>
-                  <th>Nama Package</th>
-                  <th>Tanggal Keberangkatan</th>
-                  <th>Tanggal Booking</th>
-                  <th>Jumlah Orang</th>
-                  <th>Status</th>
-                  <th>Total Harga</th>
-                  <th>Aksi</th>
-                </tr>
-              </thead>
-              <tbody>;
-let no = 1;
-html += 
-  <table class="table table-bordered table-striped">
-    <thead>
-      <tr>
-        <th>No</th>
-        <th>Nama Package</th>
-        <th>Tanggal Keberangkatan</th>
-        <th>Tanggal Booking</th>
-        <th>Jumlah Orang</th>
-        <th>Status</th>
-        <th>Total Harga</th>
-        <th>Aksi</th>
-      </tr>
-    </thead>
-    <tbody>;
-
-data.forEach(row => {
-  let badgeClass = "secondary";
-  if (row.status === "disetujui" || row.status === "Confirmed") badgeClass = "success";
-  else if (row.status === "menunggu" || row.status === "Pending") badgeClass = "warning";
-
-  html +=
-    <tr>
-      <td>${no++}</td>
-      <td>${row.package_name}</td>
-      <td>${new Date(row.departure_date).toLocaleDateString("id-ID", { day: '2-digit', month: 'long', year: 'numeric' })}</td>
-      <td>${new Date(row.booking_date).toLocaleDateString("id-ID", { day: '2-digit', month: 'long', year: 'numeric' })}</td>
-      <td>${row.participants} Orang</td>
-      <td><span class="badge bg-${badgeClass}">${row.status}</span></td>
-      <td>Rp ${parseInt(row.total_price).toLocaleString("id-ID")}</td>
-      <td>
-        <a href="bookingDetail.php?id=${row.booking_id}" class="btn btn-sm btn-primary">Detail</a>
-        <button class="btn btn-sm btn-secondary" disabled>Edit</button>
-        <button class="btn btn-sm btn-danger" disabled>Batal</button>
-      </td>
-    </tr>
-  ;
-});
-
-html += "</tbody></table>";
-            
-        }
-        resultContainer.innerHTML = html;
-      })
-      .catch(error => {
-        resultContainer.innerHTML = "<p>Gagal mengambil data booking.</p>";
-        console.error(error);
-      });
-  }
-
-  statusFilter.addEventListener("change", function () {
-    loadBookings(this.value);
-  });
-
-  loadBookings(); // Load awal
-});
-</script>
-
-</body>
+    <script src="../JS/JsAbout.js"></script>
+    <script src="../JS/JsSchedule.js"></script>
+    <script src="../JS/JsScheduleModal.js"></script>
+  </body>
 </html>
