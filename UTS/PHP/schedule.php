@@ -161,8 +161,19 @@ $schedules = $stmt->fetchAll();
           <img src="../a1/snorkeling.jpg" alt="Tour Image" class="tour-image" id="modalTourImage">
           
           <!-- Date -->
-          <div class="date-selector">
-            <strong id="modalDate">13 - 07 - 2025</strong>
+          <div class="date-picker-modal" id="datePickerModal">
+            <div class="date-picker-content">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h3 style="margin: 0; color: #1976d2;">Pilih Tanggal</h3>
+                <button id="closeDatePicker" style="background: none; border: none; font-size: 24px; cursor: pointer; color: #666;">&times;</button>
+              </div>
+              
+              <div style="margin-bottom: 15px; text-align: center; color: #666;">
+                <small>Pilih tanggal dengan hari yang sama (interval 7 hari)</small>
+              </div>
+              
+              <div id="dateOptions"></div>
+            </div>
           </div>
           
           <!-- Price -->
