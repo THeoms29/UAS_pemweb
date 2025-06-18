@@ -172,7 +172,7 @@ $schedules = $stmt->fetchAll();
           
           <!-- Include List -->
           <div class="include-list">
-            <h5>Include :</h5>
+            <h5><b>Include :</b></h5>
             <ol id="modalIncludeList">
               <li>Tiket snorkeling dan akses area wisata</li>
               <li>Peralatan snorkeling lengkap</li>
