@@ -45,8 +45,8 @@ const scrollBtn = document.getElementById('scrollToTopBtn');
         .then(response => response.json())
         .then(data => {
           if (data.success) {
-            alert('Booking berhasil dikonfirmasi!, silahkan konfirmasi ulang ke https://wa.me/+62 888-0532-7491');
-            // Perbarui tampilan baris di tabel tanpa perlu reload halaman penuh
+            alert('Booking berhasil dikonfirmasi! Kamu akan diarahkan ke WhatsApp untuk konfirmasi ulang.');
+            window.open('https://wa.me/6288805327491', '_blank');
             const row = document.getElementById(`booking-row-${bookingId}`);
             if (row) {
               const statusCell = row.querySelector('.badge');
