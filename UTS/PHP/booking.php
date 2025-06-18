@@ -34,7 +34,6 @@ $bookings = $stmt->fetchAll();
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
   <link rel="stylesheet" href="../CSS/navbar.css">
   <link rel="stylesheet" href="../CSS/style.css">
-  <link rel="stylesheet" href="../CSS/gallery.css">
   <link rel="stylesheet" href="../CSS/about.css">
   <link rel="stylesheet" href="../CSS/booking.css">
 </head>
@@ -63,7 +62,7 @@ $bookings = $stmt->fetchAll();
 </nav>
 
 <!-- Tabel Booking -->
-<div class="container mt-5 mb-5">
+<div class="container-booking">
   <h2 class="text-center mb-4"><b>My Booking</b></h2>
   <table class="table-booking" id="bookingTable">
     <thead style="background-color: #0d6fb1; color: white;">
