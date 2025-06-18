@@ -192,7 +192,68 @@
         <div class="caption">Noko</div>
       </div>
     </div>
+    <div class="gallery-item size-1">
+      <img src="../album/c5.jpg" alt="Cabin by the lake" class="gallery-img">
+      <div class="overlay">
+        <div class="caption">kacamataan</div>
+      </div>
+    </div>
+    <div class="gallery-item size-1">
+      <img src="../album/c6.jpg" alt="Cabin by the lake" class="gallery-img">
+      <div class="overlay">
+        <div class="caption">Angkuh</div>
+      </div>
+    </div>
+    <div class="gallery-item size-1">
+      <img src="../album/c7.jpg" alt="Cabin by the lake" class="gallery-img">
+      <div class="overlay">
+        <div class="caption">Ketemu kang parkir</div>
+      </div>
+    </div>
+    <div class="gallery-item size-1">
+      <img src="../album/c8.jpg" alt="Cabin by the lake" class="gallery-img">
+      <div class="overlay">
+        <div class="caption">PSHT Bawean</div>
+      </div>
+    </div>
+    <div class="gallery-item size-1">
+      <img src="../album/c9.jpg" alt="Cabin by the lake" class="gallery-img">
+      <div class="overlay">
+        <div class="caption">renang</div>
+      </div>
+    </div>
+    <div class="gallery-item size-1">
+      <img src="../album/d1.jpg" alt="Cabin by the lake" class="gallery-img">
+      <div class="overlay">
+        <div class="caption">psht bawean part 2</div>
+      </div>
+    </div>
+    <div class="gallery-item size-1">
+      <img src="../album/d2.jpg" alt="Cabin by the lake" class="gallery-img">
+      <div class="overlay">
+        <div class="caption">Hari paling terang bawean</div>
+      </div>
+    </div>
+    <div class="gallery-item size-1">
+      <img src="../album/d3.jpg" alt="Cabin by the lake" class="gallery-img">
+      <div class="overlay">
+        <div class="caption">me and the boys</div>
+      </div>
+    </div>
+    <div class="gallery-item size-1">
+      <img src="../album/d4.jpg" alt="Cabin by the lake" class="gallery-img">
+      <div class="overlay">
+        <div class="caption">Nelayan bawean Memasak</div>
+      </div>
+    </div>
+    <div class="gallery-item size-1">
+      <img src="../album/d5.jpg" alt="Cabin by the lake" class="gallery-img">
+      <div class="overlay">
+        <div class="caption">manusia terkeren Bawean</div>
+      </div>
+    </div>
   </div>
+
 
   <div class="pagination-container">
   <ul class="pagination">
