@@ -79,12 +79,12 @@ h1 {
 }
 
 .btn.book {
-  background-color: #0077b6;
+  background-color: #0d6fb1;
   color: white;
 }
 
 .btn.book:hover {
-  background-color: #023e8a;
+  background-color: #0d6fb1;
   transform: scale(1.05);
 }
 
@@ -143,3 +143,138 @@ h1 {
     font-size: 0.9rem;
   }
   
+   .custom-modal .modal-dialog {
+      max-width: 500px;
+    }
+    
+    .custom-modal .modal-content {
+      border-radius: 15px;
+      border: none;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    
+    .modal-header-custom {
+      background-color: #0d6fb1;
+      color: white;
+      text-align: center;
+      border-radius: 15px 15px 0 0;
+      padding: 20px;
+      border-bottom: none;
+      position: relative;
+    }
+    
+    .modal-header-custom h4 {
+      font-weight: bold;
+      margin: 0;
+      font-size: 18px;
+      letter-spacing: 1px;
+    }
+    
+    .modal-header-custom .btn-close {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      background: transparent;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      opacity: 1;
+    }
+    
+    .modal-body-custom {
+      padding: 25px;
+      background-color: white;
+    }
+    
+    .tour-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+    
+    .date-selector {
+      background-color: #e3f2fd;
+      border: 1px solid #90caf9;
+      border-radius: 8px;
+      padding: 12px;
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: bold;
+      color: #1565c0;
+      font-size: 16px;
+    }
+    
+    .price-tag {
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 16px;
+      font-weight: bold;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+    
+    .include-section {
+      text-align: left;
+      margin-bottom: 25px;
+    }
+    
+    .include-section h5 {
+      color: #1565c0;
+      margin-bottom: 15px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    
+    .include-section ol {
+      margin-bottom: 0;
+      padding-left: 20px;
+    }
+    
+    .include-section li {
+      margin-bottom: 8px;
+      color: #333;
+      line-height: 1.4;
+    }
+    
+    .modal-buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    
+    .btn-custom {
+      padding: 12px 30px;
+      border-radius: 25px;
+      font-weight: bold;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-add-cart {
+      background-color: #78909c;
+      color: white;
+    }
+    
+    .btn-book-now {
+      background-color: #1e88e5;
+      color: white;
+    }
+    
+    .btn-add-cart:hover {
+      background-color: #607d8b;
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    .btn-book-now:hover {
+      background-color: #1565c0;
+      color: white;
+      transform: translateY(-2px);
+    }

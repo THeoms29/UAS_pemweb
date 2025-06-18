@@ -11,7 +11,8 @@
     s.daftar_orang,
     s.status,
     p.name AS package_name,
-    p.price
+    p.price,
+    p.package_id
         FROM schedules s
         JOIN packages p ON s.package_id = p.package_id
         ORDER BY s.schedule_date";
@@ -113,7 +114,7 @@ $schedules = $stmt->fetchAll();
           'Thursday'  => 'Kamis',
           'Friday'    => 'Jumat',
           'Saturday'  => 'Sabtu'
-          ]
+          ];
           ?>
     <tr>
       <td><?= $hari_id[$hari_en] ?? $hari_en ?></td>
@@ -126,7 +127,14 @@ $schedules = $stmt->fetchAll();
       </td>
       <td>
         <?php if ($row['status'] == 'tersedia'): ?>
-          <a href="booking.php" class="btn book">Book Now</a>
+          <button class="btn book" 
+                  onclick="openBookingModal('<?= htmlspecialchars($row['package_name']) ?>', 
+                                         '<?= number_format($row['price'], 0, ',', '.') ?>', 
+                                         '<?= date('d - m - Y', strtotime($row['schedule_date'])) ?>',
+                                         '<?= $row['schedule_id'] ?>',
+                                         '<?= $row['package_id'] ?>')">
+            Book Now
+          </button>
         <?php elseif ($row['status'] == 'penuh'): ?>
           <button class="btn full" disabled>Full</button>
         <?php else: ?>
@@ -137,6 +145,51 @@ $schedules = $stmt->fetchAll();
   <?php endforeach; ?>
       </tbody>
     </table>
+  </div>
+
+  <!-- Modal Booking -->
+  <div class="modal fade custom-modal" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header-custom">
+          <h4 class="modal-title w-100" id="modalPackageName">SNORKELING BAWEAN UNDERWATER</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+            </button>
+        </div>
+        <div class="modal-body modal-body-custom">
+          <!-- Tour Image -->
+          <img src="../a1/snorkeling.jpg" alt="Tour Image" class="tour-image" id="modalTourImage">
+          
+          <!-- Date -->
+          <div class="date-selector">
+            <strong id="modalDate">13 - 07 - 2025</strong>
+          </div>
+          
+          <!-- Price -->
+          <div class="text-center">
+            <span class="price-tag" id="modalPrice">Rp. 500.000/Person</span>
+          </div>
+          
+          <!-- Include List -->
+          <div class="include-list">
+            <h5>Include :</h5>
+            <ol id="modalIncludeList">
+              <li>Tiket snorkeling dan akses area wisata</li>
+              <li>Peralatan snorkeling lengkap</li>
+              <li>Pemandu wisata lokal (guide berpengalaman)</li>
+              <li>Dokumentasi foto underwater</li>
+              <li>Transportasi</li>
+            </ol>
+          </div>
+          
+          <!-- Action Buttons -->
+          <div class="d-flex gap-3 justify-content-center">
+            <button type="button" class="btn btn-add-cart btn-custom" onclick="addToCart()">Add Cart</button>
+            <button type="button" class="btn btn-book-now btn-custom" onclick="bookNow()">Book Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Section About Us -->
@@ -197,5 +250,79 @@ $schedules = $stmt->fetchAll();
   <script src="../JS/JsSchedule.js"></script>
   <script src="../JS/Jstombolkecil.js"></script>
   <script src="../JS/JsAbout.js"></script>
+  
+  <script>
+    let currentScheduleId = null;
+    let currentPackageId = null;
+
+    function openBookingModal(packageName, price, date, scheduleId, packageId) {
+      currentScheduleId = scheduleId;
+      currentPackageId = packageId;
+      
+      // Update modal content
+      document.getElementById('modalPackageName').textContent = packageName.toUpperCase();
+      document.getElementById('modalDate').textContent = date;
+      document.getElementById('modalPrice').textContent = 'Rp. ' + price + '/Person';
+      
+      // You can customize the image and include list based on package type
+      updateModalContent(packageName);
+      
+      // Show modal
+      const modal = new bootstrap.Modal(document.getElementById('bookingModal'));
+      modal.show();
+    }
+
+    function updateModalContent(packageName) {
+      const modalImage = document.getElementById('modalTourImage');
+      const modalIncludeList = document.getElementById('modalIncludeList');
+      
+      // Default content (you can customize this based on different packages)
+      if (packageName.toLowerCase().includes('snorkeling')) {
+        modalImage.src = '../a1/snorkeling.jpg';
+        modalIncludeList.innerHTML = `
+          <li>Tiket snorkeling dan akses area wisata</li>
+          <li>Peralatan snorkeling lengkap</li>
+          <li>Pemandu wisata lokal (guide berpengalaman)</li>
+          <li>Dokumentasi foto underwater</li>
+          <li>Transportasi</li>
+        `;
+      } else if (packageName.toLowerCase().includes('wisata')) {
+        modalImage.src = '../a1/wisata.jpg';
+        modalIncludeList.innerHTML = `
+          <li>Tiket masuk tempat wisata</li>
+          <li>Pemandu wisata profesional</li>
+          <li>Transportasi antar jemput</li>
+          <li>Dokumentasi foto</li>
+          <li>Makan siang</li>
+        `;
+      } else {
+        modalImage.src = '../a1/default-tour.jpg';
+        modalIncludeList.innerHTML = `
+          <li>Tiket masuk</li>
+          <li>Pemandu wisata</li>
+          <li>Transportasi</li>
+          <li>Dokumentasi</li>
+          <li>Fasilitas pendukung</li>
+        `;
+      }
+    }
+
+    function addToCart() {
+      // Add to cart functionality
+      alert('Item berhasil ditambahkan ke cart!');
+      // You can implement actual cart functionality here
+      // For example, save to session or database
+    }
+
+    function bookNow() {
+      // Direct booking functionality
+      if (currentScheduleId && currentPackageId) {
+        // Redirect to booking page with parameters
+        window.location.href = `booking.php?schedule_id=${currentScheduleId}&package_id=${currentPackageId}`;
+      } else {
+        alert('Terjadi kesalahan. Silakan coba lagi.');
+      }
+    }
+  </script>
 </body>
 </html>
