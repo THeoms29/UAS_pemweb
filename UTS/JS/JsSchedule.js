@@ -1,4 +1,4 @@
-  document.getElementById('statusFilter').addEventListener('change', function () {
+document.getElementById('statusFilter').addEventListener('change', function () {
     const selected = this.value;
     const rows = document.querySelectorAll('.schedule-table tbody tr');
 
