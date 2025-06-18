@@ -36,11 +36,7 @@ $bookings = $stmt->fetchAll();
   <link rel="stylesheet" href="../CSS/style.css">
   <link rel="stylesheet" href="../CSS/gallery.css">
   <link rel="stylesheet" href="../CSS/about.css">
-  <style>
-    .badge-pending { background-color: #ffc107; color: black; }
-    .badge-confirmed { background-color: #28a745; }
-    .badge-cancelled { background-color: #dc3545; }
-  </style>
+  <link rel="stylesheet" href="../CSS/booking.css">
 </head>
 <body>
 
@@ -154,122 +150,56 @@ $bookings = $stmt->fetchAll();
   </div>
 </div>
 
-
-<!-- Bagian About -->
+<!-- Bagian about us-->
 <section id="about" class="text-white py-5" style="background-color: #0d6fb1;">
-  <div class="container text-center">
-    <p>Baweanique adalah perusahaan penyedia layanan tour dan travel di Pulau Bawean.</p>
-  </div>
+  <div class="container">
+    <div class="row align-items-center">
+      <!--logo-->
+        <div class="col-md-3 mb-4">
+          <img src="../a1/baweanique2.png" width="150" height="auto" alt="Logo Baweanique" class="mb-3">
+          <p>Baweanique adalah perusahaan penyedia layanan tour dan travel di Pulau Bawean.</p>
+        </div>
+    <!-- contact us -->
+    <div class="col-md-3 mb-4 text-center text-md-start">
+      <h5 class="text-uppercase mb-3">Contact Us</h5>
+      <ul class="list-unstyled">
+        <li class="mb-2"><i class="bi bi-geo-alt"></i> Jl. Purbonegoro No.01, Sangkapura, Bawean, Gresik</li>
+        <li class="mb-2"><i class="bi bi-telephone"></i> +62xx-xxxx-xxxx</li>
+        <li class="mb-2"><i class="bi bi-envelope"></i> info@baweanique.com</li>
+      </ul>
+    </div>
+    <!-- Support -->
+    <div class="col-md-3 mb-4 text-center text-md-start">
+      <h5 class="text-uppercase mb-3">Support</h5>
+      <ul class="list-unstyled">
+        <li class="mb-2">- Documentation</li>
+        <li class="mb-2">- Experience</li>
+        <li class="mb-2">- Knowledge</li>
+        <li class="mb-2">- Forum</li>
+      </ul>
+    </div>
+    <!-- Sosmed -->
+    <div class="col-md-3 mb-4 text-center text-md-end">
+      <div class="d-flex justify-content-center justify-content-md-end gap-4">
+        <a href="#" class="social-icon"><i class="bi bi-facebook fs-1"></i></a>
+        <a href="https://youtu.be/vSa8xdmPTy0?si=RZM8l5BH_cZ261CH" class="social-icon"><i class="bi bi-youtube fs-1"></i></a>
+        <a href="https://www.instagram.com/ouwchiee_/" class="social-icon"><i class="bi bi-instagram fs-1"></i></a>
+        <a href="https://www.tiktok.com/@babynacho6" class="social-icon"><i class="bi bi-tiktok fs-1"></i></a>
+      </div>
+    </div>
+
+    <div class="copyright text-center">
+        Copyright - Baweanique Team 
+    </div> 
+  </div> 
 </section>
 
 <!-- Tombol Scroll -->
 <button id="scrollToTopBtn" title="Kembali ke Atas"><i class="bi bi-arrow-up"></i></button>
 
 <script src="../JS/Jstombolkecil.js"></script>
-<script>
-  const scrollBtn = document.getElementById('scrollToTopBtn');
-  window.onscroll = () => {
-    scrollBtn.style.display = (document.documentElement.scrollTop > 300) ? 'block' : 'none';
-  };
-  scrollBtn.onclick = () => {
-    document.documentElement.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  document.querySelectorAll('.btn-batal-booking').forEach(button => {
-    button.addEventListener('click', () => {
-      const bookingId = button.getAttribute('data-booking-id');
-      if (confirm('Yakin ingin membatalkan booking ini?')) {
-        fetch('batal_booking.php', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams({ booking_id: bookingId })
-        })
-        .then(response => response.json())
-        .then(data => {
-          if (data.success) {
-            document.getElementById(`booking-row-${bookingId}`).remove();
-            alert('Booking berhasil dibatalkan.');
-          } else {
-            alert(data.error || 'Gagal membatalkan booking.');
-          }
-        })
-        .catch(error => {
-          alert('Terjadi kesalahan saat membatalkan booking.');
-          console.error(error);
-        });
-      }
-    });
-  });
-
-  document.querySelectorAll('.btn-edit-booking').forEach(button => {
-    button.addEventListener('click', () => {
-      const bookingId = button.getAttribute('data-booking-id');
-      const packageId = button.getAttribute('data-package-id');
-      const modal = new bootstrap.Modal(document.getElementById('editBookingModal'));
-      const select = document.getElementById('edit-schedule-id');
-
-      document.getElementById('edit-booking-id').value = bookingId;
-      select.innerHTML = '<option value="">Memuat jadwal...</option>';
-
-      fetch(`get_schedule.php?package_id=${packageId}`)
-        .then(res => res.json())
-        .then(data => {
-          select.innerHTML = '<option value="">-- Pilih Jadwal --</option>';
-          data.forEach(s => {
-            select.innerHTML += `<option value="${s.schedule_id}">${s.schedule_date}</option>`;
-          });
-          modal.show();
-        })
-        .catch(() => {
-          select.innerHTML = '<option value="">Gagal memuat jadwal</option>';
-        });
-    });
-  });
-
-  document.getElementById('editBookingForm').addEventListener('submit', function (e) {
-    e.preventDefault();
-    const formData = new URLSearchParams(new FormData(this));
-
-    fetch('edit_booking.php', {
-      method: 'POST',
-      body: formData
-    })
-      .then(res => res.json())
-      .then(data => {
-        if (data.success) {
-          alert('Jadwal booking berhasil diperbarui.');
-          location.reload();
-        } else {
-          alert(data.error || 'Gagal mengubah booking.');
-        }
-      })
-      .catch(err => {
-        alert('Terjadi kesalahan saat mengirim permintaan.');
-        console.error(err);
-      });
-  });
-</script>
-<style>
-.date-picker-modal {
-  display: none; position: fixed; top: 0; left: 0; width: 100%;
-  height: 100%; background: rgba(0,0,0,0.5);
-  justify-content: center; align-items: center; z-index: 1055;
-}
-.date-picker-content {
-  background: #fff; padding: 20px; border-radius: 10px;
-  width: 90%; max-width: 400px;
-}
-.date-option {
-  padding: 8px; border: 1px solid #ccc; margin-bottom: 6px;
-  border-radius: 5px; cursor: pointer;
-}
-.date-option:hover {
-  background-color: #f0f0f0;
-}
-</style>
+<script src="../JS/JsBooking.js"></script>
 <script src="../JS/WeeklyDatePickerEdit.js"></script>
-
-
 
 </body>
 </html>
