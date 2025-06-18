@@ -160,11 +160,6 @@ $schedules = $stmt->fetchAll();
         </div>
         <div class="modal-body modal-body-custom">
           <img src="../a1/snorkeling.jpg" alt="Tour Image" class="tour-image" id="modalTourImage">
-          <!-- Date Display -->
-          <div class="date-display" id="dateDisplay">
-            <div>Tanggal: <span id="selectedDate">01 - 01 - 2024</span></div>
-            <small style="color: #666; font-size: 12px;">Klik untuk mengubah tanggal</small>
-          </div>
           
           <!-- Date Picker Modal -->
           <div class="date-picker-modal" id="datePickerModal">
