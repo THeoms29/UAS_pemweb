@@ -301,7 +301,7 @@
                 </ul>
                 <hr>
               <div class="text-end">
-                <h4 class="price-tag">Harga: Rp 450.000/Person</h4>
+                <h4 class="price-tag">Harga: Rp 1.800.000/Person</h4>
               </div>
           </div>
         </div>
@@ -328,7 +328,7 @@
                 </ul>
               <hr>
               <div class="text-end">
-                <h4 class="price-tag">Harga: Rp 450.000/Person</h4>
+                <h4 class="price-tag">Harga: Rp 1.500.000/Person</h4>
               </div>
             </div>
           </div>
@@ -355,7 +355,7 @@
                 </ul>
               <hr>
               <div class="text-end">
-                <h4 class="price-tag">Harga: Rp 450.000/Person</h4>
+                <h4 class="price-tag">Harga: Rp 3.500.000/Person</h4>
               </div>
             </div>
           </div>
@@ -409,7 +409,7 @@
                 </ul>
               <hr>
               <div class="text-end">
-                <h4 class="price-tag">Harga: Rp 450.000/Person</h4>
+                <h4 class="price-tag">Harga: Rp 7000.000/Person</h4>
               </div>
             </div>
           </div>
@@ -436,7 +436,7 @@
                 </ul>
               <hr>
               <div class="text-end">
-                <h4 class="price-tag">Harga: Rp 450.000/Person</h4>
+                <h4 class="price-tag">Harga: Rp 2.500.000/Person</h4>
               </div>
             </div>
           </div>
@@ -490,7 +490,7 @@
                 </ul>
               <hr>
               <div class="text-end">
-                <h4 class="price-tag">Harga: Rp 450.000/Person</h4>
+                <h4 class="price-tag">Harga: Rp 950.000/Person</h4>
               </div>
             </div>
           </div>
@@ -517,7 +517,7 @@
                 </ul>
               <hr>
               <div class="text-end">
-                <h4 class="price-tag">Harga: Rp 450.000/Person</h4>
+                <h4 class="price-tag">Harga: Rp 1.200.000/Person</h4>
               </div>
             </div>
           </div>
@@ -570,7 +570,7 @@
                 </ul>
               <hr>
               <div class="text-end">
-                <h4 class="price-tag">Harga: Rp 450.000/Person</h4>
+                <h4 class="price-tag">Harga: Rp 800.000/Person</h4>
               </div>
             </div>
         </div>
@@ -585,6 +585,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
+              <img src="../a1/mangrove.jpg" class="img-fluid mb-3" alt="Mangrove">
               <h6>Keunggulan & Karakteristik</h6>
               <p>Keunggulan utama Noko Gili adalah fenomena alamnya sebagai pulau pasir yang timbul dan tenggelam.
               Dikelilingi perairan jernih, tempat ini menawarkan pengalaman eksklusif seolah berada di pulau pribadi dengan pemandangan bawah laut yang masih sangat alami.</p>
