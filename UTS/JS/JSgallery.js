@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 2) Group items into pages by container height
   function computePages() {
     pages = [];
-    const pageHeight = (2100 * 1.5);
+    const pageHeight = (2000 * 2);
     let batch = [];
     let accH  = 0;
 
