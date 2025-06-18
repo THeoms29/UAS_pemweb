@@ -129,10 +129,10 @@ $schedules = $stmt->fetchAll();
         <?php if ($row['status'] == 'tersedia'): ?>
           <button class="btn book" 
                   onclick="openBookingModal('<?= htmlspecialchars($row['package_name']) ?>', 
-                                         '<?= number_format($row['price'], 0, ',', '.') ?>', 
+                                         <?= $row['price'] ?>, 
                                          '<?= date('d - m - Y', strtotime($row['schedule_date'])) ?>',
-                                         '<?= $row['schedule_id'] ?>',
-                                         '<?= $row['package_id'] ?>')">
+                                         <?= $row['schedule_id'] ?>,
+                                         <?= $row['package_id'] ?>)">
             Book Now
           </button>
         <?php elseif ($row['status'] == 'penuh'): ?>
@@ -152,15 +152,20 @@ $schedules = $stmt->fetchAll();
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header-custom">
-          <h4 class="modal-title w-100" id="modalPackageName">SNORKELING BAWEAN UNDERWATER</h4>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-            </button>
+          <h4 class="modal-title w-100" id="modalPackageName">PACKAGE NAME</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body modal-body-custom">
           <!-- Tour Image -->
-          <img src="../a1/snorkeling.jpg" alt="Tour Image" class="tour-image" id="modalTourImage">
+          <div class="tour-image" id="modalTourImage">Tour Image</div>
           
-          <!-- Date -->
+          <!-- Date Display -->
+          <div class="date-display" id="dateDisplay">
+            <div>Tanggal: <span id="selectedDate">01 - 01 - 2024</span></div>
+            <small style="color: #666; font-size: 12px;">Klik untuk mengubah tanggal</small>
+          </div>
+          
+          <!-- Date Picker Modal -->
           <div class="date-picker-modal" id="datePickerModal">
             <div class="date-picker-content">
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
@@ -185,11 +190,11 @@ $schedules = $stmt->fetchAll();
           <div class="include-list">
             <h5><b>Include :</b></h5>
             <ol id="modalIncludeList">
-              <li>Tiket snorkeling dan akses area wisata</li>
-              <li>Peralatan snorkeling lengkap</li>
-              <li>Pemandu wisata lokal (guide berpengalaman)</li>
-              <li>Dokumentasi foto underwater</li>
-              <li>Transportasi</li>
+              <li>Tiket masuk tempat wisata</li>
+              <li>Pemandu wisata profesional</li>
+              <li>Transportasi antar jemput</li>
+              <li>Dokumentasi foto</li>
+              <li>Makan siang</li>
             </ol>
           </div>
           
@@ -261,79 +266,5 @@ $schedules = $stmt->fetchAll();
   <script src="../JS/JsSchedule.js"></script>
   <script src="../JS/Jstombolkecil.js"></script>
   <script src="../JS/JsAbout.js"></script>
-  
-  <script>
-    let currentScheduleId = null;
-    let currentPackageId = null;
-
-    function openBookingModal(packageName, price, date, scheduleId, packageId) {
-      currentScheduleId = scheduleId;
-      currentPackageId = packageId;
-      
-      // Update modal content
-      document.getElementById('modalPackageName').textContent = packageName.toUpperCase();
-      document.getElementById('modalDate').textContent = date;
-      document.getElementById('modalPrice').textContent = 'Rp. ' + price + '/Person';
-      
-      // You can customize the image and include list based on package type
-      updateModalContent(packageName);
-      
-      // Show modal
-      const modal = new bootstrap.Modal(document.getElementById('bookingModal'));
-      modal.show();
-    }
-
-    function updateModalContent(packageName) {
-      const modalImage = document.getElementById('modalTourImage');
-      const modalIncludeList = document.getElementById('modalIncludeList');
-      
-      // Default content (you can customize this based on different packages)
-      if (packageName.toLowerCase().includes('snorkeling')) {
-        modalImage.src = '../a1/snorkeling.jpg';
-        modalIncludeList.innerHTML = `
-          <li>Tiket snorkeling dan akses area wisata</li>
-          <li>Peralatan snorkeling lengkap</li>
-          <li>Pemandu wisata lokal (guide berpengalaman)</li>
-          <li>Dokumentasi foto underwater</li>
-          <li>Transportasi</li>
-        `;
-      } else if (packageName.toLowerCase().includes('wisata')) {
-        modalImage.src = '../a1/wisata.jpg';
-        modalIncludeList.innerHTML = `
-          <li>Tiket masuk tempat wisata</li>
-          <li>Pemandu wisata profesional</li>
-          <li>Transportasi antar jemput</li>
-          <li>Dokumentasi foto</li>
-          <li>Makan siang</li>
-        `;
-      } else {
-        modalImage.src = '../a1/default-tour.jpg';
-        modalIncludeList.innerHTML = `
-          <li>Tiket masuk</li>
-          <li>Pemandu wisata</li>
-          <li>Transportasi</li>
-          <li>Dokumentasi</li>
-          <li>Fasilitas pendukung</li>
-        `;
-      }
-    }
-
-    function addToCart() {
-      // Add to cart functionality
-      alert('Item berhasil ditambahkan ke cart!');
-      // You can implement actual cart functionality here
-      // For example, save to session or database
-    }
-
-    function bookNow() {
-      // Direct booking functionality
-      if (currentScheduleId && currentPackageId) {
-        // Redirect to booking page with parameters
-        window.location.href = `booking.php?schedule_id=${currentScheduleId}&package_id=${currentPackageId}`;
-      } else {
-        alert('Terjadi kesalahan. Silakan coba lagi.');
-      }
-    }
-  </script>
 </body>
 </html>
