@@ -182,3 +182,26 @@
 [2025-06-17 11:51:54] Insert executed successfully
 [2025-06-17 11:51:54] New user ID: 12
 [2025-06-17 11:51:54] === Debug signup process ended ===
+[2025-06-18 08:14:12] === Debug signup process started ===
+[2025-06-18 08:14:12] Database connection included
+[2025-06-18 08:14:12] Method: POST
+[2025-06-18 08:14:12] POST data: Array
+(
+    [full_name] => Telo Dalang
+    [email] => telodalang12@gmail.com
+    [password] => 1234567
+    [confirm_password] => 1234567
+    [terms] => on
+)
+
+[2025-06-18 08:14:12] Data received - Name: Telo Dalang, Email: telodalang12@gmail.com
+[2025-06-18 08:14:12] Validation passed, checking database connection
+[2025-06-18 08:14:12] Database connected successfully
+[2025-06-18 08:14:12] Email check passed, proceeding with insert
+[2025-06-18 08:14:12] Password hashed successfully
+[2025-06-18 08:14:12] Current time: 2025-06-18 08:14:12
+[2025-06-18 08:14:12] Insert query prepared successfully
+[2025-06-18 08:14:13] Parameters bound, executing insert
+[2025-06-18 08:14:13] Insert executed successfully
+[2025-06-18 08:14:13] New user ID: 1
+[2025-06-18 08:14:13] === Debug signup process ended ===

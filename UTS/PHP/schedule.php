@@ -63,14 +63,29 @@ $schedules = $stmt->fetchAll();
       </a>
     </div>
     
-    <div class="d-flex gap-2">
-      <a href="<?php echo BASE_URL; ?>PHP/login.php" class="btn btn-outline-dark custom-login-btn d-flex align-items-center gap-1 rounded-pill">
-        <span>Login</span><i class="bi bi-box-arrow-in-right small"></i>
+    <div class="d-flex gap-2 align-items-center">
+    <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true): ?>
+      
+      <span class="text-welcome">
+        Welcome, <br><b><?php echo htmlspecialchars($_SESSION['user_name']); ?>!</b></br>
+      </span>
+      <a href="<?php echo BASE_URL; ?>PHP/logout.php" class="btn btn-danger">
+        <span></span>
+        <i class="bi bi-box-arrow-right"></i>
       </a>
-      <a href="<?php echo BASE_URL; ?>PHP/SignUp.php" class="btn btn-primary rounded-pill">
+
+    <?php else: ?>
+
+      <a href="<?php echo BASE_URL; ?>PHP/login.php" class="btn btn-outline-dark custom-login-btn d-flex align-items-center gap-1">
+        <span>Login</span>
+        <i class="bi bi-box-arrow-in-right small"></i>
+      </a>
+      <a href="<?php echo BASE_URL; ?>PHP/SignUp.php" class="btn btn-primary">
         <span>Sign-up</span>
       </a>
-    </div>
+      
+    <?php endif; ?>
+  </div>
   </nav>
 
   <div class="container-schedule">
@@ -83,7 +98,6 @@ $schedules = $stmt->fetchAll();
           <th>Destinasi</th>
           <th>Waktu</th>
           <th>Durasi</th>
-          <th>Status</th>
           <th>Aksi</th>
         </tr>
       </thead>
@@ -110,7 +124,6 @@ $schedules = $stmt->fetchAll();
           round((strtotime($row['end_time']) - strtotime($row['start_time'])) / 3600) . ' Jam'; 
         ?>
       </td>
-      <td><span class="status <?= $row['status'] ?>"><?= ucfirst($row['status']) ?></span></td>
       <td>
         <?php if ($row['status'] == 'tersedia'): ?>
           <a href="booking.php" class="btn book">Book Now</a>
