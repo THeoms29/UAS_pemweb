@@ -83,7 +83,7 @@
   <!-- Tombol Scroll to Top -->
 <button id="scrollToTopBtn" title="Kembali ke Atas">
   <i class="bi bi-arrow-up"></i>
-  <script src="/JS/Jstombolkecil.js"></script>
+  <script src="../JS/Jstombolkecil.js"></script>
 </button>
 <!-- Gallery -->
 <div class="container-fluid mt-5">
