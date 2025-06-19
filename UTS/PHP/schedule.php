@@ -91,7 +91,7 @@ $schedules = $stmt->fetchAll();
   </nav>
 
   <div class="container-schedule">
-    <h1><b>Jadwal Tour Mingguan</b></h1>
+    <h1><b>Jadwal Tour Bulan Ini</b></h1>
 
     <table class="schedule-table font-table">
       <thead>

@@ -86,7 +86,6 @@
           <div class="row">
             <div class="col-md-4 mb-4">
               <div class="card">
-                <span class="badge bg-success position-absolute top-0 end-0 m-2 fs-6">Rp 1.800.000</span>
                 <img src="../a1/noko.jpg" class="card-img-top" alt="Noko Gili">
                 <div class="card-body">
                   <h5 class="card-title">Noko Gili</h5>
@@ -102,7 +101,6 @@
             </div>
             <div class="col-md-4 mb-4">
               <div class="card">
-                <span class="badge bg-success position-absolute top-0 end-0 m-2 fs-6">Rp 1.500.000</span>
                 <img src="../a1/tajhunggheen.jpg" class="card-img-top" alt="Tajhunghe'en">
                 <div class="card-body">
                   <h5 class="card-title">Tajhunghe'en</h5>
@@ -118,7 +116,6 @@
             </div>
             <div class="col-md-4 mb-4">
               <div class="card">
-                <span class="badge bg-success position-absolute top-0 end-0 m-2 fs-6">Rp 3.500.000</span>
                 <img src="../a1/kastoba.jpg" class="card-img-top" alt="Kastoba Lake">
                 <div class="card-body">
                   <h5 class="card-title">Kastoba Lake</h5>
@@ -134,7 +131,6 @@
             </div>
             <div class="col-md-4 mb-4">
               <div class="card">
-                <span class="badge bg-success position-absolute top-0 end-0 m-2 fs-6">Rp 250.000</span>
                 <img src="../a1/air terjun.jpg" class="card-img-top" alt="Laccar Waterfall">
                 <div class="card-body">
                   <h5 class="card-title">Laccar Waterfall</h5>
@@ -150,7 +146,6 @@
             </div>
             <div class="col-md-4 mb-4">
               <div class="card">
-                <span class="badge bg-success position-absolute top-0 end-0 m-2 fs-6">Rp 700.000</span>
                 <img src="../a1/noko selayar.jpg" class="card-img-top" alt="Noko Selayar">
                 <div class="card-body">
                   <h5 class="card-title">Noko Selayar</h5>
@@ -166,7 +161,6 @@
             </div>
             <div class="col-md-4 mb-4">
               <div class="card">
-                <span class="badge bg-success position-absolute top-0 end-0 m-2 fs-6">Rp 2.500.000</span>
                 <img src="../a1/cina.jpg" class="card-img-top" alt="China Island">
                 <div class="card-body">
                   <h5 class="card-title">China Island</h5>
@@ -182,7 +176,6 @@
             </div>
             <div class="col-md-4 mb-4">
               <div class="card">
-                <span class="badge bg-success position-absolute top-0 end-0 m-2 fs-6">Rp 100.000</span>
                 <img src="../a1/air panas.jpg" class="card-img-top" alt="Pemandian Air Panas">
                 <div class="card-body">
                   <h5 class="card-title">Pemandian Air Panas</h5>
@@ -198,7 +191,6 @@
             </div>
             <div class="col-md-4 mb-4">
               <div class="card">
-                <span class="badge bg-success position-absolute top-0 end-0 m-2 fs-6">Rp 950.000</span>
                 <img src="../a1/rusa.jpg" class="card-img-top" alt="Bawean Deer Breeding">
                 <div class="card-body">
                   <h5 class="card-title">Bawean Deer Breeding</h5>
@@ -214,7 +206,6 @@
             </div>
             <div class="col-md-4 mb-4">
               <div class="card">
-                <span class="badge bg-success position-absolute top-0 end-0 m-2 fs-6">Rp 1.200.000</span>
                 <img src="../a1/snorkeling.jpg" class="card-img-top" alt="Bawean Underwater">
                 <div class="card-body">
                   <h5 class="card-title">Bawean Underwater</h5>
@@ -230,7 +221,6 @@
             </div>
             <div class="col-md-4 mb-4">
               <div class="card">
-                <span class="badge bg-success position-absolute top-0 end-0 m-2 fs-6">Rp 350.000</span>
                 <img src="../a1/mombhul.png" class="card-img-top" alt="Mombhul Beach">
                 <div class="card-body">
                   <h5 class="card-title">Mombhul Beach</h5>
@@ -246,7 +236,6 @@
             </div>
             <div class="col-md-4 mb-4">
               <div class="card">
-                <span class="badge bg-success position-absolute top-0 end-0 m-2 fs-6">Rp 800.000</span>
                 <img src="../a1/lantong.jpg" class="card-img-top" alt="Lantong Waterfall">
                 <div class="card-body">
                   <h5 class="card-title">Lantong Waterfall</h5>
@@ -262,7 +251,6 @@
             </div>
             <div class="col-md-4 mb-4">
               <div class="card">
-                <span class="badge bg-success position-absolute top-0 end-0 m-2 fs-6">Rp 200.000</span>
                 <img src="../a1/mangrove.jpg" class="card-img-top" alt="Mangrove">
                 <div class="card-body">
                   <h5 class="card-title">Mangrove</h5>
